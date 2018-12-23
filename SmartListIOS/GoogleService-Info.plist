@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>837625752367-if1uiqufteph3jps3jodahffaj9sdaup.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.837625752367-if1uiqufteph3jps3jodahffaj9sdaup</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB6LbD_fdFiQXGAV3kYr6O9-4IAWt-2Ud4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>837625752367</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Aharon.SmartListIOS</string>
+	<key>PROJECT_ID</key>
+	<string>smartlistios-7a38f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smartlistios-7a38f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:837625752367:ios:7352abae25450fed</string>
+	<key>DATABASE_URL</key>
+	<string>https://smartlistios-7a38f.firebaseio.com</string>
+</dict>
+</plist>

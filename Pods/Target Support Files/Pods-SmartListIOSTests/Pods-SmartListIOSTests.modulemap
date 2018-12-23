@@ -1,0 +1,6 @@
+framework module Pods_SmartListIOSTests {
+  umbrella header "Pods-SmartListIOSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

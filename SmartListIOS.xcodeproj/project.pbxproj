@@ -1,0 +1,791 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		567F2556A80B796B534485D6 /* Pods_SmartListIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329F39389BAC4221994C6501 /* Pods_SmartListIOSUITests.framework */; };
+		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
+		84558B3321B32FC8005C3978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3221B32FC8005C3978 /* ViewController.swift */; };
+		84558B3621B32FC8005C3978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3421B32FC8005C3978 /* Main.storyboard */; };
+		84558B3821B32FCA005C3978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3721B32FCA005C3978 /* Assets.xcassets */; };
+		84558B3B21B32FCA005C3978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */; };
+		84558B4621B32FCA005C3978 /* SmartListIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B4521B32FCA005C3978 /* SmartListIOSTests.swift */; };
+		84558B5121B32FCA005C3978 /* SmartListIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B5021B32FCA005C3978 /* SmartListIOSUITests.swift */; };
+		84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B5E21B33C28005C3978 /* HomePageViewController.swift */; };
+		84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B5F21B33C28005C3978 /* SignInViewController.swift */; };
+		84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B6021B33C28005C3978 /* RegisterUserViewController.swift */; };
+		846BED4A21CF6AD80046DA0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */; };
+		86777E48E7BC53071A22AF8A /* Pods_SmartListIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */; };
+		8BC5CDECD1B010562E03C30E /* Pods_SmartListIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84558B4221B32FCA005C3978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84558B2521B32FC7005C3978 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84558B2C21B32FC7005C3978;
+			remoteInfo = SmartListIOS;
+		};
+		84558B4D21B32FCA005C3978 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84558B2521B32FC7005C3978 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84558B2C21B32FC7005C3978;
+			remoteInfo = SmartListIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00BE77694E1393489B99546B /* Pods-SmartListIOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSUITests/Pods-SmartListIOSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		15007024304768B87875BC2F /* Pods-SmartListIOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSTests/Pods-SmartListIOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		1B57125E28EAB7396195523A /* Pods-SmartListIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSTests/Pods-SmartListIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		329F39389BAC4221994C6501 /* Pods_SmartListIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F486E37D411C215B6FD3D19 /* Pods-SmartListIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.release.xcconfig"; sourceTree = "<group>"; };
+		7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84558B3021B32FC8005C3978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84558B3221B32FC8005C3978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84558B3521B32FC8005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84558B3721B32FCA005C3978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84558B3A21B32FCA005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84558B3C21B32FCA005C3978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84558B4121B32FCA005C3978 /* SmartListIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartListIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84558B4521B32FCA005C3978 /* SmartListIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartListIOSTests.swift; sourceTree = "<group>"; };
+		84558B4721B32FCA005C3978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84558B4C21B32FCA005C3978 /* SmartListIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartListIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84558B5021B32FCA005C3978 /* SmartListIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartListIOSUITests.swift; sourceTree = "<group>"; };
+		84558B5221B32FCA005C3978 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84558B5E21B33C28005C3978 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		84558B5F21B33C28005C3978 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		84558B6021B33C28005C3978 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
+		84558B6421B34605005C3978 /* SwiftKeychainWrapper */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftKeychainWrapper; path = SwiftKeychainWrapper/SwiftKeychainWrapper; sourceTree = "<group>"; };
+		846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A90616A4A411FEFFCE0ABBDE /* Pods-SmartListIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSUITests/Pods-SmartListIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C91213562B86680A83AD1068 /* Pods-SmartListIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84558B2A21B32FC7005C3978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86777E48E7BC53071A22AF8A /* Pods_SmartListIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84558B3E21B32FCA005C3978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC5CDECD1B010562E03C30E /* Pods_SmartListIOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84558B4921B32FCA005C3978 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				567F2556A80B796B534485D6 /* Pods_SmartListIOSUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7EDB28E5DD5FDDE83AF2B78D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C91213562B86680A83AD1068 /* Pods-SmartListIOS.debug.xcconfig */,
+				5F486E37D411C215B6FD3D19 /* Pods-SmartListIOS.release.xcconfig */,
+				1B57125E28EAB7396195523A /* Pods-SmartListIOSTests.debug.xcconfig */,
+				15007024304768B87875BC2F /* Pods-SmartListIOSTests.release.xcconfig */,
+				A90616A4A411FEFFCE0ABBDE /* Pods-SmartListIOSUITests.debug.xcconfig */,
+				00BE77694E1393489B99546B /* Pods-SmartListIOSUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		84558B2421B32FC7005C3978 = {
+			isa = PBXGroup;
+			children = (
+				84558B6421B34605005C3978 /* SwiftKeychainWrapper */,
+				84558B2F21B32FC7005C3978 /* SmartListIOS */,
+				84558B4421B32FCA005C3978 /* SmartListIOSTests */,
+				84558B4F21B32FCA005C3978 /* SmartListIOSUITests */,
+				84558B2E21B32FC7005C3978 /* Products */,
+				7EDB28E5DD5FDDE83AF2B78D /* Pods */,
+				8688009BADFDCCB198DCA0CA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		84558B2E21B32FC7005C3978 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84558B2D21B32FC7005C3978 /* SmartListIOS.app */,
+				84558B4121B32FCA005C3978 /* SmartListIOSTests.xctest */,
+				84558B4C21B32FCA005C3978 /* SmartListIOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84558B2F21B32FC7005C3978 /* SmartListIOS */ = {
+			isa = PBXGroup;
+			children = (
+				846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */,
+				84558B5E21B33C28005C3978 /* HomePageViewController.swift */,
+				84558B6021B33C28005C3978 /* RegisterUserViewController.swift */,
+				84558B5F21B33C28005C3978 /* SignInViewController.swift */,
+				84558B3C21B32FCA005C3978 /* Info.plist */,
+				84558B3021B32FC8005C3978 /* AppDelegate.swift */,
+				84558B3221B32FC8005C3978 /* ViewController.swift */,
+				84558B3721B32FCA005C3978 /* Assets.xcassets */,
+				84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */,
+				84558B3421B32FC8005C3978 /* Main.storyboard */,
+			);
+			path = SmartListIOS;
+			sourceTree = "<group>";
+		};
+		84558B4421B32FCA005C3978 /* SmartListIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				84558B4521B32FCA005C3978 /* SmartListIOSTests.swift */,
+				84558B4721B32FCA005C3978 /* Info.plist */,
+			);
+			path = SmartListIOSTests;
+			sourceTree = "<group>";
+		};
+		84558B4F21B32FCA005C3978 /* SmartListIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84558B5021B32FCA005C3978 /* SmartListIOSUITests.swift */,
+				84558B5221B32FCA005C3978 /* Info.plist */,
+			);
+			path = SmartListIOSUITests;
+			sourceTree = "<group>";
+		};
+		8688009BADFDCCB198DCA0CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */,
+				7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */,
+				329F39389BAC4221994C6501 /* Pods_SmartListIOSUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84558B2C21B32FC7005C3978 /* SmartListIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84558B5521B32FCA005C3978 /* Build configuration list for PBXNativeTarget "SmartListIOS" */;
+			buildPhases = (
+				3F891E742EE93B3539B89D59 /* [CP] Check Pods Manifest.lock */,
+				84558B2921B32FC7005C3978 /* Sources */,
+				84558B2A21B32FC7005C3978 /* Frameworks */,
+				84558B2B21B32FC7005C3978 /* Resources */,
+				24932FB552DB2283CC0C2084 /* [CP] Embed Pods Frameworks */,
+				AA101CC753327D7B9B8A5D5C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartListIOS;
+			productName = SmartListIOS;
+			productReference = 84558B2D21B32FC7005C3978 /* SmartListIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84558B4021B32FCA005C3978 /* SmartListIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84558B5821B32FCA005C3978 /* Build configuration list for PBXNativeTarget "SmartListIOSTests" */;
+			buildPhases = (
+				94B07818ECBA66F2167C4155 /* [CP] Check Pods Manifest.lock */,
+				84558B3D21B32FCA005C3978 /* Sources */,
+				84558B3E21B32FCA005C3978 /* Frameworks */,
+				84558B3F21B32FCA005C3978 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84558B4321B32FCA005C3978 /* PBXTargetDependency */,
+			);
+			name = SmartListIOSTests;
+			productName = SmartListIOSTests;
+			productReference = 84558B4121B32FCA005C3978 /* SmartListIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84558B4B21B32FCA005C3978 /* SmartListIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84558B5B21B32FCA005C3978 /* Build configuration list for PBXNativeTarget "SmartListIOSUITests" */;
+			buildPhases = (
+				2E842CBD518C59DEFECA513E /* [CP] Check Pods Manifest.lock */,
+				84558B4821B32FCA005C3978 /* Sources */,
+				84558B4921B32FCA005C3978 /* Frameworks */,
+				84558B4A21B32FCA005C3978 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84558B4E21B32FCA005C3978 /* PBXTargetDependency */,
+			);
+			name = SmartListIOSUITests;
+			productName = SmartListIOSUITests;
+			productReference = 84558B4C21B32FCA005C3978 /* SmartListIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84558B2521B32FC7005C3978 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Aharon.Garada;
+				TargetAttributes = {
+					84558B2C21B32FC7005C3978 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					84558B4021B32FCA005C3978 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 84558B2C21B32FC7005C3978;
+					};
+					84558B4B21B32FCA005C3978 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 84558B2C21B32FC7005C3978;
+					};
+				};
+			};
+			buildConfigurationList = 84558B2821B32FC7005C3978 /* Build configuration list for PBXProject "SmartListIOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84558B2421B32FC7005C3978;
+			productRefGroup = 84558B2E21B32FC7005C3978 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84558B2C21B32FC7005C3978 /* SmartListIOS */,
+				84558B4021B32FCA005C3978 /* SmartListIOSTests */,
+				84558B4B21B32FCA005C3978 /* SmartListIOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84558B2B21B32FC7005C3978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84558B3B21B32FCA005C3978 /* LaunchScreen.storyboard in Resources */,
+				846BED4A21CF6AD80046DA0F /* GoogleService-Info.plist in Resources */,
+				84558B3821B32FCA005C3978 /* Assets.xcassets in Resources */,
+				84558B3621B32FC8005C3978 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84558B3F21B32FCA005C3978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84558B4A21B32FCA005C3978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24932FB552DB2283CC0C2084 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E842CBD518C59DEFECA513E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartListIOSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F891E742EE93B3539B89D59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartListIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94B07818ECBA66F2167C4155 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartListIOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA101CC753327D7B9B8A5D5C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore/gRPCCertificates-Firestore.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAnonymousAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Firestore.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAnonymousAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84558B2921B32FC7005C3978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
+				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
+				84558B3321B32FC8005C3978 /* ViewController.swift in Sources */,
+				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
+				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84558B3D21B32FCA005C3978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84558B4621B32FCA005C3978 /* SmartListIOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84558B4821B32FCA005C3978 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84558B5121B32FCA005C3978 /* SmartListIOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84558B4321B32FCA005C3978 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84558B2C21B32FC7005C3978 /* SmartListIOS */;
+			targetProxy = 84558B4221B32FCA005C3978 /* PBXContainerItemProxy */;
+		};
+		84558B4E21B32FCA005C3978 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84558B2C21B32FC7005C3978 /* SmartListIOS */;
+			targetProxy = 84558B4D21B32FCA005C3978 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84558B3421B32FC8005C3978 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84558B3521B32FC8005C3978 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84558B3A21B32FCA005C3978 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84558B5321B32FCA005C3978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84558B5421B32FCA005C3978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84558B5621B32FCA005C3978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91213562B86680A83AD1068 /* Pods-SmartListIOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartListIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Aharon.SmartListIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84558B5721B32FCA005C3978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F486E37D411C215B6FD3D19 /* Pods-SmartListIOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartListIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Aharon.SmartListIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84558B5921B32FCA005C3978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B57125E28EAB7396195523A /* Pods-SmartListIOSTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartListIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Aharon.Garada.SmartListIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartListIOS.app/SmartListIOS";
+			};
+			name = Debug;
+		};
+		84558B5A21B32FCA005C3978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15007024304768B87875BC2F /* Pods-SmartListIOSTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartListIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Aharon.Garada.SmartListIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartListIOS.app/SmartListIOS";
+			};
+			name = Release;
+		};
+		84558B5C21B32FCA005C3978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90616A4A411FEFFCE0ABBDE /* Pods-SmartListIOSUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartListIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Aharon.Garada.SmartListIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartListIOS;
+			};
+			name = Debug;
+		};
+		84558B5D21B32FCA005C3978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00BE77694E1393489B99546B /* Pods-SmartListIOSUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SmartListIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Aharon.Garada.SmartListIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartListIOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84558B2821B32FC7005C3978 /* Build configuration list for PBXProject "SmartListIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84558B5321B32FCA005C3978 /* Debug */,
+				84558B5421B32FCA005C3978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84558B5521B32FCA005C3978 /* Build configuration list for PBXNativeTarget "SmartListIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84558B5621B32FCA005C3978 /* Debug */,
+				84558B5721B32FCA005C3978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84558B5821B32FCA005C3978 /* Build configuration list for PBXNativeTarget "SmartListIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84558B5921B32FCA005C3978 /* Debug */,
+				84558B5A21B32FCA005C3978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84558B5B21B32FCA005C3978 /* Build configuration list for PBXNativeTarget "SmartListIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84558B5C21B32FCA005C3978 /* Debug */,
+				84558B5D21B32FCA005C3978 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84558B2521B32FC7005C3978 /* Project object */;
+}
