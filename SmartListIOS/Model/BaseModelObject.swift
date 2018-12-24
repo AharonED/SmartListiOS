@@ -9,19 +9,19 @@
 import Foundation
 
 public class BaseModelObject{
-    var id:String
+    public var id:String
     
-    init(_ _id:String)
+    public init(_id:String)
     {
         id=_id
     }
     
     
-    init(json:[String:Any]) {
+    public init(json:[String:Any]) {
         id = json["id"] as! String
     }
     
-    func toJson() -> [String:Any] {
+    public func toJson() -> [String:Any] {
         var json = [String:Any]()
         json["id"] = id
         return json

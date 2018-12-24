@@ -74,36 +74,45 @@ class RegisterUserViewController: UIViewController {
         let password:String = passwordTextField.text!
         
          do {
-        Auth.auth().createUser(withEmail: email, password: password)
-        { (authResult, error) in
-            // ...
-            if ((error?.localizedDescription) != nil)
-            {
-                self.displayMessage(userMessage: (error?.localizedDescription)!)
-                return
-            }
-            guard let user = authResult?.user else { return }
-            let userId:String = user.uid
-            print("User id: \(String(describing: userId))")
+            //try
+                Auth.auth().createUser(withEmail: email, password: password)
+                { (authResult, error) in
             
-            if (userId.isEmpty)
-            {
-                // Display an Alert dialog with a friendly error message
-                self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
-                return
-            } else {
-                self.displayMessage(userMessage: "Successfully Registered a New Account. Please proceed to Sign in")
-            }
+                if ((error?.localizedDescription) != nil)
+                {
+                    self.displayMessage(userMessage: (error?.localizedDescription)!)
+                    return
+                }
+                guard let user = authResult?.user else { return }
+                let userId:String = user.uid
+                print("User id: \(String(describing: userId))")
+            
+                if (userId.isEmpty)
+                {
+                    
+                    self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
+                    return
+                } else {
+                    self.displayMessage(userMessage: "Successfully Registered a New Account. Please proceed to Sign in")
+                }
+                    
+                   
+                    
+                    let model:Model = Model()
+                    
+                    let userObj:Users = Users(_id: userId, _name: email, _email: email, _password: password)
+                    model.addNew(instance: userObj)
+                    
             
             }
         }
-        catch let error {
-        print(error.localizedDescription)
-        displayMessage(userMessage: "Something went wrong. Try again.")
-        return
-    }
+        //catch let error {
+        //    print(error.localizedDescription)
+        //    displayMessage(userMessage: "Something went wrong. Try again.")
+        //    return
+       // }
         
-        
+
         //-----------------------------------------------------------------
         /*
         // Send HTTP Request to Register user

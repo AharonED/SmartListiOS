@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
+            </PersistentString>
+            <PersistentString
+               value = "String(describing: instance)">
+            </PersistentString>
+            <PersistentString
+               value = "instance.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RegisterUserViewController.signupButtonTapped(_:):RegisterUserViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -8,6 +8,17 @@
 
 import Foundation
 
-public class{
+public class Model:IModel {
+    
+    var modelFirebase:ModelFirebase?
+    
+    init(){
+        modelFirebase = ModelFirebase()
+        
+    }
+    public func addNew(instance: BaseModelObject) {
+        modelFirebase?.addNew(instance: instance)
+    }
+    
     
 }
