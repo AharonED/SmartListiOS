@@ -110,7 +110,7 @@ class RegisterUserViewController: UIViewController {
         //    print(error.localizedDescription)
         //    displayMessage(userMessage: "Something went wrong. Try again.")
         //    return
-       // }
+       // } 
         
 
         //-----------------------------------------------------------------
