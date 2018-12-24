@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		567F2556A80B796B534485D6 /* Pods_SmartListIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329F39389BAC4221994C6501 /* Pods_SmartListIOSUITests.framework */; };
+		8400D28D21D1857F0070BDD6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D28C21D1857F0070BDD6 /* Users.swift */; };
+		8400D28F21D1859E0070BDD6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D28E21D1859E0070BDD6 /* Model.swift */; };
+		8400D29121D188C60070BDD6 /* BaseModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29021D188C60070BDD6 /* BaseModelObject.swift */; };
 		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
 		84558B3321B32FC8005C3978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3221B32FC8005C3978 /* ViewController.swift */; };
 		84558B3621B32FC8005C3978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3421B32FC8005C3978 /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F486E37D411C215B6FD3D19 /* Pods-SmartListIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.release.xcconfig"; sourceTree = "<group>"; };
 		7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8400D28C21D1857F0070BDD6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Users.swift; path = SmartListIOS/Model/Users.swift; sourceTree = SOURCE_ROOT; };
+		8400D28E21D1859E0070BDD6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SmartListIOS/Model/Model.swift; sourceTree = SOURCE_ROOT; };
+		8400D29021D188C60070BDD6 /* BaseModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseModelObject.swift; path = SmartListIOS/Model/BaseModelObject.swift; sourceTree = SOURCE_ROOT; };
 		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84558B3021B32FC8005C3978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84558B3221B32FC8005C3978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8400D28B21D1850B0070BDD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8400D28C21D1857F0070BDD6 /* Users.swift */,
+				8400D28E21D1859E0070BDD6 /* Model.swift */,
+				8400D29021D188C60070BDD6 /* BaseModelObject.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		84558B2421B32FC7005C3978 = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +164,7 @@
 				84558B3721B32FCA005C3978 /* Assets.xcassets */,
 				84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */,
 				84558B3421B32FC8005C3978 /* Main.storyboard */,
+				8400D28B21D1850B0070BDD6 /* Model */,
 			);
 			path = SmartListIOS;
 			sourceTree = "<group>";
@@ -453,11 +471,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8400D28F21D1859E0070BDD6 /* Model.swift in Sources */,
 				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
 				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
+				8400D29121D188C60070BDD6 /* BaseModelObject.swift in Sources */,
 				84558B3321B32FC8005C3978 /* ViewController.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
+				8400D28D21D1857F0070BDD6 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

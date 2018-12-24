@@ -201,6 +201,7 @@ class SignInViewController: UIViewController {
  
     }
     
+
     func displayMessage(userMessage:String) -> Void {
         DispatchQueue.main.async
             {
