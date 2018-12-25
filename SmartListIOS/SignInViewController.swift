@@ -15,6 +15,8 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
+    let indicator:Indicator = Indicator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
   
@@ -38,159 +40,51 @@ class SignInViewController: UIViewController {
         {
             // Display alert message here
             print("User name \(String(describing: userName)) or password \(String(describing: userPassword)) is empty")
-            displayMessage(userMessage: "One of the required fields is missing")
+            Utils.displayMessage(_controller: self, userMessage: "One of the required fields is missing")
             
             return
         }
         
-        
-        //Create Activity Indicator
-        let myActivityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
-        
-        // Position Activity Indicator in the center of the main view
-        myActivityIndicator.center = view.center
-        
-        // If needed, you can prevent Acivity Indicator from hiding when stopAnimating() is called
-        myActivityIndicator.hidesWhenStopped = false
-        
-        // Start Activity Indicator
-        myActivityIndicator.startAnimating()
-        
-        view.addSubview(myActivityIndicator)
-        
-        
-        
+  
         do {
-            Auth.auth().signIn(withEmail: userName!, password: userPassword!)
-            { (authResult, error) in
-                // ...
-                if ((error?.localizedDescription) != nil)
-                {
-                    self.displayMessage(userMessage: (error?.localizedDescription)!)
-                    return
-                }
-                guard let user = authResult?.user else { return }
-                let userId:String = user.uid
-                print("User id: \(String(describing: userId))")
-                
-                if (userId.isEmpty)
-                {
-                    // Display an Alert dialog with a friendly error message
-                    self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
-                    return
-                } else {
-                    self.displayMessage(userMessage: "Successfully Signed in")
-                    // Now we can access value of First Name by its key
-                    let email = user.email
-                    //print("Access token: \(String(describing: accessToken!))")
-                    DispatchQueue.main.async
-                        {
-                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-                            let appDelegate = UIApplication.shared.delegate
-                            appDelegate?.window??.rootViewController = homePage
-                    }
-                    
-                }
-                
-            }
+            indicator.show(view: view)
+            var user:Users = Users(_id:userName!, _firstName:"", _lastName:"", _email:userName!, _password:userPassword!)
+            try FirebaseUsersManager.signin(user, callback: loginUser)
         }
         catch let error {
             print(error.localizedDescription)
-            displayMessage(userMessage: "Something went wrong. Try again.")
+            Utils.displayMessage(_controller: self, userMessage: "Something went wrong. Try again.")
+            indicator.hide()
             return
         }
         
         
-        /*
-        //Send HTTP Request to perform Sign in
-        let myUrl = URL(string: "http://localhost:8080/api/authentication")
-        var request = URLRequest(url:myUrl!)
-       
-        request.httpMethod = "POST"// Compose a query string
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
-        let postString = ["userName": userName!, "userPassword": userPassword!] as [String: String]
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: postString, options: .prettyPrinted)
-        } catch let error {
-            print(error.localizedDescription)
-            displayMessage(userMessage: "Something went wrong...")
-            return
-        }
-        
-         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            
-            self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-            
-            if error != nil
+    }
+    
+    //CreateUser callback
+    func loginUser (success:Bool, user:Users,errorDesc:String) -> Void {
+        if (success == true) {
+            if (user.id.isEmpty)
             {
-                self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
-                print("error=\(String(describing: error))")
-                return
-            }
-            
-            //Let's convert response sent from a server side code to a NSDictionary object:
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-                
-                if let parseJSON = json {
-                    
-                    if parseJSON["errorMessageKey"] != nil
-                    {
-                         self.displayMessage(userMessage: parseJSON["errorMessage"] as! String)
-                        return
-                    }
-                    // Now we can access value of First Name by its key
-                    let accessToken = parseJSON["token"] as? String
-                    let userId = parseJSON["id"] as? String
-                    //print("Access token: \(String(describing: accessToken!))")
-                    
-                    let saveAccesssToken: Bool = true// KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
-                    let saveUserId: Bool = true// KeychainWrapper.standard.set(userId!, forKey: "userId")
-                    
-                    print("The access token save result: \(saveAccesssToken)")
-                    print("The userId save result \(saveUserId)")
-                    
-                    if (accessToken?.isEmpty)!
-                    {
-                        // Display an Alert dialog with a friendly error message
-                        self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
-                        return
-                    }
-                    
+                Utils.displayMessage(_controller: self, userMessage:  "Could not successfully perform this request. Please try again later")
+            } else {
+                Utils.displayMessage(_controller: self, userMessage: "Successfully Signed in",  CloseParent: true) {(param) in
                     DispatchQueue.main.async
-                    {
-                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+                        {
+                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
                             let appDelegate = UIApplication.shared.delegate
                             appDelegate?.window??.rootViewController = homePage
                     }
-                    
-                    
-                } else {
-                    //Display an Alert dialog with a friendly error message
-                    self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
                 }
-                
-            } catch {
-                
-                self.removeActivityIndicator(activityIndicator: myActivityIndicator)
-                
-                // Display an Alert dialog with a friendly error message
-                self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
-                print(error)
-            }
-            
-            
-            
-            
-         }
-        task.resume()
-        
-        */
-        
+              }
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage: errorDesc)
+        }
+        indicator.hide()
     }
+    
     
     @IBAction func registerNewAccountButtonTapped(_ sender: Any) {
         print("Register account button tapped")
@@ -202,32 +96,7 @@ class SignInViewController: UIViewController {
     }
     
 
-    func displayMessage(userMessage:String) -> Void {
-        DispatchQueue.main.async
-            {
-                let alertController = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
-                
-                let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    // Code in this block will trigger when OK button tapped.
-                    print("Ok button tapped")
-                    DispatchQueue.main.async
-                        {
-                            self.dismiss(animated: true, completion: nil)
-                    }
-                }
-                alertController.addAction(OKAction)
-                self.present(alertController, animated: true, completion:nil)
-        }
-    }
     
-    func removeActivityIndicator(activityIndicator: UIActivityIndicatorView)
-    {
-        DispatchQueue.main.async
-            {
-                activityIndicator.stopAnimating()
-                activityIndicator.removeFromSuperview()
-        }
-    }
-    
+   
 
 }

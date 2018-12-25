@@ -18,20 +18,9 @@ public class FirebaseUsersManager{
        
     }
 
-    static func signin(_ user: Users, callback:@escaping (_ success:Bool,_ user: Users)->Void) {
+    static func signin(_ user: Users, callback:@escaping (_ success:Bool,_ user: Users, _ errorDesc:String)->Void) throws {
         Auth.auth().signIn(withEmail: user.email, password: user.password) { (authResult, error) in
-            if (authResult != nil){
-                user.id = authResult?.user.uid ?? user.email
-                callback (true, user)
-            }else{
-                callback (false, user)
-            }
-        }
-        
-    }
-    
-    static func createUser(_ user: Users, callback:@escaping (_ success:Bool,_ user: Users, _ errorDesc:String)->Void) {
-        Auth.auth().createUser(withEmail: user.email, password: user.password) { (authResult, error) in
+            
             var errorDesc:String = ""
             
             if ((error?.localizedDescription) != nil)
@@ -39,18 +28,39 @@ public class FirebaseUsersManager{
                 errorDesc=error?.localizedDescription ?? ""
             }
             
-            if (authResult?.user != nil) {
-                user.id=authResult?.user.uid ?? user.email
-                do{
-                    try Model.addNew(instance: user)
-                }
-                catch let error {
-                    errorDesc=error.localizedDescription
-                }
+            if (authResult != nil){
+                user.id = authResult?.user.uid ?? user.email
                 callback (true, user, errorDesc)
             }else{
                 callback (false, user, errorDesc)
             }
+        }
+        
+    }
+    
+    static func createUser(_ user: Users, callback:@escaping (_ success:Bool,_ user: Users, _ errorDesc:String)->Void) throws {
+            //Add new user to Firebase Authentication system
+            Auth.auth().createUser(withEmail: user.email, password: user.password) { (authResult, error) in
+                var errorDesc:String = ""
+                
+                if ((error?.localizedDescription) != nil)
+                {
+                    errorDesc=error?.localizedDescription ?? ""
+                }
+                
+                if (authResult?.user != nil) {
+                    user.id=authResult?.user.uid ?? user.email
+                    do{
+                        //Add the new user also to Firebase Database
+                        try Model.addNew(instance: user)
+                    }
+                    catch let error {
+                        errorDesc=error.localizedDescription
+                    }
+                    callback (true, user, errorDesc)
+                }else{
+                    callback (false, user, errorDesc)
+                }
         }
     }
     

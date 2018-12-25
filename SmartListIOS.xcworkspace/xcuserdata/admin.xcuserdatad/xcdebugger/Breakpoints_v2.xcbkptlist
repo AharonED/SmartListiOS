@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430377.654484"
+            timestampString = "567445168.817053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "signupButtonTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -26,12 +26,12 @@
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/RegisterUserViewController.swift"
-                  timestampString = "567430378.119418"
+                  timestampString = "567442222.423498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "2910">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "3011">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,62 +41,14 @@
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/RegisterUserViewController.swift"
-                  timestampString = "567430378.123251"
+                  timestampString = "567442222.4317729"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "8168">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "7721">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430377.654606"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "signupButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430377.654687"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "signupButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430377.654766"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "signupButtonTapped(_:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Users.swift"
-            timestampString = "567430377.654863"
+            timestampString = "567445168.8172179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -138,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/ModelFirebase.swift"
-            timestampString = "567430377.655314"
+            timestampString = "567445168.817638"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -154,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/ModelFirebase.swift"
-            timestampString = "567430377.655393"
+            timestampString = "567445168.817717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -170,7 +122,7 @@
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Model/ModelFirebase.swift"
-                  timestampString = "567430378.19672"
+                  timestampString = "567442222.470515"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "31"
@@ -185,7 +137,7 @@
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Model/ModelFirebase.swift"
-                  timestampString = "567430378.202458"
+                  timestampString = "567442222.475371"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -202,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/ModelFirebase.swift"
-            timestampString = "567430377.655461"
+            timestampString = "567445168.817784"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -218,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/FirebaseUsersManager.swift"
-            timestampString = "567430377.655535"
+            timestampString = "567445168.817888"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "createUser(_:callback:)"
             landmarkType = "7">
             <Locations>
@@ -230,30 +182,30 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static SmartListIOS.FirebaseUsersManager.createUser(_: SmartListIOS.Users, callback: (Swift.Bool, SmartListIOS.Users, Swift.String) -&gt; ()) -&gt; ()"
+                  symbolName = "static SmartListIOS.FirebaseUsersManager.createUser(_: SmartListIOS.Users, callback: (Swift.Bool, SmartListIOS.Users, Swift.String) -&gt; ()) throws -&gt; ()"
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Model/FirebaseUsersManager.swift"
-                  timestampString = "567430378.247063"
+                  timestampString = "567442222.491255"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
                   offsetFromSymbolStart = "45">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static SmartListIOS.FirebaseUsersManager.createUser(_: SmartListIOS.Users, callback: (Swift.Bool, SmartListIOS.Users, Swift.String) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static SmartListIOS.FirebaseUsersManager.createUser(_: SmartListIOS.Users, callback: (Swift.Bool, SmartListIOS.Users, Swift.String) -&gt; ()) throws -&gt; ()"
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Model/FirebaseUsersManager.swift"
-                  timestampString = "567430378.250313"
+                  timestampString = "567442222.4956011"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
                   offsetFromSymbolStart = "105">
                </Location>
             </Locations>
@@ -266,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/FirebaseUsersManager.swift"
-            timestampString = "567430377.656087"
+            timestampString = "567445168.817965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "createUser(_:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "567430377.656473"
+            timestampString = "567445168.81804"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -297,13 +249,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430377.6565779"
+            filePath = "SmartListIOS/SignInViewController.swift"
+            timestampString = "567445168.818112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
-            landmarkName = "createUser(success:user:errorDesc:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "signInButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -313,13 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430460.0974571"
+            filePath = "SmartListIOS/Model/FirebaseUsersManager.swift"
+            timestampString = "567445168.818652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
-            landmarkName = "createUser(success:user:errorDesc:)"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "signin(_:callback:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -329,13 +281,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/RegisterUserViewController.swift"
-            timestampString = "567430462.905202"
+            filePath = "SmartListIOS/SignInViewController.swift"
+            timestampString = "567445168.818724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "createUser(success:user:errorDesc:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "loginUser(success:user:errorDesc:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
