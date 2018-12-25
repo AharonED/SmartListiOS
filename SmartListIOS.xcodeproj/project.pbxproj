@@ -14,7 +14,6 @@
 		8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29221D18EC70070BDD6 /* ModelFirebase.swift */; };
 		8400D29521D18F300070BDD6 /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29421D18F300070BDD6 /* IModel.swift */; };
 		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
-		84558B3321B32FC8005C3978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3221B32FC8005C3978 /* ViewController.swift */; };
 		84558B3621B32FC8005C3978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3421B32FC8005C3978 /* Main.storyboard */; };
 		84558B3821B32FCA005C3978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3721B32FCA005C3978 /* Assets.xcassets */; };
 		84558B3B21B32FCA005C3978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */; };
@@ -67,7 +66,6 @@
 		8400D29421D18F300070BDD6 /* IModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IModel.swift; path = SmartListIOS/Model/IModel.swift; sourceTree = SOURCE_ROOT; };
 		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84558B3021B32FC8005C3978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84558B3221B32FC8005C3978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84558B3521B32FC8005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84558B3721B32FCA005C3978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84558B3A21B32FCA005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -180,18 +178,12 @@
 				84CFC96521D2665F007DC3EC /* Utils */,
 				846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */,
 				84558B5E21B33C28005C3978 /* HomePageViewController.swift */,
-				84558B6021B33C28005C3978 /* RegisterUserViewController.swift */,
-				84558B5F21B33C28005C3978 /* SignInViewController.swift */,
 				84558B3C21B32FCA005C3978 /* Info.plist */,
 				84558B3021B32FC8005C3978 /* AppDelegate.swift */,
-				84558B3221B32FC8005C3978 /* ViewController.swift */,
 				84558B3721B32FCA005C3978 /* Assets.xcassets */,
 				84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */,
 				84558B3421B32FC8005C3978 /* Main.storyboard */,
 				8400D28B21D1850B0070BDD6 /* Model */,
-				84CFC96A21D2864E007DC3EC /* MainViewController.swift */,
-				84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */,
-				84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */,
 			);
 			path = SmartListIOS;
 			sourceTree = "<group>";
@@ -226,6 +218,11 @@
 		84CFC97021D28B7D007DC3EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */,
+				84CFC96A21D2864E007DC3EC /* MainViewController.swift */,
+				84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */,
+				84558B6021B33C28005C3978 /* RegisterUserViewController.swift */,
+				84558B5F21B33C28005C3978 /* SignInViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -519,7 +516,6 @@
 				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
 				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
 				8400D29121D188C60070BDD6 /* BaseModelObject.swift in Sources */,
-				84558B3321B32FC8005C3978 /* ViewController.swift in Sources */,
 				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
 				84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */,
 				8400D29521D18F300070BDD6 /* IModel.swift in Sources */,

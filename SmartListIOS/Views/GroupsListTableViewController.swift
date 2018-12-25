@@ -10,10 +10,11 @@ import UIKit
 
 class GroupsListTableViewController: UITableViewController {
 
+    @IBOutlet weak var navTitle: UINavigationItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let grp:Groups = Groups(_id: "1", _name: "Group1", _description: "Group 1 Description")
+        let grp:Groups = Groups(_id: "3", _name: "Group3", _description: "Group 3 Description")
         
         do{
             //Add the new user also to Firebase Database
@@ -22,6 +23,10 @@ class GroupsListTableViewController: UITableViewController {
         catch let error {
             let errorDesc:String = error.localizedDescription
         }
+        
+        navTitle.title=grp.name
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
