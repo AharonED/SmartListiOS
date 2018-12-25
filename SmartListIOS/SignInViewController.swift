@@ -71,7 +71,13 @@ class SignInViewController: UIViewController {
                 Utils.displayMessage(_controller: self, userMessage: "Successfully Signed in",  CloseParent: true) {(param) in
                     DispatchQueue.main.async
                         {
+                            /*
                             let homePage = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                            let appDelegate = UIApplication.shared.delegate
+                            appDelegate?.window??.rootViewController = homePage
+                            */
+                            
+                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "GroupsListTableViewController") as! GroupsListTableViewController
                             let appDelegate = UIApplication.shared.delegate
                             appDelegate?.window??.rootViewController = homePage
                     }

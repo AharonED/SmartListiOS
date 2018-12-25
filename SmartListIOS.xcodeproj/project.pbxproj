@@ -28,6 +28,9 @@
 		84CFC96721D266B1007DC3EC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96621D266B1007DC3EC /* Utils.swift */; };
 		84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96821D268AC007DC3EC /* Indicator.swift */; };
 		84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96A21D2864E007DC3EC /* MainViewController.swift */; };
+		84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */; };
+		84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */; };
+		84CFC97421D28C50007DC3EC /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97321D28C50007DC3EC /* Groups.swift */; };
 		86777E48E7BC53071A22AF8A /* Pods_SmartListIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */; };
 		8BC5CDECD1B010562E03C30E /* Pods_SmartListIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,9 @@
 		84CFC96621D266B1007DC3EC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		84CFC96821D268AC007DC3EC /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		84CFC96A21D2864E007DC3EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateListViewController.swift; sourceTree = "<group>"; };
+		84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
+		84CFC97321D28C50007DC3EC /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Groups.swift; path = SmartListIOS/Model/Groups.swift; sourceTree = SOURCE_ROOT; };
 		A90616A4A411FEFFCE0ABBDE /* Pods-SmartListIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSUITests/Pods-SmartListIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C91213562B86680A83AD1068 /* Pods-SmartListIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +144,7 @@
 				8400D29221D18EC70070BDD6 /* ModelFirebase.swift */,
 				8400D29421D18F300070BDD6 /* IModel.swift */,
 				84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */,
+				84CFC97321D28C50007DC3EC /* Groups.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -169,6 +176,7 @@
 		84558B2F21B32FC7005C3978 /* SmartListIOS */ = {
 			isa = PBXGroup;
 			children = (
+				84CFC97021D28B7D007DC3EC /* Views */,
 				84CFC96521D2665F007DC3EC /* Utils */,
 				846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */,
 				84558B5E21B33C28005C3978 /* HomePageViewController.swift */,
@@ -182,6 +190,8 @@
 				84558B3421B32FC8005C3978 /* Main.storyboard */,
 				8400D28B21D1850B0070BDD6 /* Model */,
 				84CFC96A21D2864E007DC3EC /* MainViewController.swift */,
+				84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */,
+				84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */,
 			);
 			path = SmartListIOS;
 			sourceTree = "<group>";
@@ -211,6 +221,13 @@
 				84CFC96821D268AC007DC3EC /* Indicator.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		84CFC97021D28B7D007DC3EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8688009BADFDCCB198DCA0CA /* Frameworks */ = {
@@ -506,7 +523,10 @@
 				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
 				84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */,
 				8400D29521D18F300070BDD6 /* IModel.swift in Sources */,
+				84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */,
+				84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
+				84CFC97421D28C50007DC3EC /* Groups.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
 				8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */,
 				8400D28D21D1857F0070BDD6 /* Users.swift in Sources */,
