@@ -8,5 +8,5 @@
 
 import Foundation
 public protocol IModel{
-    func addNew(instance:BaseModelObject)
+    static func addNew(instance:BaseModelObject) throws
 }

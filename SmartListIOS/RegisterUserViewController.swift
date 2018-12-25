@@ -72,8 +72,15 @@ class RegisterUserViewController: UIViewController {
         //--------------------------
         let email:String = emailAddressTextField.text!
         let password:String = passwordTextField.text!
-        
+        let firstName:String = firstNameTextField.text!
+        let lastName:String = lastNameTextField.text!
+
          do {
+            var user:Users = Users(_id:email, _firstName:firstName, _lastName:lastName, _email:email, _password:password)
+            FirebaseUsersManager.createUser(user, callback: createUser)
+          
+            
+            /*
             //try
                 Auth.auth().createUser(withEmail: email, password: password)
                 { (authResult, error) in
@@ -105,6 +112,7 @@ class RegisterUserViewController: UIViewController {
                     
             
             }
+            */
         }
         //catch let error {
         //    print(error.localizedDescription)
@@ -186,7 +194,22 @@ class RegisterUserViewController: UIViewController {
         
     }
     
-        
+    func createUser (success:Bool, user:Users,errorDesc:String) -> Void {
+        if (success == true) {
+            if (user.id.isEmpty)
+            {
+                self.displayMessage(userMessage: "Could not successfully perform this request. Please try again later")
+            } else {
+                self.displayMessage(userMessage: "Successfully Registered a New Account. Please proceed to Sign in")
+            }
+            
+        }
+        else
+        {
+            self.displayMessage(userMessage: (errorDesc))
+            return
+        }
+    }
         
       func removeActivityIndicator(activityIndicator: UIActivityIndicatorView)
         {

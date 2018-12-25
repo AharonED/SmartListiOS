@@ -12,14 +12,13 @@ import FirebaseDatabase
 
 public class ModelFirebase:IModel {
     
-    var ref: DatabaseReference!
+    static var ref: DatabaseReference!=Database.database().reference()
     
     init() {
         //FirebaseApp.configure()
-        ref = Database.database().reference()
     }
     
-    public func addNew(instance: BaseModelObject) {
+    public static func addNew(instance: BaseModelObject) throws {
         let collectionName:String=String(describing: instance).components(separatedBy: ".").last!
         
         //do {
@@ -28,15 +27,15 @@ public class ModelFirebase:IModel {
         //} catch {
         //    print("Unexpected error: \(error).")
         //}
-                ref.child(collectionName).child(instance.id).setValue(instance.toJson()) {
+
+            try ref.child(collectionName).child(instance.id).setValue(instance.toJson()) {
                     (error:Error?, ref:DatabaseReference) in
                     if let error = error {
                         print("Data could not be saved: \(error).")
                     } else {
                         print("Data saved successfully!")
                     }
-        }
-        
-    }
+            }
+     }
     
 }
