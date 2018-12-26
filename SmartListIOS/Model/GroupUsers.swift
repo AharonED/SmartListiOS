@@ -7,7 +7,7 @@
 //
 
 import Foundation
- 
+
 public class GroupUsers : BaseModelObject{
     var groupId:String
     var userId:String
@@ -18,7 +18,7 @@ public class GroupUsers : BaseModelObject{
         userId = _userId
         super.init(_id: _id)
     }
-    
+     
     
     override init(json:[String:Any]) {
         
