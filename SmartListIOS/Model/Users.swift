@@ -8,14 +8,16 @@
 
 import Foundation
 
-public class Users:BaseModelObject{
-    var name:String
+public class Users : BaseModelObject{
+    var firstName:String
+    var lastName:String
     var email:String
     var password:String
     
-    init(_id:String, _name:String, _email:String, _password:String)
+    init(_id:String, _firstName:String, _lastName:String, _email:String, _password:String)
     {
-        name=_name
+        firstName = _firstName
+        lastName = _lastName
         email=_email
         password=_password
         super.init(_id: _id)
@@ -31,10 +33,15 @@ public class Users:BaseModelObject{
 
         email = json["email"] as! String
         password = json["password"] as! String
-        if json["name"] != nil{
-            name = json["name"] as! String
+        if json["firstName"] != nil{
+            firstName = json["firstName"] as! String
         }else{
-            name = ""
+            firstName = ""
+        }
+        if json["lastName"] != nil{
+            lastName = json["lastName"] as! String
+        }else{
+            lastName = ""
         }
         
         super.init(_id: id)
@@ -46,7 +53,8 @@ public class Users:BaseModelObject{
         json["id"] = id
         json["email"] = email
         json["password"] = password
-        json["name"] = name
+        json["firstName"] = firstName
+        json["lastName"] = lastName
         return json
     }
 }

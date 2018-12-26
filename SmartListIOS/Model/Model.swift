@@ -10,14 +10,14 @@ import Foundation
 
 public class Model:IModel {
     
-    var modelFirebase:ModelFirebase?
-    
-    init(){
-        modelFirebase = ModelFirebase()
+ 
+    private init() {
         
     }
-    public func addNew(instance: BaseModelObject) {
-        modelFirebase?.addNew(instance: instance)
+    
+
+    public static func addNew(instance: BaseModelObject) throws {
+        try ModelFirebase.addNew(instance: instance)
     }
     
     
