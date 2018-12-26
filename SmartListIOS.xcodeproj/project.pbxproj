@@ -30,6 +30,7 @@
 		84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */; };
 		84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */; };
 		84CFC97421D28C50007DC3EC /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97321D28C50007DC3EC /* Groups.swift */; };
+		84E8FB2321D37D6F00A95DAB /* GroupUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E8FB2221D37D6F00A95DAB /* GroupUsers.swift */; };
 		86777E48E7BC53071A22AF8A /* Pods_SmartListIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */; };
 		8BC5CDECD1B010562E03C30E /* Pods_SmartListIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateListViewController.swift; sourceTree = "<group>"; };
 		84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
 		84CFC97321D28C50007DC3EC /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Groups.swift; path = SmartListIOS/Model/Groups.swift; sourceTree = SOURCE_ROOT; };
+		84E8FB2221D37D6F00A95DAB /* GroupUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GroupUsers.swift; path = SmartListIOS/Model/GroupUsers.swift; sourceTree = SOURCE_ROOT; };
 		A90616A4A411FEFFCE0ABBDE /* Pods-SmartListIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSUITests/Pods-SmartListIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C91213562B86680A83AD1068 /* Pods-SmartListIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 				8400D29421D18F300070BDD6 /* IModel.swift */,
 				84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */,
 				84CFC97321D28C50007DC3EC /* Groups.swift */,
+				84E8FB2221D37D6F00A95DAB /* GroupUsers.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -526,6 +529,7 @@
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
 				8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */,
 				8400D28D21D1857F0070BDD6 /* Users.swift in Sources */,
+				84E8FB2321D37D6F00A95DAB /* GroupUsers.swift in Sources */,
 				84CFC96721D266B1007DC3EC /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
