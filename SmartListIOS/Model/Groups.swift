@@ -12,7 +12,7 @@ public class Groups : BaseModelObject{
     var name:String
     var description:String
     var users:[GroupUsers] = [GroupUsers]()
-    
+     
     
     init(_id:String, _name:String, _description:String)
     {
