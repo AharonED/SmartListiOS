@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		567F2556A80B796B534485D6 /* Pods_SmartListIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329F39389BAC4221994C6501 /* Pods_SmartListIOSUITests.framework */; };
+		8400D28D21D1857F0070BDD6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D28C21D1857F0070BDD6 /* Users.swift */; };
+		8400D28F21D1859E0070BDD6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D28E21D1859E0070BDD6 /* Model.swift */; };
+		8400D29121D188C60070BDD6 /* BaseModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29021D188C60070BDD6 /* BaseModelObject.swift */; };
+		8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29221D18EC70070BDD6 /* ModelFirebase.swift */; };
+		8400D29521D18F300070BDD6 /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29421D18F300070BDD6 /* IModel.swift */; };
 		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
-		84558B3321B32FC8005C3978 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3221B32FC8005C3978 /* ViewController.swift */; };
 		84558B3621B32FC8005C3978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3421B32FC8005C3978 /* Main.storyboard */; };
 		84558B3821B32FCA005C3978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3721B32FCA005C3978 /* Assets.xcassets */; };
 		84558B3B21B32FCA005C3978 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */; };
@@ -19,6 +23,13 @@
 		84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B5F21B33C28005C3978 /* SignInViewController.swift */; };
 		84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B6021B33C28005C3978 /* RegisterUserViewController.swift */; };
 		846BED4A21CF6AD80046DA0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */; };
+		84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */; };
+		84CFC96721D266B1007DC3EC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96621D266B1007DC3EC /* Utils.swift */; };
+		84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96821D268AC007DC3EC /* Indicator.swift */; };
+		84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96A21D2864E007DC3EC /* MainViewController.swift */; };
+		84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */; };
+		84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */; };
+		84CFC97421D28C50007DC3EC /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97321D28C50007DC3EC /* Groups.swift */; };
 		86777E48E7BC53071A22AF8A /* Pods_SmartListIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */; };
 		8BC5CDECD1B010562E03C30E /* Pods_SmartListIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,9 +59,13 @@
 		5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F486E37D411C215B6FD3D19 /* Pods-SmartListIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.release.xcconfig"; sourceTree = "<group>"; };
 		7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartListIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8400D28C21D1857F0070BDD6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Users.swift; path = SmartListIOS/Model/Users.swift; sourceTree = SOURCE_ROOT; };
+		8400D28E21D1859E0070BDD6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SmartListIOS/Model/Model.swift; sourceTree = SOURCE_ROOT; };
+		8400D29021D188C60070BDD6 /* BaseModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseModelObject.swift; path = SmartListIOS/Model/BaseModelObject.swift; sourceTree = SOURCE_ROOT; };
+		8400D29221D18EC70070BDD6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelFirebase.swift; path = SmartListIOS/Model/ModelFirebase.swift; sourceTree = SOURCE_ROOT; };
+		8400D29421D18F300070BDD6 /* IModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IModel.swift; path = SmartListIOS/Model/IModel.swift; sourceTree = SOURCE_ROOT; };
 		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84558B3021B32FC8005C3978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84558B3221B32FC8005C3978 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84558B3521B32FC8005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84558B3721B32FCA005C3978 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84558B3A21B32FCA005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +81,13 @@
 		84558B6021B33C28005C3978 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		84558B6421B34605005C3978 /* SwiftKeychainWrapper */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftKeychainWrapper; path = SwiftKeychainWrapper/SwiftKeychainWrapper; sourceTree = "<group>"; };
 		846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseUsersManager.swift; path = SmartListIOS/Model/FirebaseUsersManager.swift; sourceTree = SOURCE_ROOT; };
+		84CFC96621D266B1007DC3EC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		84CFC96821D268AC007DC3EC /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		84CFC96A21D2864E007DC3EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateListViewController.swift; sourceTree = "<group>"; };
+		84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
+		84CFC97321D28C50007DC3EC /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Groups.swift; path = SmartListIOS/Model/Groups.swift; sourceTree = SOURCE_ROOT; };
 		A90616A4A411FEFFCE0ABBDE /* Pods-SmartListIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOSUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOSUITests/Pods-SmartListIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C91213562B86680A83AD1068 /* Pods-SmartListIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartListIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartListIOS/Pods-SmartListIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +133,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8400D28B21D1850B0070BDD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8400D28C21D1857F0070BDD6 /* Users.swift */,
+				8400D28E21D1859E0070BDD6 /* Model.swift */,
+				8400D29021D188C60070BDD6 /* BaseModelObject.swift */,
+				8400D29221D18EC70070BDD6 /* ModelFirebase.swift */,
+				8400D29421D18F300070BDD6 /* IModel.swift */,
+				84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */,
+				84CFC97321D28C50007DC3EC /* Groups.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		84558B2421B32FC7005C3978 = {
 			isa = PBXGroup;
 			children = (
@@ -137,16 +174,16 @@
 		84558B2F21B32FC7005C3978 /* SmartListIOS */ = {
 			isa = PBXGroup;
 			children = (
+				84CFC97021D28B7D007DC3EC /* Views */,
+				84CFC96521D2665F007DC3EC /* Utils */,
 				846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */,
 				84558B5E21B33C28005C3978 /* HomePageViewController.swift */,
-				84558B6021B33C28005C3978 /* RegisterUserViewController.swift */,
-				84558B5F21B33C28005C3978 /* SignInViewController.swift */,
 				84558B3C21B32FCA005C3978 /* Info.plist */,
 				84558B3021B32FC8005C3978 /* AppDelegate.swift */,
-				84558B3221B32FC8005C3978 /* ViewController.swift */,
 				84558B3721B32FCA005C3978 /* Assets.xcassets */,
 				84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */,
 				84558B3421B32FC8005C3978 /* Main.storyboard */,
+				8400D28B21D1850B0070BDD6 /* Model */,
 			);
 			path = SmartListIOS;
 			sourceTree = "<group>";
@@ -167,6 +204,27 @@
 				84558B5221B32FCA005C3978 /* Info.plist */,
 			);
 			path = SmartListIOSUITests;
+			sourceTree = "<group>";
+		};
+		84CFC96521D2665F007DC3EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84CFC96621D266B1007DC3EC /* Utils.swift */,
+				84CFC96821D268AC007DC3EC /* Indicator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		84CFC97021D28B7D007DC3EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */,
+				84CFC96A21D2864E007DC3EC /* MainViewController.swift */,
+				84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */,
+				84558B6021B33C28005C3978 /* RegisterUserViewController.swift */,
+				84558B5F21B33C28005C3978 /* SignInViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8688009BADFDCCB198DCA0CA /* Frameworks */ = {
@@ -453,11 +511,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */,
+				8400D28F21D1859E0070BDD6 /* Model.swift in Sources */,
 				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
 				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
-				84558B3321B32FC8005C3978 /* ViewController.swift in Sources */,
+				8400D29121D188C60070BDD6 /* BaseModelObject.swift in Sources */,
+				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
+				84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */,
+				8400D29521D18F300070BDD6 /* IModel.swift in Sources */,
+				84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */,
+				84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
+				84CFC97421D28C50007DC3EC /* Groups.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
+				8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */,
+				8400D28D21D1857F0070BDD6 /* Users.swift in Sources */,
+				84CFC96721D266B1007DC3EC /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
