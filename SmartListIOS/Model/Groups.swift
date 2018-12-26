@@ -13,6 +13,7 @@ public class Groups : BaseModelObject{
     var description:String
     var users:[GroupUsers] = [GroupUsers]()
     
+    
     init(_id:String, _name:String, _description:String)
     {
         name = _name
