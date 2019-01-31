@@ -21,7 +21,8 @@ class GroupsListTableViewController: UITableViewController {
             try Model.addNew(instance: grp)
         }
         catch let error {
-            let errorDesc:String = error.localizedDescription
+            //let errorDesc:String = error.localizedDescription
+            print("Unexpected error: \(error.localizedDescription).")
         }
         
         navTitle.title=grp.name

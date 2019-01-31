@@ -28,7 +28,9 @@ public class ModelFirebase:IModel {
         //    print("Unexpected error: \(error).")
         //}
 
-            try ref.child(collectionName).child(instance.id).setValue(instance.toJson()) {
+        do {
+            try
+                ref.child(collectionName).child(instance.id).setValue(instance.toJson()) {
                     (error:Error?, ref:DatabaseReference) in
                     if let error = error {
                         print("Data could not be saved: \(error).")
@@ -36,6 +38,9 @@ public class ModelFirebase:IModel {
                         print("Data saved successfully!")
                     }
             }
-     }
-    
+            
+        } catch let error {
+            print("Unexpected error: \(error).")
+            }
+    }
 }

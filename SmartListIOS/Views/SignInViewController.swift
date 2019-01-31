@@ -48,7 +48,7 @@ class SignInViewController: UIViewController {
   
         do {
             indicator.show(view: view)
-            var user:Users = Users(_id:userName!, _firstName:"", _lastName:"", _email:userName!, _password:userPassword!)
+            let user:Users = Users(_id:userName!, _firstName:"", _lastName:"", _email:userName!, _password:userPassword!)
             try FirebaseUsersManager.signin(user, callback: loginUser)
         }
         catch let error {

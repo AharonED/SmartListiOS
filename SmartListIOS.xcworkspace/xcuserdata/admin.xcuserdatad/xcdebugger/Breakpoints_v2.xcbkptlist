@@ -106,54 +106,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/ModelFirebase.swift"
-            timestampString = "567461509.850971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "addNew(instance:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static SmartListIOS.ModelFirebase.addNew(instance: SmartListIOS.BaseModelObject) throws -&gt; ()"
-                  moduleName = "SmartListIOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Model/ModelFirebase.swift"
-                  timestampString = "567442222.470515"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "565">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDatabaseReference) -&gt; () in static SmartListIOS.ModelFirebase.addNew(instance: SmartListIOS.BaseModelObject) throws -&gt; ()"
-                  moduleName = "SmartListIOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Model/ModelFirebase.swift"
-                  timestampString = "567442222.475371"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "43">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SmartListIOS/Model/ModelFirebase.swift"
             timestampString = "567461509.851042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

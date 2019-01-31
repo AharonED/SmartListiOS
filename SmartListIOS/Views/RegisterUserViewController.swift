@@ -67,7 +67,7 @@ class RegisterUserViewController: UIViewController {
 
          do {
            indicator.show(view: view)
-           var user:Users = Users(_id:email, _firstName:firstName, _lastName:lastName, _email:email, _password:password)
+            let user:Users = Users(_id:email, _firstName:firstName, _lastName:lastName, _email:email, _password:password)
            try FirebaseUsersManager.createUser(user, callback: createUser)
          }
         catch let error {
