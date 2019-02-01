@@ -11,14 +11,19 @@ import UIKit
 class GroupsListTableViewController: UITableViewController {
 
     @IBOutlet weak var navTitle: UINavigationItem!
+    
+    var data = [Groups]()
+    var groupsListener:NSObjectProtocol?
+    let model:Model<Groups> = Model<Groups>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let grp:Groups = Groups(_id: "3", _name: "Group3", _description: "Group 3 Description")
+        let grp:Groups = Groups(_id: "4", _name: "Group4", _description: "Group 4 Description", _url: "", _lastUpdate:nil)
         
         do{
             //Add the new user also to Firebase Database
-            try Model.addNew(instance: grp)
+            try model.addNew(instance: grp)
         }
         catch let error {
             //let errorDesc:String = error.localizedDescription
@@ -26,6 +31,15 @@ class GroupsListTableViewController: UITableViewController {
         }
         
         navTitle.title=grp.name
+        
+
+        groupsListener = ModelNotification.GroupsListNotification.observe(){
+            (data:Any) in
+            self.data = data as! [Groups]
+            self.tableView.reloadData()
+        }
+        
+        model.getAllRecords()
         
         
         // Uncomment the following line to preserve selection between presentations

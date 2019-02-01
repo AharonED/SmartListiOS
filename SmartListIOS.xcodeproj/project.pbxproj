@@ -11,6 +11,12 @@
 		8400D28F21D1859E0070BDD6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D28E21D1859E0070BDD6 /* Model.swift */; };
 		8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29221D18EC70070BDD6 /* ModelFirebase.swift */; };
 		8400D29521D18F300070BDD6 /* IModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400D29421D18F300070BDD6 /* IModel.swift */; };
+		8416E42F220385ED0032CB52 /* ModelNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416E42E220385ED0032CB52 /* ModelNotification.swift */; };
+		8416E43122038D410032CB52 /* ModelSqlDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416E43022038D410032CB52 /* ModelSqlDatabase.swift */; };
+		8416E436220393C80032CB52 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8416E435220393C80032CB52 /* libsqlite3.0.tbd */; };
+		8416E4382203AF730032CB52 /* ModelFirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416E4372203AF730032CB52 /* ModelFirebaseDatabase.swift */; };
+		8416E43A2203BDEF0032CB52 /* ModelSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416E4392203BDEF0032CB52 /* ModelSQL.swift */; };
+		8416E43C2203C1720032CB52 /* LastUpdateDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416E43B2203C1720032CB52 /* LastUpdateDates.swift */; };
 		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
 		84558B3621B32FC8005C3978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3421B32FC8005C3978 /* Main.storyboard */; };
 		84558B3821B32FCA005C3978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3721B32FCA005C3978 /* Assets.xcassets */; };
@@ -63,6 +69,14 @@
 		8400D28E21D1859E0070BDD6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Model.swift; path = SmartListIOS/Model/Model.swift; sourceTree = SOURCE_ROOT; };
 		8400D29221D18EC70070BDD6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelFirebase.swift; path = SmartListIOS/Model/ModelFirebase.swift; sourceTree = SOURCE_ROOT; };
 		8400D29421D18F300070BDD6 /* IModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IModel.swift; path = SmartListIOS/Model/IModel.swift; sourceTree = SOURCE_ROOT; };
+		8416E42E220385ED0032CB52 /* ModelNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelNotification.swift; path = SmartListIOS/Model/ModelNotification.swift; sourceTree = SOURCE_ROOT; };
+		8416E43022038D410032CB52 /* ModelSqlDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelSqlDatabase.swift; path = SmartListIOS/Model/ModelSqlDatabase.swift; sourceTree = SOURCE_ROOT; };
+		8416E432220390590032CB52 /* SmartList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartList-Bridging-Header.h"; sourceTree = "<group>"; };
+		8416E433220393960032CB52 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8416E435220393C80032CB52 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		8416E4372203AF730032CB52 /* ModelFirebaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelFirebaseDatabase.swift; path = SmartListIOS/Model/ModelFirebaseDatabase.swift; sourceTree = SOURCE_ROOT; };
+		8416E4392203BDEF0032CB52 /* ModelSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelSQL.swift; path = SmartListIOS/Model/ModelSQL.swift; sourceTree = SOURCE_ROOT; };
+		8416E43B2203C1720032CB52 /* LastUpdateDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LastUpdateDates.swift; path = SmartListIOS/Model/LastUpdateDates.swift; sourceTree = SOURCE_ROOT; };
 		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84558B3021B32FC8005C3978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84558B3521B32FC8005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8416E436220393C80032CB52 /* libsqlite3.0.tbd in Frameworks */,
 				86777E48E7BC53071A22AF8A /* Pods_SmartListIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,10 +153,15 @@
 		8400D28B21D1850B0070BDD6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8400D29421D18F300070BDD6 /* IModel.swift */,
 				8400D28E21D1859E0070BDD6 /* Model.swift */,
 				8400D29221D18EC70070BDD6 /* ModelFirebase.swift */,
-				8400D29421D18F300070BDD6 /* IModel.swift */,
+				8416E4392203BDEF0032CB52 /* ModelSQL.swift */,
+				8416E42E220385ED0032CB52 /* ModelNotification.swift */,
 				84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */,
+				8416E43022038D410032CB52 /* ModelSqlDatabase.swift */,
+				8416E4372203AF730032CB52 /* ModelFirebaseDatabase.swift */,
+				8416E43B2203C1720032CB52 /* LastUpdateDates.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -184,6 +204,7 @@
 				84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */,
 				84558B3421B32FC8005C3978 /* Main.storyboard */,
 				8400D28B21D1850B0070BDD6 /* Model */,
+				8416E432220390590032CB52 /* SmartList-Bridging-Header.h */,
 			);
 			path = SmartListIOS;
 			sourceTree = "<group>";
@@ -241,6 +262,8 @@
 		8688009BADFDCCB198DCA0CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8416E435220393C80032CB52 /* libsqlite3.0.tbd */,
+				8416E433220393960032CB52 /* libsqlite3.tbd */,
 				5ACE6054430ACA5251CAB63C /* Pods_SmartListIOS.framework */,
 				7D0DAF9D2596AD18059745EF /* Pods_SmartListIOSTests.framework */,
 				329F39389BAC4221994C6501 /* Pods_SmartListIOSUITests.framework */,
@@ -524,20 +547,25 @@
 			files = (
 				84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */,
 				8400D28F21D1859E0070BDD6 /* Model.swift in Sources */,
+				8416E43122038D410032CB52 /* ModelSqlDatabase.swift in Sources */,
 				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
 				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
+				8416E4382203AF730032CB52 /* ModelFirebaseDatabase.swift in Sources */,
+				8416E42F220385ED0032CB52 /* ModelNotification.swift in Sources */,
 				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
 				84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */,
 				8400D29521D18F300070BDD6 /* IModel.swift in Sources */,
 				84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */,
 				8461A3C02200C2ED0020AF92 /* BaseModelObject.swift in Sources */,
 				84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */,
+				8416E43A2203BDEF0032CB52 /* ModelSQL.swift in Sources */,
 				8461A3C32200C2ED0020AF92 /* Users.swift in Sources */,
 				8461A3C12200C2ED0020AF92 /* Groups.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
 				8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */,
 				8461A3C22200C2ED0020AF92 /* GroupUsers.swift in Sources */,
+				8416E43C2203C1720032CB52 /* LastUpdateDates.swift in Sources */,
 				84CFC96721D266B1007DC3EC /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,14 +743,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = SmartListIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Aharon.SmartListIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartListIOS/SmartList-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -733,14 +764,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = SmartListIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Aharon.SmartListIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartListIOS/SmartList-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

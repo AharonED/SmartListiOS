@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public protocol IModel{
     static func addNew(instance:BaseModelObject) throws
 }

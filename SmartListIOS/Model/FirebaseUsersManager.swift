@@ -12,6 +12,7 @@ import FirebaseDatabase
 
 public class FirebaseUsersManager{
     
+     let model:Model<Users> = Model<Users>()
     //Auth
 
     init() {
@@ -38,7 +39,7 @@ public class FirebaseUsersManager{
         
     }
     
-    static func createUser(_ user: Users, callback:@escaping (_ success:Bool,_ user: Users, _ errorDesc:String)->Void) throws {
+    public func createUser(_ user: Users, callback:@escaping (_ success:Bool,_ user: Users, _ errorDesc:String)->Void) throws {
             //Add new user to Firebase Authentication system
             Auth.auth().createUser(withEmail: user.email, password: user.password) { (authResult, error) in
                 var errorDesc:String = ""
@@ -52,7 +53,7 @@ public class FirebaseUsersManager{
                     user.id=authResult?.user.uid ?? user.email
                     do{
                         //Add the new user also to Firebase Database
-                        try Model.addNew(instance: user)
+                        try self.model.addNew(instance: user)
                     }
                     catch let error {
                         errorDesc=error.localizedDescription

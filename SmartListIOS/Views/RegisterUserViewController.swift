@@ -16,6 +16,7 @@ class RegisterUserViewController: UIViewController {
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     
     let indicator:Indicator = Indicator()
+    let fbUserMan:FirebaseUsersManager=FirebaseUsersManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +69,8 @@ class RegisterUserViewController: UIViewController {
          do {
            indicator.show(view: view)
             let user:Users = Users(_id:email, _firstName:firstName, _lastName:lastName, _email:email, _password:password)
-           try FirebaseUsersManager.createUser(user, callback: createUser)
+           
+           try fbUserMan.createUser(user, callback: createUser)
          }
         catch let error {
             print(error.localizedDescription)

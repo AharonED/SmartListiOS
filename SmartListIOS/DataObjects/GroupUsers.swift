@@ -20,7 +20,7 @@ public class GroupUsers : BaseModelObject{
     }
      
     
-    override init(json:[String:Any]) {
+    public required init(json:[String:Any]) {
         
         if json["id"] == nil{
             fatalError("Missing id!");

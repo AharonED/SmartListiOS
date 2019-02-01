@@ -8,16 +8,49 @@
 
 import Foundation
 
-public class Model:IModel {
+public class Model<T> where T:BaseModelObject {
     
+    //static let instance:Model = Model()
  
-    private init() {
+    var modelSql = ModelSQL<T>();
+    var modelFirebase = ModelFirebase<T>();
+
+    public init() {
         
     }
     
 
-    public static func addNew(instance: BaseModelObject) throws {
-        try ModelFirebase.addNew(instance: instance)
+    public func getAllRecords(){
+        //1. read local students last update date
+        var lastUpdated = modelSql.getLastUpdateDate(database: modelSql.database)
+        lastUpdated += 1;
+        
+        //2. get updates from firebase and observe
+        modelFirebase.getAllRecordsAndObserve(from:lastUpdated){ (data:[T]) in
+            //3. write new records to the local DB
+            for st in data{
+                self.modelSql.addNew(database: self.modelSql.database, student: st)
+                if (st.lastUpdate != nil && st.lastUpdate! > lastUpdated){
+                    lastUpdated = st.lastUpdate!
+                }
+            }
+            
+            //4. update the local students last update date
+            self.modelSql.setLastUpdateDate(database: self.modelSql.database, date: lastUpdated)
+            
+            //5. get the full data
+            let stFullData = self.modelSql.getAll(database: self.modelSql.database)
+            
+            //6. notify observers with full data
+//            ModelNotification.studentsListNotification.notify(data: stFullData)
+        }
+        
+    }
+    
+    public func addNew(instance: T) throws {
+        let fb:ModelFirebase=ModelFirebase<T>()
+        try fb.addNew(instance: instance)
+        
     }
     
     

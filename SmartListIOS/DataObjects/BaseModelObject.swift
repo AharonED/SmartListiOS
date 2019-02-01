@@ -10,14 +10,16 @@ import Foundation
 
 public class BaseModelObject{
     public var id:String
-    
+    public var tableName:String = "BaseModelObject"
+    public var lastUpdate:Double?
+
     public init(_id:String)
     {
         id=_id
     }
     
     
-    public init(json:[String:Any]) {
+    public required init(json:[String:Any]) {
         id = json["id"] as! String
     }
     
@@ -26,5 +28,6 @@ public class BaseModelObject{
         json["id"] = id
         return json
     }
+
 }
 

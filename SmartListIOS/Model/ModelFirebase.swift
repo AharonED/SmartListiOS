@@ -10,16 +10,35 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-public class ModelFirebase:IModel {
+public class ModelFirebase<T> where T:BaseModelObject {
     
-    static var ref: DatabaseReference!=Database.database().reference()
+    var ref: DatabaseReference!=ModelFirebaseDatabase.ref
+    var collectionName:String
     
     init() {
         //FirebaseApp.configure()
+        collectionName = String(describing: T.self).components(separatedBy: ".").last!
     }
     
-    public static func addNew(instance: BaseModelObject) throws {
-        let collectionName:String=String(describing: instance).components(separatedBy: ".").last!
+    func getAllRecordsAndObserve(from:Double, callback:@escaping ([T])->Void){
+        let stRef = ref.child(collectionName)
+        let fbQuery = stRef.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: from)
+        fbQuery.observe(.value) { (snapshot) in
+            var data = [T]()
+            //var elementType: T.Type
+            //elementType = T.self
+            if let value = snapshot.value as? [String:Any] {
+                for (_, json) in value{
+                    //let newT = elementType.init(json: json as! [String : Any])
+                    data.append(T.init(json: json as! [String : Any]))
+                }
+            }
+            callback(data)
+        }
+    }
+    
+    public func addNew(instance: T) throws {
+        //let collectionName:String=String(describing: instance).components(separatedBy: ".").last!
         
         //do {
             //try
@@ -30,7 +49,7 @@ public class ModelFirebase:IModel {
 
         do {
             try
-                ref.child(collectionName).child(instance.id).setValue(instance.toJson()) {
+                self.ref.child(collectionName).child(instance.id).setValue(instance.toJson()) {
                     (error:Error?, ref:DatabaseReference) in
                     if let error = error {
                         print("Data could not be saved: \(error).")
