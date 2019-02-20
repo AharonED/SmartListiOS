@@ -23,8 +23,9 @@ public class Model<T> where T:BaseModelObject {
 
     public func getAllRecords(){
         //1. read local students last update date
-        var lastUpdated = modelSql.getLastUpdateDate(database: modelSql.database)
-        lastUpdated += 1;
+        let lastUpdated = (modelSql.getLastUpdateDate(database: modelSql.database) as! Double)+1
+        //lastUpdated += 1;
+        var lastUpdated2 : Double = 0
         
         //2. get updates from firebase and observe
         modelFirebase.getAllRecordsAndObserve(from:lastUpdated){ (data:[T]) in
@@ -33,12 +34,12 @@ public class Model<T> where T:BaseModelObject {
             for st in data{
                 self.modelSql.addNew(database: self.modelSql.database, instance: st)
                 if (st.lastUpdate != nil && st.lastUpdate! > lastUpdated){
-                    lastUpdated = st.lastUpdate!
+                    lastUpdated2 = st.lastUpdate!
                 }
             }
             
             //4. update the local students last update date
-            self.modelSql.setLastUpdateDate(database: self.modelSql.database, date: lastUpdated)
+            self.modelSql.setLastUpdateDate(database: self.modelSql.database, date: lastUpdated2)
             
             //5. get the full data
             let stFullData = self.modelSql.getAll(database: self.modelSql.database)
@@ -49,10 +50,9 @@ public class Model<T> where T:BaseModelObject {
 
             ModelNotification.GetNotification(collectionName: collectionName , dummy: dummy).notify(data: stFullData)
             
-            //ModelNotification.ListNotification[collectionName] = ModelNotification.MyNotification<T>(collectionName) as?  ModelNotification.MyNotification<Any>
-            //ModelNotification.ListNotification[collectionName]!.notify(data: stFullData)
-            
-            ModelNotification.GroupsListNotification.notify(data: stFullData)
+            /*
+             ModelNotification.GroupsListNotification.notify(data: stFullData as! [Groups])
+            */
         }
         
     }

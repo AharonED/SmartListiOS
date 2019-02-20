@@ -25,6 +25,8 @@ public class ModelFirebase<T> where T:BaseModelObject {
         let fbQuery = stRef.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: from)
         
         fbQuery.observe(.value) { (snapshot) in
+            print("fbQuery.observe")
+            
             var data = [T]()
 //            if let value = snapshot.value as? [String:Any] {
             if let value = self.convertSnapshot2Json(snapshot: snapshot) as? [String:Any]  {

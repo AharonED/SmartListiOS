@@ -11,7 +11,7 @@ import UIKit
 
 
 class ModelNotification{
-    static let GroupsListNotification = MyNotification<[Groups]>("com.smartlist.groups")
+    //static let GroupsListNotification = MyNotification<Groups>("Aharon.SmartListIOS")
     //static let UsersListNotification = MyNotification<[Users]>("com.smartlist.users")
 
     static var ListNotification = [String:Any]()
@@ -52,12 +52,15 @@ class ModelNotification{
             name = _name
         }
         
-        func observe(cb:@escaping (T)->Void)-> NSObjectProtocol{
+        func observe(cb:@escaping ([T])->Void)-> NSObjectProtocol{
             count += 1
             return NotificationCenter.default.addObserver(forName: NSNotification.Name(name),
                                                           object: nil, queue: nil) { (data) in
-                                                            if let data = data.userInfo?["data"] as? T {
-                                                                cb(data)
+                                                            
+                                                            cb(data.userInfo?["data"] as! [T] )
+                                                            
+                                                            if let data1 = data.userInfo?["data"] as? [T] {
+                                                                cb(data1)
                                                             }
             }
         }
@@ -66,6 +69,7 @@ class ModelNotification{
             NotificationCenter.default.post(name: NSNotification.Name(name),
                                             object: self,
                                             userInfo: ["data":data])
+            print("NotificationCenter.default.post")
         }
         
         func remove(observer: NSObjectProtocol){

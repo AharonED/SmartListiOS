@@ -6,13 +6,21 @@
          contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
          <PersistentStrings>
             <PersistentString
+               value = "instance.id">
+            </PersistentString>
+            <PersistentString
                value = "String(describing: instance)">
             </PersistentString>
             <PersistentString
                value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ModelNotification.MyNotification.observe(cb:):ModelNotification.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "instance.id">
+               value = "name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -24,14 +32,6 @@
             </PersistentString>
             <PersistentString
                value = "String(cString: sqlite3_errmsg(db)!)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ModelNotification.MyNotification.observe(cb:):ModelNotification.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "name">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -53,16 +53,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ModelSQL.getLastUpdateDate(database:):ModelSQL.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "model.getLastUpdateDate(database: database)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Model.getAllRecords():Model.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "modelSql.getLastUpdateDate(database: modelSql.database)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in Model.getAllRecords():Model.swift">
          <PersistentStrings>
             <PersistentString
                value = "st">
             </PersistentString>
             <PersistentString
-               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
+               value = "(st as! BaseModelObject)">
             </PersistentString>
             <PersistentString
-               value = "(st as! BaseModelObject)">
+               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

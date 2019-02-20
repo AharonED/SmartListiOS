@@ -33,28 +33,25 @@ class GroupsListTableViewController: UITableViewController {
         }
         
         navTitle.title=grp.name
-        
-//        groupsListener = ModelNotification.GroupsListNotification.observe(){
-        //let dummy:Groups = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
-        //collectionName = dummy.tableName
 
         let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
         collectionName = dummy.tableName
-        
-        //let notif:ModelNotification.MyNotification<Groups> = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy)
         
         groupsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
             (data:Any) in
             self.data = data as! [Groups]
             self.tableView.reloadData()
+             print("GetNotification.observe()")
             } as NSObjectProtocol
         
-        
+/*
         groupsListener = ModelNotification.GroupsListNotification.observe(){
             (data:Any) in
             self.data = data as! [Groups]
             self.tableView.reloadData()
+            print("GroupsListNotification.observe()")
             } as NSObjectProtocol
+*/
         
         model.getAllRecords()
         
