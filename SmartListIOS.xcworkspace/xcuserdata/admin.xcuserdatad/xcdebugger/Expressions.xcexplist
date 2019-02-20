@@ -3,21 +3,43 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #1 in RegisterUserViewController.signupButtonTapped(_:):RegisterUserViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
          <PersistentStrings>
             <PersistentString
-               value = "instance.id">
+               value = "String(describing: instance)">
             </PersistentString>
             <PersistentString
                value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
             </PersistentString>
             <PersistentString
-               value = "String(describing: instance)">
+               value = "instance.id">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ModelSQLDatabase.init():ModelSqlDatabase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sqlite3_open(path.absoluteString, &amp;database)">
+            </PersistentString>
+            <PersistentString
+               value = "String(cString: sqlite3_errmsg(db)!)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ModelNotification.MyNotification.observe(cb:):ModelNotification.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in RegisterUserViewController.signupButtonTapped(_:):RegisterUserViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ModelFirebase.getAllRecordsAndObserve(from:callback:):ModelFirebase.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in ModelFirebase.addNew(instance:):ModelFirebase.swift">
@@ -27,6 +49,86 @@
          <PersistentStrings>
             <PersistentString
                value = "instance.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in Model.getAllRecords():Model.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "st">
+            </PersistentString>
+            <PersistentString
+               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
+            </PersistentString>
+            <PersistentString
+               value = "(st as! BaseModelObject)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GroupsListTableViewController.viewDidLoad():GroupsListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in ModelFirebase.getAllRecordsAndObserve(from:callback:):ModelFirebase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "rest">
+            </PersistentString>
+            <PersistentString
+               value = "snapshot.value as? [String:Any] ">
+            </PersistentString>
+            <PersistentString
+               value = "snapshot.value">
+            </PersistentString>
+            <PersistentString
+               value = "enumerator">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Groups.init(json:):Groups.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "description">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static ModelNotification.GetNotification&lt;A&gt;(collectionName:dummy:):ModelNotification.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(dummy as! BaseModelObject).tableName">
+            </PersistentString>
+            <PersistentString
+               value = "obj">
+            </PersistentString>
+            <PersistentString
+               value = "obj.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ModelNotification.MyNotification.notify(data:):ModelNotification.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "name">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ModelFirebase.getAllRecordsAndObserve(from:callback:):ModelFirebase.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapshot.value">
+            </PersistentString>
+            <PersistentString
+               value = "self.collectionName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

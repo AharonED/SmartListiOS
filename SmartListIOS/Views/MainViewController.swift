@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UITabBarController {
 
+    public var groupId:String=""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

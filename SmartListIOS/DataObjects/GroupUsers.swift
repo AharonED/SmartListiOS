@@ -16,20 +16,21 @@ public class GroupUsers : BaseModelObject{
     {
         groupId = _groupId
         userId = _userId
-        super.init(_id: _id)
+        
+        var json = [String:Any]()
+        json["id"] = _id
+        
+        super.init(json: json)
     }
      
     
     public required init(json:[String:Any]) {
         
-        if json["id"] == nil{
-            fatalError("Missing id!");
-        }
-        let id = json["id"] as! String
-        
         groupId = json["groupId"] as! String
         userId = json["userId"] as! String
-        super.init(_id: id)
+        
+            
+        super.init(json: json)
         
     }
     

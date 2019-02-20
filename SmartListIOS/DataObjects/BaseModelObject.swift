@@ -8,19 +8,30 @@
 
 import Foundation
 
-public class BaseModelObject{
+public class BaseModelObject {
     public var id:String
     public var tableName:String = "BaseModelObject"
     public var lastUpdate:Double?
 
-    public init(_id:String)
+    public convenience init(_id:String)
     {
-        id=_id
+        var json = [String:Any]()
+        json["id"] = _id
+        self.init(json:json)
     }
     
     
     public required init(json:[String:Any]) {
+        if json["id"] == nil{
+            fatalError("Missing id!");
+        }
         id = json["id"] as! String
+        
+        if json["lastUpdate"] != nil {
+            if let lud = json["lastUpdate"] as? Double{
+                self.lastUpdate = lud
+            }
+        }
     }
     
     public func toJson() -> [String:Any] {

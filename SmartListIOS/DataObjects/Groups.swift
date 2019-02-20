@@ -33,43 +33,48 @@ public class Groups : BaseModelObject{
  */
     
     
-    init(_id:String, _name:String, _description:String, _url:String = "", _lastUpdate:Double?)
+    public convenience init (_id:String, _name:String, _description:String, _url:String = "", _lastUpdate:Double?)
     {
+        /*
         name = _name
         description = _description
         url = _url
         super.init(_id: _id)
         super.lastUpdate = _lastUpdate
+        */
+        
+        
+        var json = [String:Any]()
+        json["id"] = _id
+        json["name"] = _name
+        json["description"] = _description
+        json["url"] = _url
+        json["lastUpdate"] = _lastUpdate
+        
+        self.init(json:json)
+        
    }
     
     
     public required init(json:[String:Any]) {
-        
-        if json["id"] == nil{
-            fatalError("Missing id!");
-        }
-        let id = json["id"] as! String
-
         name = json["name"] as! String
         description = json["description"] as! String
-        //url = json["url"] as! String
-        //lastUpdate = json["lastUpdate"] as! Double?
-        
+       
         if json["url"] != nil{
             url = json["url"] as! String
         }else{
             url = ""
         }
-
-        super.init(_id: id)
-        if json["lastUpdate"] != nil {
-            if let lud = json["lastUpdate"] as? Double{
-                super.lastUpdate = lud
-            }
-        }
-
-        
+        super.init(json: json)
+        super.tableName="Groups"
     }
+    
+    /*
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
+    */
+    
     
     override public func toJson() -> [String:Any] {
         var json = [String:Any]()

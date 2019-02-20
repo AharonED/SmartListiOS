@@ -14,7 +14,7 @@ import FirebaseDatabase
 
 public class ModelFirebaseDatabase {
     
-    static var ref: DatabaseReference!=Database.database().reference()
+    static var ref: DatabaseReference! = Database.database().reference()
     
     init() {
         //FirebaseApp.configure()

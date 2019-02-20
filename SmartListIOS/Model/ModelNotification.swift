@@ -12,8 +12,38 @@ import UIKit
 
 class ModelNotification{
     static let GroupsListNotification = MyNotification<[Groups]>("com.smartlist.groups")
-    static let UsersListNotification = MyNotification<[Users]>("com.smartlist.users")
+    //static let UsersListNotification = MyNotification<[Users]>("com.smartlist.users")
 
+    static var ListNotification = [String:Any]()
+
+    static func GetNotification<T>(collectionName:String, dummy:T )->MyNotification<T> where T:BaseModelObject {
+       
+        let collectionName =  dummy.tableName
+        
+        var obj:MyNotification<T>
+        
+       /* switch collectionName {
+        case "Groups":
+            obj=MyNotification<[T]>("com.smartlist.groups")
+            break
+        default:
+            obj=MyNotification<[T]>("com.smartlist.groups")
+            break
+        }
+         */
+        
+        if(ListNotification["com.smartlist." + collectionName]==nil)
+        {
+            obj=MyNotification<T>("com.smartlist." + collectionName)
+            ListNotification["com.smartlist." + collectionName]=obj
+        }
+        else
+        {
+            obj = ListNotification["com.smartlist." + collectionName] as! MyNotification<T>
+        }
+        return obj
+    }
+    
     class MyNotification<T>{
         let name:String
         var count = 0;
@@ -32,7 +62,7 @@ class ModelNotification{
             }
         }
         
-        func notify(data:T){
+        func notify(data:[T]){
             NotificationCenter.default.post(name: NSNotification.Name(name),
                                             object: self,
                                             userInfo: ["data":data])

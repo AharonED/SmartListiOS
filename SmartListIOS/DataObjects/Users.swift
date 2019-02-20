@@ -14,22 +14,31 @@ public class Users : BaseModelObject{
     var email:String
     var password:String
     
-    init(_id:String, _firstName:String, _lastName:String, _email:String, _password:String)
+    convenience init(_id:String, _firstName:String, _lastName:String, _email:String, _password:String)
     {
+        /*
         firstName = _firstName
         lastName = _lastName
         email=_email
         password=_password
         super.init(_id: _id)
+        */
+        
+        var json = [String:Any]()
+        json["id"] = _id
+        json["firstName"] = _firstName
+        json["lastName"] = _lastName
+        json["email"] = _email
+        json["password"] = _password
+        //json["lastUpdate"] = _lastUpdate
+        
+        self.init(json:json)
+        
     }
     
     
   public required init(json:[String:Any]) {
     
-        if json["id"] == nil{
-            fatalError("Missing id!");
-        }
-        let id = json["id"] as! String
 
         email = json["email"] as! String
         password = json["password"] as! String
@@ -43,9 +52,10 @@ public class Users : BaseModelObject{
         }else{
             lastName = ""
         }
-        
-        super.init(_id: id)
-        
+    
+        super.init(json: json)
+        super.tableName="Users"
+
     }
     
     override public func toJson() -> [String:Any] {
@@ -55,7 +65,8 @@ public class Users : BaseModelObject{
         json["password"] = password
         json["firstName"] = firstName
         json["lastName"] = lastName
-        return json
+//        json["lastUpdate"] = ServerValue.timestamp()
+       return json
     }
 }
 

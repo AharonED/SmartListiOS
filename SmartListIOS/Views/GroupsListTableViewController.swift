@@ -15,11 +15,13 @@ class GroupsListTableViewController: UITableViewController {
     var data = [Groups]()
     var groupsListener:NSObjectProtocol?
     let model:Model<Groups> = Model<Groups>()
+    var selectedId:String?
+    var collectionName:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let grp:Groups = Groups(_id: "4", _name: "Group4", _description: "Group 4 Description", _url: "", _lastUpdate:nil)
+        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _lastUpdate:nil)
         
         do{
             //Add the new user also to Firebase Database
@@ -32,12 +34,27 @@ class GroupsListTableViewController: UITableViewController {
         
         navTitle.title=grp.name
         
+//        groupsListener = ModelNotification.GroupsListNotification.observe(){
+        //let dummy:Groups = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
+        //collectionName = dummy.tableName
 
+        let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
+        collectionName = dummy.tableName
+        
+        //let notif:ModelNotification.MyNotification<Groups> = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy)
+        
+        groupsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
+            (data:Any) in
+            self.data = data as! [Groups]
+            self.tableView.reloadData()
+            } as NSObjectProtocol
+        
+        
         groupsListener = ModelNotification.GroupsListNotification.observe(){
             (data:Any) in
             self.data = data as! [Groups]
             self.tableView.reloadData()
-        }
+            } as NSObjectProtocol
         
         model.getAllRecords()
         
@@ -49,8 +66,71 @@ class GroupsListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
+    deinit{
+        if groupsListener != nil{
+            ModelNotification.ListNotification.removeValue(forKey: collectionName)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:GroupsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupsTableViewCell
+        
+        let st = data[indexPath.row]
+        cell.groupNameTextField.text = st.name
+        cell.groupDescriptionTextField.text = st.description
+        cell.id = st.id
+        cell.imageView?.image = UIImage(named: "group")
+        cell.imageView!.tag = indexPath.row
+        if st.url != "" {
+            model.getImage(url: st.url) { (image:UIImage?) in
+                if (cell.imageView!.tag == indexPath.row){
+                    if image != nil {
+                        cell.imageView?.image = image!
+                    }
+                }
+            }
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        NSLog("user select row \(indexPath.row)")
+        selectedId = data[indexPath.row].id
+        self.performSegue(withIdentifier: "MainViewController", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GroupDetailsView"{
+            let groupDetailsVc:MainViewController = segue.destination as! MainViewController
+            groupDetailsVc.groupId = self.selectedId!
+            
+        }
+        
+    }
+    
+    // MARK: - Table view data source
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -60,7 +140,7 @@ class GroupsListTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+*/
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
