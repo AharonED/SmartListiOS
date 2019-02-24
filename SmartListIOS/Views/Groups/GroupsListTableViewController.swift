@@ -65,7 +65,10 @@ class GroupsListTableViewController: UITableViewController {
 
     deinit{
         if groupsListener != nil{
-            ModelNotification.ListNotification.removeValue(forKey: collectionName)
+            let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
+            collectionName = dummy.tableName
+            ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: groupsListener!)
+            //ModelNotification.ListNotification.removeValue(forKey: collectionName)
         }
     }
     
@@ -114,15 +117,36 @@ class GroupsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("user select row \(indexPath.row)")
         selectedId = data[indexPath.row].id
-        self.performSegue(withIdentifier: "MainViewController", sender: self)
+        self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
     }
 
+    
+    @IBAction func AddGroup(_ sender: Any) {
+         self.performSegue(withIdentifier: "AddGroupSegue", sender: self)
+    }
+    
+    @IBAction func EditGroup(_ sender: Any) {
+         self.performSegue(withIdentifier: "GroupDetailsSegue", sender: self)
+    }
+    
+    @IBAction func OpenChecklists(_ sender: Any) {
+         self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GroupDetailsView"{
-            let groupDetailsVc:MainViewController = segue.destination as! MainViewController
+        if segue.identifier == "GroupDetailsSegue"{
+            let groupDetailsVc:GroupDetailsViewController = segue.destination as! GroupDetailsViewController
             groupDetailsVc.groupId = self.selectedId!
             
         }
+        
+        if segue.identifier == "ChrcklistsSegue"{
+            let checklistsVc:MainViewController = segue.destination as! MainViewController
+            checklistsVc.groupId = self.selectedId!
+            
+        }
+        
+        
         
     }
     

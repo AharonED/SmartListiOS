@@ -10,14 +10,14 @@ import Foundation
 //import Firebase
 //import FirebaseDatabase
 
-public class ModelSQL<T> where T: BaseModelObject {
+public class ModelSQL<T>:IModelSQL where T: BaseModelObject {
     public var database: OpaquePointer? = ModelSQLDatabase.getInstance()
     var collectionName:String
     var model:IModelSQL
     
     init() {
         collectionName = String(describing: T.self).components(separatedBy: ".").last!
-        model = ModelSQLFactory<Groups>.GetModelSQLInstance()
+        model = ModelSQLFactory<T>.GetModelSQLInstance()
     }
     
     public func createTable(database: OpaquePointer?)  {
@@ -28,16 +28,16 @@ public class ModelSQL<T> where T: BaseModelObject {
         model.drop(database: database)
     }
     
-    public func getAll(database: OpaquePointer?)->[T]{
-        return model.getAll(database: database) as! [T]
+    public func getAll(database: OpaquePointer?)->[BaseModelObject]{
+        return model.getAll(database: database)
     }
     
-    public func addNew(database: OpaquePointer?, instance:T){
+    public func addNew(database: OpaquePointer?, instance:BaseModelObject){
         model.addNew(database: database, instance: instance)
     }
     
-    public func get(database: OpaquePointer?, byId:String)->T?{
-        return (model.get(database: database,byId: byId) as! T);
+    public func get(database: OpaquePointer?, byId:String)->BaseModelObject?{
+        return (model.get(database: database,byId: byId) );
     }
     
     public func getLastUpdateDate(database: OpaquePointer?)->Double{

@@ -192,6 +192,21 @@
             </objects>
             <point key="canvasLocation" x="708" y="26.53673163418291"/>
         </scene>
+        <!--Group Details View Controller-->
+        <scene sceneID="LJv-OF-DEv">
+            <objects>
+                <viewController storyboardIdentifier="GroupDetailsViewController" id="P6a-0o-n0z" customClass="GroupDetailsViewController" customModule="SmartListIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vgb-sr-HAz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="AFJ-Nm-n56"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMr-6r-0Oh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2081" y="885"/>
+        </scene>
         <!--Public-->
         <scene sceneID="6ll-lB-erP">
             <objects>
@@ -236,7 +251,28 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Title" id="RPm-yC-Q4X"/>
+                                <navigationItem title="Title" id="RPm-yC-Q4X">
+                                    <rightBarButtonItems>
+                                        <barButtonItem systemItem="add" id="ZC6-uA-8tr">
+                                            <connections>
+                                                <action selector="AddGroup:" destination="iMU-16-L1c" id="7eW-Fv-Zhm"/>
+                                                <segue destination="db3-5E-cej" kind="show" identifier="AddGroupSegue" id="sbG-av-wgA"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="compose" id="rzE-Ds-yh6">
+                                            <connections>
+                                                <action selector="EditGroup:" destination="iMU-16-L1c" id="cBf-md-85L"/>
+                                                <segue destination="P6a-0o-n0z" kind="show" identifier="GroupDetailsSegue" id="iiR-lf-fkr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="bookmarks" id="jez-FP-SqH">
+                                            <connections>
+                                                <action selector="OpenChecklists:" destination="iMU-16-L1c" id="lCG-bU-gSW"/>
+                                                <segue destination="QUg-vh-8OO" kind="show" identifier="ChrcklistsSegue" id="u4b-JL-Rxu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </rightBarButtonItems>
+                                </navigationItem>
                             </items>
                         </navigationBar>
                         <prototypes>
@@ -290,25 +326,87 @@
             </objects>
             <point key="canvasLocation" x="1349.5999999999999" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--New Group View Controller-->
         <scene sceneID="LGd-MX-qe2">
             <objects>
-                <viewController id="db3-5E-cej" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewGroupViewController" id="db3-5E-cej" customClass="NewGroupViewController" customModule="SmartListIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HhZ-Kb-ZBo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7r-RB-bEA">
+                                <rect key="frame" x="16" y="465" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="AVX-BG-iii" eventType="touchUpInside" id="RPa-tW-u0n"/>
+                                    <action selector="cancelButtonTapped:" destination="db3-5E-cej" eventType="touchUpInside" id="U4V-iO-Vqy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsh-Zk-dVh">
+                                <rect key="frame" x="228" y="465" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="db3-5E-cej" eventType="touchUpInside" id="LKT-vP-gSE"/>
+                                    <action selector="signupButtonTapped:" destination="AVX-BG-iii" eventType="touchUpInside" id="Qkz-3w-o2F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hb5-2f-TyF">
+                                <rect key="frame" x="16" y="40" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="groupNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-kQ-dlt">
+                                <rect key="frame" x="16" y="76" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="groupImageView" translatesAutoresizingMaskIntoConstraints="NO" id="Bj7-XQ-sjr">
+                                <rect key="frame" x="16" y="173" width="343" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="groupDescriptionTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group description" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2v6-2V-wJV">
+                                <rect key="frame" x="16" y="124" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="847-Lj-NLM">
+                                <rect key="frame" x="327" y="390" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="takeImage:" destination="db3-5E-cej" eventType="touchUpInside" id="MaA-eF-DU1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="AzS-Au-etV"/>
                     </view>
+                    <connections>
+                        <outlet property="groupDescriptionTextField" destination="2v6-2V-wJV" id="81d-Ju-KuL"/>
+                        <outlet property="groupNameTextField" destination="PrP-kQ-dlt" id="82Q-Gf-EgB"/>
+                        <outlet property="imageView" destination="Bj7-XQ-sjr" id="VaN-QS-xNk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYf-zx-EC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="-636"/>
+            <point key="canvasLocation" x="2080.8000000000002" y="-637.33133433283365"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="QRT-hi-EXZ">
             <objects>
                 <tabBarController storyboardIdentifier="MainViewController" id="QUg-vh-8OO" customClass="MainViewController" customModule="SmartListIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dZF-t6-W0y"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xqR-lE-2p5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -322,7 +420,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPh-fW-nIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="27"/>
+            <point key="canvasLocation" x="2081" y="27"/>
         </scene>
         <!--Reported-->
         <scene sceneID="tkY-wc-igt">
@@ -341,35 +439,6 @@
             </objects>
             <point key="canvasLocation" x="3655" y="27"/>
         </scene>
-        <!--Root View Controller-->
-        <scene sceneID="ndI-fI-MLY">
-            <objects>
-                <tableViewController id="NlK-WP-cDv" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ETb-Xx-7Fy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Qt4-rw-OXo">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qt4-rw-OXo" id="Fd2-hA-gDu">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="NlK-WP-cDv" id="u37-dZ-LJf"/>
-                            <outlet property="delegate" destination="NlK-WP-cDv" id="FhX-aL-5C2"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="MKe-fV-oF7"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x60-bf-Xkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="708" y="734"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="qxX-BY-Ohb">
             <objects>
@@ -378,13 +447,10 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="NlK-WP-cDv" kind="relationship" relationship="rootViewController" id="Sqs-7o-ipR"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Y4-w2-9aI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="734"/>
+            <point key="canvasLocation" x="1350" y="885"/>
         </scene>
     </scenes>
 </document>

@@ -121,7 +121,7 @@ public class ModelFirebase<T> where T:BaseModelObject {
     }
     
     lazy var storageRef = Storage.storage().reference(forURL:
-        "gs://ios2018-f658d.appspot.com")
+        "gs://smartlistios-7a38f.appspot.com")
     
     public func saveImage(image:UIImage, name:(String),
                    callback:@escaping (String?)->Void){
