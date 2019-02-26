@@ -143,6 +143,27 @@ public class ModelFirebase<T> where T:BaseModelObject {
         }
     }
     
+    /*
+    static func get(database: OpaquePointer?, byId:String) throws ->BaseModelObject
+    {
+        let stRef = self.ref.child(self.collectionName)
+        let fbQuery = stRef.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: from)
+        
+        fbQuery.observe(.value) { (snapshot) in
+            print("fbQuery.observe")
+            
+            var data = [T]()
+            //            if let value = snapshot.value as? [String:Any] {
+            if let value = self.convertSnapshot2Json(snapshot: snapshot) as? [String:Any]  {
+                for (_, json) in value{
+                    //let newT = elementType.init(json: json as! [String : Any])
+                    data.append(T.init(json: json as! [String : Any]))
+                }
+            }
+            
+    }
+ */
+    
     public func getImage(url:String, callback:@escaping (UIImage?)->Void){
         let ref = Storage.storage().reference(forURL: url)
         ref.getData(maxSize: 10 * 1024 * 1024) { data, error in

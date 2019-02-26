@@ -10,4 +10,6 @@ import Foundation
 
 public protocol IModel{
     static func addNew(instance:BaseModelObject) throws
+    
+    static func get(database: OpaquePointer?, byId:String) throws ->BaseModelObject
 }
