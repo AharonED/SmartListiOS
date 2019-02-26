@@ -100,13 +100,13 @@ class GroupsListTableViewController: UITableViewController {
         cell.groupNameTextField.text = st.name
         cell.groupDescriptionTextField.text = st.description
         cell.id = st.id
-        cell.imageView?.image = UIImage(named: "group")
-        cell.imageView!.tag = indexPath.row
+        cell.groupImageView?.image = UIImage(named: "group")
+        cell.groupImageView!.tag = indexPath.row
         if st.url != "" {
             model.getImage(url: st.url) { (image:UIImage?) in
-                if (cell.imageView!.tag == indexPath.row){
+                if (cell.groupImageView!.tag == indexPath.row){
                     if image != nil {
-                        cell.imageView?.image = image!
+                        cell.groupImageView?.image = image!
                     }
                 }
             }
@@ -117,7 +117,7 @@ class GroupsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("user select row \(indexPath.row)")
         selectedId = data[indexPath.row].id
-        self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
+        //self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
     }
 
     
@@ -130,7 +130,7 @@ class GroupsListTableViewController: UITableViewController {
     }
     
     @IBAction func OpenChecklists(_ sender: Any) {
-         self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
+         self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -140,7 +140,7 @@ class GroupsListTableViewController: UITableViewController {
             
         }
         
-        if segue.identifier == "ChrcklistsSegue"{
+        if segue.identifier == "ChecklistsSegue"{
             let checklistsVc:MainViewController = segue.destination as! MainViewController
             checklistsVc.groupId = self.selectedId!
             
