@@ -49,7 +49,8 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBAction func save(_ sender: Any) {
         if image != nil {
-            model.saveImage(image: image!, name: groupNameTextField.text!){ (url:String?) in
+            let imageIdentifier = NSUUID().uuidString
+            model.saveImage(image: image!, name: imageIdentifier){ (url:String?) in
                 var _url = ""
                 if url != nil {
                     _url = url!

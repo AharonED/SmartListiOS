@@ -9,62 +9,88 @@
 import UIKit
 
 class GroupDetailsViewController:  UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    var image:UIImage?
     let model:Model<Groups> = Model<Groups>()
-    let identifier = NSUUID().uuidString
+    var identifier = ""//NSUUID().uuidString
+    var image:UIImage?
+
+    public var name : String=""
+    public var desc : String=""
+    public var imageUrl : String=""
+    public var groupId : String=""
+
+    public var uiImage : UIImage?
+
+    
     
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupDescriptionTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     
-    public var groupId:String=""
 
     override func viewDidLoad() {
     super.viewDidLoad()
 
         if (groupId != "")
         {
-            groupNameTextField.text=groupId
+            identifier = groupId
+            groupNameTextField.text = name
+            groupDescriptionTextField.text = desc
+            /*if(imageUrl != "")
+            {
+                imageView.image = UIImage.load(image: imageUrl)
+                image = imageView.image
+            }
+            */
+            
+            if(uiImage != nil)
+            {
+                imageView.image = uiImage
+                image = uiImage
+            }
         }
     }
     
+    
+    
     @IBAction func takeImage(_ sender: Any) {
-    if UIImagePickerController.isSourceTypeAvailable(
-    UIImagePickerControllerSourceType.camera) {
-    let imagePicker = UIImagePickerController()
-    imagePicker.delegate = self //as!  & UINavigationControllerDelegate
-    imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-    imagePicker.allowsEditing = true
-    self.present(imagePicker, animated: true, completion: nil)
-    }else{
-    let imagePicker = UIImagePickerController()
-    imagePicker.delegate = self
-    imagePicker.sourceType =
-    UIImagePickerControllerSourceType.photoLibrary;
-    imagePicker.allowsEditing = true
-    self.present(imagePicker, animated: true, completion: nil)
-    }
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self //as!  & UINavigationControllerDelegate
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+            }
+        else
+        {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType =
+            UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
-    // UIImagePickerControllerDelegate
+    // UIImagePickerControllerDelegate (from base class...)
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
-    image = info["UIImagePickerControllerOriginalImage"] as? UIImage
-    imageView.image = image
-    self.dismiss(animated: true, completion: nil)
+        image = info["UIImagePickerControllerOriginalImage"] as? UIImage
+        imageView.image = image
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func save(_ sender: Any) {
-    if image != nil {
-    model.saveImage(image: image!, name: groupNameTextField.text!){ (url:String?) in
-    var _url = ""
-    if url != nil {
-    _url = url!
-    }
-    self.saveGroupInfo(url: _url)
-    }
-    }else{
-    self.saveGroupInfo(url: "")
-    }
+        if image != nil {
+            let imageIdentifier = NSUUID().uuidString
+            model.saveImage(image: image!, name: imageIdentifier){ (url:String?) in
+                var _url = ""
+                if url != nil {
+                    _url = url!
+                    }
+                self.saveGroupInfo(url: _url)
+            }
+        }else{
+            self.saveGroupInfo(url: "")
+            }
     }
     
     func saveGroupInfo(url:String)  {

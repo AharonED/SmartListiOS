@@ -13,6 +13,9 @@ class GroupsListTableViewController: UITableViewController {
     @IBOutlet weak var navTitle: UINavigationItem!
     
     var data = [Groups]()
+    var selectedGroup:Groups?
+    var selectedCell:GroupsTableViewCell?
+    
     var groupsListener:NSObjectProtocol?
     let model:Model<Groups> = Model<Groups>()
     var selectedId:String?
@@ -117,6 +120,9 @@ class GroupsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("user select row \(indexPath.row)")
         selectedId = data[indexPath.row].id
+        selectedGroup = data[indexPath.row]
+        selectedCell = tableView.cellForRow(at: indexPath) as? GroupsTableViewCell
+
         //self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
     }
 
@@ -137,7 +143,16 @@ class GroupsListTableViewController: UITableViewController {
         if segue.identifier == "GroupDetailsSegue"{
             let groupDetailsVc:GroupDetailsViewController = segue.destination as! GroupDetailsViewController
             groupDetailsVc.groupId = self.selectedId!
-            
+            if(selectedGroup != nil)
+            {
+                groupDetailsVc.name = selectedGroup!.name
+                groupDetailsVc.desc = selectedGroup!.description
+                groupDetailsVc.imageUrl = selectedGroup!.url
+                if(selectedCell != nil)
+                {
+                    groupDetailsVc.uiImage = self.selectedCell!.groupImageView?.image
+                }
+            }
         }
         
         if segue.identifier == "ChecklistsSegue"{

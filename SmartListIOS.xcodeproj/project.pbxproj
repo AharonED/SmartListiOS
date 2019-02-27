@@ -35,6 +35,10 @@
 		8461A3C32200C2ED0020AF92 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BF2200C2ED0020AF92 /* Users.swift */; };
 		846BED4A21CF6AD80046DA0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */; };
 		847ADFFC220A436600B1CB09 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */; };
+		849EA8D0222729D400B0C3C6 /* Checklists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8CF222729D400B0C3C6 /* Checklists.swift */; };
+		849EA8D2222729F500B0C3C6 /* ChecklistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8D1222729F500B0C3C6 /* ChecklistItems.swift */; };
+		849EA8D422272B3900B0C3C6 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8D322272B3900B0C3C6 /* Attributes.swift */; };
+		849EA8D622273B1500B0C3C6 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8D522273B1500B0C3C6 /* UIImage.swift */; };
 		84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */; };
 		84CFC96721D266B1007DC3EC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96621D266B1007DC3EC /* Utils.swift */; };
 		84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96821D268AC007DC3EC /* Indicator.swift */; };
@@ -109,6 +113,10 @@
 		8461A3BF2200C2ED0020AF92 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = SmartListIOS/DataObjects/Users.swift; sourceTree = SOURCE_ROOT; };
 		846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		849EA8CF222729D400B0C3C6 /* Checklists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklists.swift; sourceTree = "<group>"; };
+		849EA8D1222729F500B0C3C6 /* ChecklistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItems.swift; sourceTree = "<group>"; };
+		849EA8D322272B3900B0C3C6 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
+		849EA8D522273B1500B0C3C6 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseUsersManager.swift; path = "SmartListIOS/New Group/Firebase/FirebaseUsersManager.swift"; sourceTree = SOURCE_ROOT; };
 		84CFC96621D266B1007DC3EC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		84CFC96821D268AC007DC3EC /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
@@ -263,6 +271,9 @@
 				8461A3BD2200C2ED0020AF92 /* Groups.swift */,
 				8461A3BE2200C2ED0020AF92 /* GroupUsers.swift */,
 				8461A3BF2200C2ED0020AF92 /* Users.swift */,
+				849EA8CF222729D400B0C3C6 /* Checklists.swift */,
+				849EA8D1222729F500B0C3C6 /* ChecklistItems.swift */,
+				849EA8D322272B3900B0C3C6 /* Attributes.swift */,
 			);
 			path = DataObjects;
 			sourceTree = "<group>";
@@ -272,6 +283,7 @@
 			children = (
 				84CFC96621D266B1007DC3EC /* Utils.swift */,
 				84CFC96821D268AC007DC3EC /* Indicator.swift */,
+				849EA8D522273B1500B0C3C6 /* UIImage.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -606,18 +618,22 @@
 				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
 				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
 				8416E4382203AF730032CB52 /* ModelFirebaseDatabase.swift in Sources */,
+				849EA8D2222729F500B0C3C6 /* ChecklistItems.swift in Sources */,
 				847ADFFC220A436600B1CB09 /* GroupsTableViewCell.swift in Sources */,
 				84DF5A672209A11A00A92AB2 /* ModelSQLFactory.swift in Sources */,
 				8416E42F220385ED0032CB52 /* ModelNotification.swift in Sources */,
+				849EA8D622273B1500B0C3C6 /* UIImage.swift in Sources */,
 				8429CA8D222322410048E1A3 /* GroupDetailsViewController.swift in Sources */,
 				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
 				84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */,
 				8400D29521D18F300070BDD6 /* IModel.swift in Sources */,
 				84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */,
 				8461A3C02200C2ED0020AF92 /* BaseModelObject.swift in Sources */,
+				849EA8D422272B3900B0C3C6 /* Attributes.swift in Sources */,
 				84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */,
 				8416E43A2203BDEF0032CB52 /* ModelSQL.swift in Sources */,
 				8461A3C32200C2ED0020AF92 /* Users.swift in Sources */,
+				849EA8D0222729D400B0C3C6 /* Checklists.swift in Sources */,
 				84DF5A692209A58E00A92AB2 /* ModelSQLGroups.swift in Sources */,
 				8461A3C12200C2ED0020AF92 /* Groups.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
