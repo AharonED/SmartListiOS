@@ -21,6 +21,11 @@ class GroupsListTableViewController: UITableViewController {
     var selectedId:String?
     var collectionName:String = ""
     
+    func setTitle()
+    {
+        navTitle.title="Public Checklists"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +40,7 @@ class GroupsListTableViewController: UITableViewController {
             print("Unexpected error: \(error.localizedDescription).")
         }
         
-        navTitle.title=grp.name
+        setTitle()
 
         let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
         collectionName = dummy.tableName

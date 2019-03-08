@@ -18,6 +18,13 @@ class MainViewController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PrivateListViewController"{
+            let groupDetailsVc:GroupDetailsViewController = segue.destination as! GroupDetailsViewController
+            groupDetailsVc.groupId = self.groupId
+        }
+       
+    }
 
     /*
     // MARK: - Navigation

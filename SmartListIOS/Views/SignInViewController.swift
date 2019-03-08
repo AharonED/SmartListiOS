@@ -77,7 +77,7 @@ class SignInViewController: UIViewController {
                             appDelegate?.window??.rootViewController = homePage
                             */
                             
-                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "GroupsListTableViewController") as! GroupsListTableViewController
+                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "GroupsTabViewController") as! GroupsTabViewController
                             let appDelegate = UIApplication.shared.delegate
                             appDelegate?.window??.rootViewController = homePage
                     }

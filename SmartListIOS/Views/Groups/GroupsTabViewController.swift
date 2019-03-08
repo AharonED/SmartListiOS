@@ -1,14 +1,14 @@
 //
-//  PrivateListViewController.swift
+//  GroupsTabViewController.swift
 //  SmartListIOS
 //
-//  Created by admin on 25/12/2018.
-//  Copyright © 2018 Aharon.Garada. All rights reserved.
+//  Created by admin on 08/03/2019.
+//  Copyright © 2019 Aharon.Garada. All rights reserved.
 //
- 
+
 import UIKit
 
-class PrivateListViewController: UIViewController {
+class GroupsTabViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
