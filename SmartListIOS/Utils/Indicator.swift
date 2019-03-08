@@ -13,8 +13,10 @@ import Firebase
 public class Indicator {
   
     //Create Activity Indicator
-    var myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorView.Style.gray)
-    
+//  For new IOS 10+ version
+//    var myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorView.Style.gray)
+    var myActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+
    
 
     public func show(view:UIView) {
