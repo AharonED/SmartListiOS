@@ -19,7 +19,7 @@ class MainViewController: UITabBarController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "PrivateListViewController"{
+        if segue.identifier == "ChecklistsViewController"{
             let groupDetailsVc:GroupDetailsViewController = segue.destination as! GroupDetailsViewController
             groupDetailsVc.groupId = self.groupId
         }

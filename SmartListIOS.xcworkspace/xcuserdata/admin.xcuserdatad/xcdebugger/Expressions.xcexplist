@@ -6,10 +6,10 @@
          contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
          <PersistentStrings>
             <PersistentString
-               value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
+               value = "String(describing: instance)">
             </PersistentString>
             <PersistentString
-               value = "String(describing: instance)">
+               value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
             </PersistentString>
             <PersistentString
                value = "instance.id">
@@ -21,6 +21,9 @@
          <PersistentStrings>
             <PersistentString
                value = "name">
+            </PersistentString>
+            <PersistentString
+               value = "count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -34,6 +37,9 @@
                value = "String(cString: sqlite3_errmsg(db)!)">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "PrivateListViewController.tableView(_:cellForRowAt:):PrivateListViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in RegisterUserViewController.signupButtonTapped(_:):RegisterUserViewController.swift">
@@ -56,6 +62,9 @@
          contextName = "ModelSQL.getLastUpdateDate(database:):ModelSQL.swift">
          <PersistentStrings>
             <PersistentString
+               value = "collectionName">
+            </PersistentString>
+            <PersistentString
                value = "model.getLastUpdateDate(database: database)">
             </PersistentString>
          </PersistentStrings>
@@ -77,6 +86,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #1 in Model.getAllRecords():Model.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "st">
+            </PersistentString>
+            <PersistentString
+               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
+            </PersistentString>
+            <PersistentString
+               value = "(st as! BaseModelObject)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #2 in ModelFirebase.getAllRecordsAndObserve(from:callback:):ModelFirebase.swift">
          <PersistentStrings>
             <PersistentString
@@ -90,20 +113,6 @@
             </PersistentString>
             <PersistentString
                value = "enumerator">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in Model.getAllRecords():Model.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "st">
-            </PersistentString>
-            <PersistentString
-               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
-            </PersistentString>
-            <PersistentString
-               value = "(st as! BaseModelObject)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

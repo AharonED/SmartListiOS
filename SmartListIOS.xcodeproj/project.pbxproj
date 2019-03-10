@@ -23,6 +23,7 @@
 		844792B52232713A005FC1FA /* GroupsListReportedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B42232713A005FC1FA /* GroupsListReportedTableViewController.swift */; };
 		844792B7223271A0005FC1FA /* GroupsListPrivateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B6223271A0005FC1FA /* GroupsListPrivateTableViewController.swift */; };
 		844792BB22327456005FC1FA /* GroupsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792BA22327456005FC1FA /* GroupsTabViewController.swift */; };
+		844792BD2232811B005FC1FA /* LoggedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792BC2232811B005FC1FA /* LoggedUser.swift */; };
 		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
 		84558B3621B32FC8005C3978 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3421B32FC8005C3978 /* Main.storyboard */; };
 		84558B3821B32FCA005C3978 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84558B3721B32FCA005C3978 /* Assets.xcassets */; };
@@ -37,6 +38,9 @@
 		8461A3C22200C2ED0020AF92 /* GroupUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BE2200C2ED0020AF92 /* GroupUsers.swift */; };
 		8461A3C32200C2ED0020AF92 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BF2200C2ED0020AF92 /* Users.swift */; };
 		846BED4A21CF6AD80046DA0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */; };
+		84703EE0223551DB00DB2711 /* ReportedChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */; };
+		84714B8C22346349002296E8 /* ModelSQLChecklists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714B8B22346349002296E8 /* ModelSQLChecklists.swift */; };
+		84714B8E22346E67002296E8 /* DataObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714B8D22346E67002296E8 /* DataObjectFactory.swift */; };
 		84762985222B434A00006358 /* ChecklistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84762984222B434A00006358 /* ChecklistsTableViewCell.swift */; };
 		847ADFFC220A436600B1CB09 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */; };
 		849EA8D0222729D400B0C3C6 /* Checklists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8CF222729D400B0C3C6 /* Checklists.swift */; };
@@ -47,7 +51,7 @@
 		84CFC96721D266B1007DC3EC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96621D266B1007DC3EC /* Utils.swift */; };
 		84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96821D268AC007DC3EC /* Indicator.swift */; };
 		84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96A21D2864E007DC3EC /* MainViewController.swift */; };
-		84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */; };
+		84CFC96D21D28A82007DC3EC /* PrivateChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC96C21D28A82007DC3EC /* PrivateChecklistsViewController.swift */; };
 		84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */; };
 		84DF5A672209A11A00A92AB2 /* ModelSQLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF5A662209A11A00A92AB2 /* ModelSQLFactory.swift */; };
 		84DF5A692209A58E00A92AB2 /* ModelSQLGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF5A682209A58E00A92AB2 /* ModelSQLGroups.swift */; };
@@ -98,6 +102,7 @@
 		844792B42232713A005FC1FA /* GroupsListReportedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListReportedTableViewController.swift; sourceTree = "<group>"; };
 		844792B6223271A0005FC1FA /* GroupsListPrivateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListPrivateTableViewController.swift; sourceTree = "<group>"; };
 		844792BA22327456005FC1FA /* GroupsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTabViewController.swift; sourceTree = "<group>"; };
+		844792BC2232811B005FC1FA /* LoggedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUser.swift; sourceTree = "<group>"; };
 		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84558B3021B32FC8005C3978 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84558B3521B32FC8005C3978 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +124,9 @@
 		8461A3BE2200C2ED0020AF92 /* GroupUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupUsers.swift; path = SmartListIOS/DataObjects/GroupUsers.swift; sourceTree = SOURCE_ROOT; };
 		8461A3BF2200C2ED0020AF92 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = SmartListIOS/DataObjects/Users.swift; sourceTree = SOURCE_ROOT; };
 		846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedChecklistsViewController.swift; sourceTree = "<group>"; };
+		84714B8B22346349002296E8 /* ModelSQLChecklists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLChecklists.swift; sourceTree = "<group>"; };
+		84714B8D22346E67002296E8 /* DataObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectFactory.swift; sourceTree = "<group>"; };
 		84762984222B434A00006358 /* ChecklistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsTableViewCell.swift; sourceTree = "<group>"; };
 		847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
 		849EA8CF222729D400B0C3C6 /* Checklists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklists.swift; sourceTree = "<group>"; };
@@ -129,7 +137,7 @@
 		84CFC96621D266B1007DC3EC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		84CFC96821D268AC007DC3EC /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		84CFC96A21D2864E007DC3EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateListViewController.swift; sourceTree = "<group>"; };
+		84CFC96C21D28A82007DC3EC /* PrivateChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateChecklistsViewController.swift; sourceTree = "<group>"; };
 		84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
 		84DF5A662209A11A00A92AB2 /* ModelSQLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLFactory.swift; sourceTree = "<group>"; };
 		84DF5A682209A58E00A92AB2 /* ModelSQLGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLGroups.swift; sourceTree = "<group>"; };
@@ -210,9 +218,10 @@
 		8429CA90222327170048E1A3 /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
-				84CFC96C21D28A82007DC3EC /* PrivateListViewController.swift */,
 				8429CA8E222327120048E1A3 /* ChecklistsViewController.swift */,
+				84CFC96C21D28A82007DC3EC /* PrivateChecklistsViewController.swift */,
 				84762984222B434A00006358 /* ChecklistsTableViewCell.swift */,
+				84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -287,6 +296,8 @@
 				849EA8CF222729D400B0C3C6 /* Checklists.swift */,
 				849EA8D1222729F500B0C3C6 /* ChecklistItems.swift */,
 				849EA8D322272B3900B0C3C6 /* Attributes.swift */,
+				844792BC2232811B005FC1FA /* LoggedUser.swift */,
+				84714B8D22346E67002296E8 /* DataObjectFactory.swift */,
 			);
 			path = DataObjects;
 			sourceTree = "<group>";
@@ -322,6 +333,7 @@
 				84DF5A662209A11A00A92AB2 /* ModelSQLFactory.swift */,
 				84DF5A682209A58E00A92AB2 /* ModelSQLGroups.swift */,
 				84DF5A6A2209A75700A92AB2 /* IModelSQL.swift */,
+				84714B8B22346349002296E8 /* ModelSQLChecklists.swift */,
 			);
 			path = SQLite;
 			sourceTree = "<group>";
@@ -622,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844792BD2232811B005FC1FA /* LoggedUser.swift in Sources */,
 				84DF5A6B2209A75700A92AB2 /* IModelSQL.swift in Sources */,
 				84CFC96921D268AC007DC3EC /* Indicator.swift in Sources */,
 				8429CA8F222327120048E1A3 /* ChecklistsViewController.swift in Sources */,
@@ -641,13 +654,15 @@
 				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
 				84CFC96B21D2864E007DC3EC /* MainViewController.swift in Sources */,
 				8400D29521D18F300070BDD6 /* IModel.swift in Sources */,
+				84703EE0223551DB00DB2711 /* ReportedChecklistsViewController.swift in Sources */,
 				84CFC97221D28BAD007DC3EC /* GroupsListTableViewController.swift in Sources */,
 				8461A3C02200C2ED0020AF92 /* BaseModelObject.swift in Sources */,
 				849EA8D422272B3900B0C3C6 /* Attributes.swift in Sources */,
-				84CFC96D21D28A82007DC3EC /* PrivateListViewController.swift in Sources */,
+				84CFC96D21D28A82007DC3EC /* PrivateChecklistsViewController.swift in Sources */,
 				8416E43A2203BDEF0032CB52 /* ModelSQL.swift in Sources */,
 				8461A3C32200C2ED0020AF92 /* Users.swift in Sources */,
 				849EA8D0222729D400B0C3C6 /* Checklists.swift in Sources */,
+				84714B8E22346E67002296E8 /* DataObjectFactory.swift in Sources */,
 				84DF5A692209A58E00A92AB2 /* ModelSQLGroups.swift in Sources */,
 				8461A3C12200C2ED0020AF92 /* Groups.swift in Sources */,
 				844792B7223271A0005FC1FA /* GroupsListPrivateTableViewController.swift in Sources */,
@@ -656,6 +671,7 @@
 				8428D8B72221F39E00DCA44D /* NewGroupViewController.swift in Sources */,
 				8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */,
 				8461A3C22200C2ED0020AF92 /* GroupUsers.swift in Sources */,
+				84714B8C22346349002296E8 /* ModelSQLChecklists.swift in Sources */,
 				8416E43C2203C1720032CB52 /* LastUpdateDates.swift in Sources */,
 				84762985222B434A00006358 /* ChecklistsTableViewCell.swift in Sources */,
 				84CFC96721D266B1007DC3EC /* Utils.swift in Sources */,

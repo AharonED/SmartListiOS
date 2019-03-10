@@ -37,14 +37,14 @@ public class ModelSQLDatabase {
 
   
     static func createTables() {
-        //let groups : ModelSQL<Groups> = ModelSQL<Groups>();
-        //groups.createTable(database: database);
         ModelSQL<Groups>().createTable(database: self.database);
+        ModelSQL<Checklists>().createTable(database: self.database);
         LastUpdateDates.createTable(database: self.database);
     }
     
     static func dropTables(){
         ModelSQL<Groups>().drop(database: self.database);
+        ModelSQL<Checklists>().drop(database: self.database);
         LastUpdateDates.drop(database: self.database)
     }
     

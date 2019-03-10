@@ -29,7 +29,7 @@ class GroupsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _lastUpdate:nil)
+        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate:nil)
         
         do{
             //Add the new user also to Firebase Database
@@ -42,7 +42,7 @@ class GroupsListTableViewController: UITableViewController {
         
         setTitle()
 
-        let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
+        let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate: 0)
         collectionName = dummy.tableName
         
         groupsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
@@ -73,7 +73,7 @@ class GroupsListTableViewController: UITableViewController {
 
     deinit{
         if groupsListener != nil{
-            let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
+            let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate: 0)
             collectionName = dummy.tableName
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: groupsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)

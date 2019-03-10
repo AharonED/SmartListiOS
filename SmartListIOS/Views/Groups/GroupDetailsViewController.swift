@@ -95,7 +95,7 @@ class GroupDetailsViewController:  UIViewController, UIImagePickerControllerDele
     
     func saveGroupInfo(url:String)  {
     
-    let grp:Groups = Groups(_id: identifier, _name: groupNameTextField.text!, _description: groupDescriptionTextField.text!, _url: url, _lastUpdate:nil)
+    let grp:Groups = Groups(_id: identifier, _name: groupNameTextField.text!, _description: groupDescriptionTextField.text!, _url: url, _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate:nil)
     
     do{
     //Add the new user also to Firebase Database

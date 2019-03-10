@@ -23,6 +23,8 @@ public class ModelSQLFactory <T> where T: BaseModelObject {
         case "Groups":
             obj=ModelSQLGroups()
             break
+        case "Checklists":
+            obj=ModelSQLChecklists()
         default:
              obj=ModelSQLGroups()
             break

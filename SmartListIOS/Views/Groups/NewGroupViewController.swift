@@ -16,6 +16,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var groupNameTextField: UITextField!
     @IBOutlet weak var groupDescriptionTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,7 +65,10 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func saveGroupInfo(url:String)  {
         
-        let grp:Groups = Groups(_id: identifier, _name: groupNameTextField.text!, _description: groupDescriptionTextField.text!, _url: url, _lastUpdate:nil)
+        let grp:Groups = Groups(_id: identifier, _name: groupNameTextField.text!, _description: groupDescriptionTextField.text!, _url: url, _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate:nil)
+        
+ 
+        
         
         do{
             //Add the new user also to Firebase Database

@@ -13,7 +13,10 @@ public class Groups : BaseModelObject{
     var name:String
     var description:String
     var url:String
- 
+    var owner:String=""
+    var privacyType:Int = 0
+    
+    
     var users:[GroupUsers] = [GroupUsers]()
      
 /*
@@ -33,7 +36,7 @@ public class Groups : BaseModelObject{
  */
     
     
-    public convenience init (_id:String, _name:String, _description:String, _url:String = "", _lastUpdate:Double?)
+    public convenience init (_id:String, _name:String, _description:String, _url:String = "", _owner:String, _privacyType:Int, _lastUpdate:Double?)
     {
         /*
         name = _name
@@ -50,7 +53,9 @@ public class Groups : BaseModelObject{
         json["description"] = _description
         json["url"] = _url
         json["lastUpdate"] = _lastUpdate
-        
+        json["owner"] = _owner
+        json["isPrivate"] = _privacyType
+
         self.init(json:json)
         
    }
@@ -59,7 +64,15 @@ public class Groups : BaseModelObject{
     public required init(json:[String:Any]) {
         name = json["name"] as! String
         description = json["description"] as! String
-       
+        
+         if json["owner"] != nil{
+            owner = json["owner"] as! String
+        }
+        
+         if json["privacyType"] != nil{
+            privacyType = json["privacyType"] as! Int
+        }
+        
         if json["url"] != nil{
             url = json["url"] as! String
         }else{

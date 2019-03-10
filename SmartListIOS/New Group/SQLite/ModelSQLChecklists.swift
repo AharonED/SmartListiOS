@@ -1,30 +1,27 @@
 //
-//  ModelSQLGroups.swift
+//  ModelSQLChecklists.swift
 //  SmartListIOS
 //
-//  Created by admin on 05/02/2019.
+//  Created by admin on 09/03/2019.
 //  Copyright © 2019 Aharon.Garada. All rights reserved.
 //
 
 import Foundation
-//import Firebase
-//import FirebaseDatabase
 
-public class ModelSQLGroups:IModelSQL {
+public class ModelSQLChecklists:IModelSQL {
     public var database: OpaquePointer? = ModelSQLDatabase.getInstance()
-   
-    public let tableName:String = "Groups"
-    
+    public let tableName:String = "Checklists"
+
     init() {
         
     }
     
-
-
-  
+    
+    
+    
     public func createTable(database: OpaquePointer?)  {
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS GROUPS (ID TEXT PRIMARY KEY, NAME TEXT, DESCRIPTION TEXT, URL TEXT)", nil, nil, &errormsg);
+        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS CHECKLISTS (ID TEXT PRIMARY KEY, NAME TEXT, DESCRIPTION TEXT, URL TEXT)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return
@@ -33,7 +30,7 @@ public class ModelSQLGroups:IModelSQL {
     
     public func drop(database: OpaquePointer?)  {
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        let res = sqlite3_exec(database, "DROP TABLE GROUPS;", nil, nil, &errormsg);
+        let res = sqlite3_exec(database, "DROP TABLE CHECKLISTS;", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return
@@ -43,7 +40,7 @@ public class ModelSQLGroups:IModelSQL {
     public func getAll(database: OpaquePointer?)->[BaseModelObject]{
         var sqlite3_stmt: OpaquePointer? = nil
         var data = [BaseModelObject]()
-        if (sqlite3_prepare_v2(database,"SELECT * from GROUPS;",-1,&sqlite3_stmt,nil)
+        if (sqlite3_prepare_v2(database,"SELECT * from CHECKLISTS;",-1,&sqlite3_stmt,nil)
             == SQLITE_OK){
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let stId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
@@ -57,7 +54,7 @@ public class ModelSQLGroups:IModelSQL {
                 json["description"] = description
                 json["url"] = url
                 
-                data.append(Groups(json:json))
+                data.append(Checklists(json:json))
             }
         }
         sqlite3_finalize(sqlite3_stmt)
@@ -65,10 +62,10 @@ public class ModelSQLGroups:IModelSQL {
     }
     
     public func addNew(database: OpaquePointer?, instance:BaseModelObject){
-        let inst:Groups=instance as! Groups
+        let inst:Checklists=instance as! Checklists
         
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO GROUPS(ID, NAME, DESCRIPTION, URL) VALUES (?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO CHECKLISTS(ID, NAME, DESCRIPTION, URL) VALUES (?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
             let id = inst.id.cString(using: .utf8)
             let name = inst.name.cString(using: .utf8)
             let description = inst.description.cString(using: .utf8)

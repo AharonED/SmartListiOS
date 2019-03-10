@@ -44,9 +44,11 @@ public class Model<T> where T:BaseModelObject {
             //5. get the full data
             let stFullData = self.modelSql.getAll(database: self.modelSql.database)
             
+            var collectionName = String(describing: T.self).components(separatedBy: ".").last!
+
             //6. notify observers with full data
-            let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _lastUpdate: 0)
-            let collectionName = dummy.tableName
+            let dummy:BaseModelObject = DataObjectFactory.GetInstance(type: collectionName)
+            collectionName = dummy.tableName
 
             ModelNotification.GetNotification(collectionName: collectionName , dummy: dummy).notify(data: stFullData)
             

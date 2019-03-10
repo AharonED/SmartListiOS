@@ -68,6 +68,10 @@ class SignInViewController: UIViewController {
             {
                 Utils.displayMessage(_controller: self, userMessage:  "Could not successfully perform this request. Please try again later")
             } else {
+                
+                //Keep logged info. as global var
+                LoggedUser.user=user
+                
                 Utils.displayMessage(_controller: self, userMessage: "Successfully Signed in",  CloseParent: true) {(param) in
                     DispatchQueue.main.async
                         {
