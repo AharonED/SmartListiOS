@@ -23,7 +23,7 @@ class PrivateChecklistsViewController : ChecklistsViewController {
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId])
+        model.getAllRecords(fieldName: ["owner","groupid"], fieldValue: [ (LoggedUser.user?.id)!,  groupId])
     }
    
 }

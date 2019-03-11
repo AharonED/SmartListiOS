@@ -36,7 +36,7 @@ class ChecklistsViewController: UITableViewController {
     
     func getAllRecords()
     {
-        model.getAllRecords(fieldName: nil, fieldValue: nil)
+        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId])
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +74,7 @@ class ChecklistsViewController: UITableViewController {
             } as NSObjectProtocol
         
        
+        getAllRecords()
         //model.getAllRecords(fieldName: nil, fieldValue: nil)
       
     }

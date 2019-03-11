@@ -17,10 +17,10 @@
                value = "st">
             </PersistentString>
             <PersistentString
-               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
+               value = "(st as! BaseModelObject)">
             </PersistentString>
             <PersistentString
-               value = "(st as! BaseModelObject)">
+               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -72,16 +72,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "Checklists.init(json:):Checklists.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "json[&quot;groupId&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
          <PersistentStrings>
+            <PersistentString
+               value = "instance.id">
+            </PersistentString>
             <PersistentString
                value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
             </PersistentString>
             <PersistentString
                value = "String(describing: instance)">
-            </PersistentString>
-            <PersistentString
-               value = "instance.id">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -126,6 +134,14 @@
             </PersistentString>
             <PersistentString
                value = "self.collectionName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChecklistsViewController.getAllRecords():ChecklistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "[groupId]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
