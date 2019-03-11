@@ -23,7 +23,7 @@ class GroupsListTableViewController: UITableViewController {
     
     func setTitle()
     {
-        navTitle.title="Public Checklists"
+        navTitle.title="Other Groups"
     }
     
     override func viewDidLoad() {
@@ -145,26 +145,61 @@ class GroupsListTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GroupDetailsSegue"{
-            let groupDetailsVc:GroupDetailsViewController = segue.destination as! GroupDetailsViewController
-            groupDetailsVc.groupId = self.selectedId!
-            if(selectedGroup != nil)
-            {
-                groupDetailsVc.name = selectedGroup!.name
-                groupDetailsVc.desc = selectedGroup!.description
-                groupDetailsVc.imageUrl = selectedGroup!.url
-                if(selectedCell != nil)
-                {
-                    groupDetailsVc.uiImage = self.selectedCell!.groupImageView?.image
-                }
+        switch (segue.identifier)
+        {
+        case "GroupDetailsSegue":
+            do {
+                    let groupDetailsVc:GroupDetailsViewController = segue.destination as! GroupDetailsViewController
+                    groupDetailsVc.groupId = self.selectedId!
+                if(self.selectedGroup != nil)
+                    {
+                        groupDetailsVc.name = selectedGroup!.name
+                        groupDetailsVc.desc = selectedGroup!.description
+                        groupDetailsVc.imageUrl = selectedGroup!.url
+                        if(selectedCell != nil)
+                        {
+                            groupDetailsVc.uiImage = self.selectedCell!.groupImageView?.image
+                        }
+                    }
+            }
+                break
+        case "ChecklistsSegue":
+            do {
+                //let checklistsVc:MainViewController = segue.destination as! MainViewController
+                //checklistsVc.groupId = self.selectedId!
+            }
+            break
+        case "MyChecklistsTabController":
+            do{
+                let checklistsVc:ChecklistsTabViewController = segue.destination as! ChecklistsTabViewController
+                checklistsVc.groupId = self.selectedId!
+                checklistsVc.groupType = "My"
+                 //checklistsVc.setTitle()
+            }
+            break
+        case "OtherChecklistsTabController":
+            do{
+                let checklistsVc:ChecklistsTabViewController = segue.destination as! ChecklistsTabViewController
+                checklistsVc.groupId = self.selectedId!
+                checklistsVc.groupType = "Other"
+
+            }
+            break
+        case "MostChecklistsTabController":
+            do{
+                let checklistsVc:ChecklistsTabViewController = segue.destination as! ChecklistsTabViewController
+                checklistsVc.groupId = self.selectedId! 
+                checklistsVc.groupType = "Most"
+
+            }
+            break
+            
+        default:
+            do {
+                
             }
         }
         
-        if segue.identifier == "ChecklistsSegue"{
-            let checklistsVc:MainViewController = segue.destination as! MainViewController
-            checklistsVc.groupId = self.selectedId!
-            
-        }
         
         
         

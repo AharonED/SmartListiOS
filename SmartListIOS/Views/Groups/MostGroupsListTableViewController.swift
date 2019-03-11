@@ -1,5 +1,5 @@
 //
-//  GroupsListPrivateTableViewController.swift
+//  MostGroupsListTableViewController.swift
 //  SmartListIOS
 //
 //  Created by admin on 08/03/2019.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class GroupsListPrivateTableViewController: GroupsListTableViewController {
+class MostGroupsListTableViewController: GroupsListTableViewController {
 
     override func setTitle()
     {
-        navTitle.title="Private Checklists"
+        navTitle.title="Most Groups"
     }
 
 }

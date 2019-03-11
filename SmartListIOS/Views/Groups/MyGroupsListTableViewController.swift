@@ -1,5 +1,5 @@
 //
-//  GroupsListReportedTableViewController.swift
+//  MyGroupsListTableViewController.swift
 //  SmartListIOS
 //
 //  Created by admin on 08/03/2019.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class GroupsListReportedTableViewController: GroupsListTableViewController {
+class MyGroupsListTableViewController: GroupsListTableViewController {
 
     override func setTitle()
     {
-        navTitle.title="Reported Checklists"
+        navTitle.title="My Groups"
     }
 
 }

@@ -20,8 +20,8 @@
 		8428D8B72221F39E00DCA44D /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */; };
 		8429CA8D222322410048E1A3 /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429CA8C222322410048E1A3 /* GroupDetailsViewController.swift */; };
 		8429CA8F222327120048E1A3 /* ChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429CA8E222327120048E1A3 /* ChecklistsViewController.swift */; };
-		844792B52232713A005FC1FA /* GroupsListReportedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B42232713A005FC1FA /* GroupsListReportedTableViewController.swift */; };
-		844792B7223271A0005FC1FA /* GroupsListPrivateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B6223271A0005FC1FA /* GroupsListPrivateTableViewController.swift */; };
+		844792B52232713A005FC1FA /* MostGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B42232713A005FC1FA /* MostGroupsListTableViewController.swift */; };
+		844792B7223271A0005FC1FA /* MyGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B6223271A0005FC1FA /* MyGroupsListTableViewController.swift */; };
 		844792BB22327456005FC1FA /* GroupsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792BA22327456005FC1FA /* GroupsTabViewController.swift */; };
 		844792BD2232811B005FC1FA /* LoggedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792BC2232811B005FC1FA /* LoggedUser.swift */; };
 		84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B3021B32FC8005C3978 /* AppDelegate.swift */; };
@@ -39,6 +39,7 @@
 		8461A3C32200C2ED0020AF92 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BF2200C2ED0020AF92 /* Users.swift */; };
 		846BED4A21CF6AD80046DA0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */; };
 		84703EE0223551DB00DB2711 /* ReportedChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */; };
+		84703EE2223577F900DB2711 /* ChecklistsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84703EE1223577F900DB2711 /* ChecklistsTabViewController.swift */; };
 		84714B8C22346349002296E8 /* ModelSQLChecklists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714B8B22346349002296E8 /* ModelSQLChecklists.swift */; };
 		84714B8E22346E67002296E8 /* DataObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714B8D22346E67002296E8 /* DataObjectFactory.swift */; };
 		84762985222B434A00006358 /* ChecklistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84762984222B434A00006358 /* ChecklistsTableViewCell.swift */; };
@@ -99,8 +100,8 @@
 		8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		8429CA8C222322410048E1A3 /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
 		8429CA8E222327120048E1A3 /* ChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsViewController.swift; sourceTree = "<group>"; };
-		844792B42232713A005FC1FA /* GroupsListReportedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListReportedTableViewController.swift; sourceTree = "<group>"; };
-		844792B6223271A0005FC1FA /* GroupsListPrivateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListPrivateTableViewController.swift; sourceTree = "<group>"; };
+		844792B42232713A005FC1FA /* MostGroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostGroupsListTableViewController.swift; sourceTree = "<group>"; };
+		844792B6223271A0005FC1FA /* MyGroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsListTableViewController.swift; sourceTree = "<group>"; };
 		844792BA22327456005FC1FA /* GroupsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTabViewController.swift; sourceTree = "<group>"; };
 		844792BC2232811B005FC1FA /* LoggedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedUser.swift; sourceTree = "<group>"; };
 		84558B2D21B32FC7005C3978 /* SmartListIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartListIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +126,7 @@
 		8461A3BF2200C2ED0020AF92 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = SmartListIOS/DataObjects/Users.swift; sourceTree = SOURCE_ROOT; };
 		846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportedChecklistsViewController.swift; sourceTree = "<group>"; };
+		84703EE1223577F900DB2711 /* ChecklistsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsTabViewController.swift; sourceTree = "<group>"; };
 		84714B8B22346349002296E8 /* ModelSQLChecklists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLChecklists.swift; sourceTree = "<group>"; };
 		84714B8D22346E67002296E8 /* DataObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectFactory.swift; sourceTree = "<group>"; };
 		84762984222B434A00006358 /* ChecklistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,8 +208,8 @@
 			children = (
 				8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */,
 				84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */,
-				844792B42232713A005FC1FA /* GroupsListReportedTableViewController.swift */,
-				844792B6223271A0005FC1FA /* GroupsListPrivateTableViewController.swift */,
+				844792B42232713A005FC1FA /* MostGroupsListTableViewController.swift */,
+				844792B6223271A0005FC1FA /* MyGroupsListTableViewController.swift */,
 				8429CA8C222322410048E1A3 /* GroupDetailsViewController.swift */,
 				847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */,
 				844792BA22327456005FC1FA /* GroupsTabViewController.swift */,
@@ -222,6 +224,7 @@
 				84CFC96C21D28A82007DC3EC /* PrivateChecklistsViewController.swift */,
 				84762984222B434A00006358 /* ChecklistsTableViewCell.swift */,
 				84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */,
+				84703EE1223577F900DB2711 /* ChecklistsTabViewController.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -642,13 +645,14 @@
 				844792BB22327456005FC1FA /* GroupsTabViewController.swift in Sources */,
 				8416E43122038D410032CB52 /* ModelSqlDatabase.swift in Sources */,
 				84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */,
-				844792B52232713A005FC1FA /* GroupsListReportedTableViewController.swift in Sources */,
+				844792B52232713A005FC1FA /* MostGroupsListTableViewController.swift in Sources */,
 				84558B6221B33C28005C3978 /* SignInViewController.swift in Sources */,
 				8416E4382203AF730032CB52 /* ModelFirebaseDatabase.swift in Sources */,
 				849EA8D2222729F500B0C3C6 /* ChecklistItems.swift in Sources */,
 				847ADFFC220A436600B1CB09 /* GroupsTableViewCell.swift in Sources */,
 				84DF5A672209A11A00A92AB2 /* ModelSQLFactory.swift in Sources */,
 				8416E42F220385ED0032CB52 /* ModelNotification.swift in Sources */,
+				84703EE2223577F900DB2711 /* ChecklistsTabViewController.swift in Sources */,
 				849EA8D622273B1500B0C3C6 /* UIImage.swift in Sources */,
 				8429CA8D222322410048E1A3 /* GroupDetailsViewController.swift in Sources */,
 				84CFC96321D231B1007DC3EC /* FirebaseUsersManager.swift in Sources */,
@@ -665,7 +669,7 @@
 				84714B8E22346E67002296E8 /* DataObjectFactory.swift in Sources */,
 				84DF5A692209A58E00A92AB2 /* ModelSQLGroups.swift in Sources */,
 				8461A3C12200C2ED0020AF92 /* Groups.swift in Sources */,
-				844792B7223271A0005FC1FA /* GroupsListPrivateTableViewController.swift in Sources */,
+				844792B7223271A0005FC1FA /* MyGroupsListTableViewController.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
 				8428D8B72221F39E00DCA44D /* NewGroupViewController.swift in Sources */,

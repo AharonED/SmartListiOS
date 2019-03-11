@@ -24,13 +24,16 @@ class ChecklistsViewController: UITableViewController {
     var selectedId:String?
     var collectionName:String = ""
     
-    func setTitle()
+    public func setTitle()
     {
         navTitle.title="Public Checklists"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("ChecklistsViewController.viewDidLoad.groupId \(groupId).")
+
         
         let chk:Checklists = Checklists(_id: "1", _name: "Checklist6", _description: "Checklist 6 Description", _url: "", _lastUpdate:nil)
         
