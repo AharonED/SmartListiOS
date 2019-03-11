@@ -330,12 +330,12 @@
 		84DF5A6422099C4300A92AB2 /* SQLite */ = {
 			isa = PBXGroup;
 			children = (
+				84DF5A6A2209A75700A92AB2 /* IModelSQL.swift */,
 				8416E4392203BDEF0032CB52 /* ModelSQL.swift */,
 				8416E43022038D410032CB52 /* ModelSqlDatabase.swift */,
 				8416E43B2203C1720032CB52 /* LastUpdateDates.swift */,
 				84DF5A662209A11A00A92AB2 /* ModelSQLFactory.swift */,
 				84DF5A682209A58E00A92AB2 /* ModelSQLGroups.swift */,
-				84DF5A6A2209A75700A92AB2 /* IModelSQL.swift */,
 				84714B8B22346349002296E8 /* ModelSQLChecklists.swift */,
 			);
 			path = SQLite;

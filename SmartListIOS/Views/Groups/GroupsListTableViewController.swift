@@ -26,10 +26,21 @@ class GroupsListTableViewController: UITableViewController {
         navTitle.title="Other Groups"
     }
     
+    func getAllRecords()
+    {
+        model.getAllRecords(fieldName: nil, fieldValue: nil)
+    }
+   
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getAllRecords()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate:nil)
+        /*
+        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate:nil)
         
         do{
             //Add the new user also to Firebase Database
@@ -39,10 +50,13 @@ class GroupsListTableViewController: UITableViewController {
             //let errorDesc:String = error.localizedDescription
             print("Unexpected error: \(error.localizedDescription).")
         }
+        */
         
+        
+        //Set the Navigationbar Title
         setTitle()
 
-        let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate: 0)
+        let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate: 0)
         collectionName = dummy.tableName
         
         groupsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
@@ -52,28 +66,14 @@ class GroupsListTableViewController: UITableViewController {
              print("GetNotification.observe()")
             } as NSObjectProtocol
         
-/*
-        groupsListener = ModelNotification.GroupsListNotification.observe(){
-            (data:Any) in
-            self.data = data as! [Groups]
-            self.tableView.reloadData()
-            print("GroupsListNotification.observe()")
-            } as NSObjectProtocol
-*/
+        //Call method for gertting all data from DB, will implemented in chiled class
+       getAllRecords()
         
-        model.getAllRecords()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+     }
 
     deinit{
         if groupsListener != nil{
-            let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate: 0)
+            let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate: 0)
             collectionName = dummy.tableName
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: groupsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)

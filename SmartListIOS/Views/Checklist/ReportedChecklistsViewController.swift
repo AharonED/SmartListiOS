@@ -10,10 +10,18 @@ import Foundation
 
 class ReportedChecklistsViewController : ChecklistsViewController {
     
+    @IBAction override func back(_ sender: Any) {
+        super.back(sender)
+    }
     
     override func setTitle()
     {
         navTitle.title="Reported Checklists"
+    }
+    
+    override func getAllRecords()
+    {
+        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId])
     }
     
 

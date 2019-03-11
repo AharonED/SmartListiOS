@@ -14,6 +14,10 @@ class ChecklistsViewController: UITableViewController {
     public var groupId:String=""
     
     @IBOutlet weak var navTitle: UINavigationItem!
+   
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     var data = [Checklists]()
     var selectedChecklist:Checklists?
@@ -29,13 +33,24 @@ class ChecklistsViewController: UITableViewController {
         navTitle.title="Public Checklists"
     }
     
+    
+    func getAllRecords()
+    {
+        model.getAllRecords(fieldName: nil, fieldValue: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        getAllRecords()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("ChecklistsViewController.viewDidLoad.groupId \(groupId).")
 
         
-        let chk:Checklists = Checklists(_id: "1", _name: "Checklist6", _description: "Checklist 6 Description", _url: "", _lastUpdate:nil)
+        let chk:Checklists = Checklists(_id: "CHECK-" + groupId, _name: "Checklist - " + groupId , _description: "Checklist Description", _groupId:groupId, _owner:((LoggedUser.user?.id)!), _checklistType:"", _url: "", _lastUpdate:nil )
         
         do{
             //Add the new user also to Firebase Database
@@ -48,7 +63,7 @@ class ChecklistsViewController: UITableViewController {
         
         setTitle()
         
-        let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _lastUpdate: 0)
+        let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _url: "", _lastUpdate: 0)
         collectionName = dummy.tableName
         
         ChecklistsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
@@ -58,28 +73,14 @@ class ChecklistsViewController: UITableViewController {
             print("GetNotification.observe()")
             } as NSObjectProtocol
         
-        /*
-         ChecklistsListener = ModelNotification.ChecklistsListNotification.observe(){
-         (data:Any) in
-         self.data = data as! [Checklists]
-         self.tableView.reloadData()
-         print("ChecklistsListNotification.observe()")
-         } as NSObjectProtocol
-         */
-        
-        model.getAllRecords()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
+        //model.getAllRecords(fieldName: nil, fieldValue: nil)
+      
     }
     
     deinit{
         if ChecklistsListener != nil{
-            let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _lastUpdate: 0)
+            let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _lastUpdate: 0)
             collectionName = dummy.tableName
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: ChecklistsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)

@@ -32,6 +32,15 @@ public class ModelSQL<T>:IModelSQL where T: BaseModelObject {
         return model.getAll(database: database)
     }
     
+    public func getAllByField(database: OpaquePointer?, fieldName:[String]!, fieldValue:[String]!)->[BaseModelObject]{
+        if(fieldName != nil && fieldValue != nil){
+            return model.getAllByField(database: database, fieldName: fieldName, fieldValue: fieldValue)
+        }
+        else{
+            return model.getAll(database: database)
+        }
+    }
+    
     public func addNew(database: OpaquePointer?, instance:BaseModelObject){
         model.addNew(database: database, instance: instance)
     }

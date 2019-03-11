@@ -16,12 +16,12 @@ public class DataObjectFactory {
         var obj:BaseModelObject
         switch type {
         case "Groups":
-            obj=Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate: 0)
+            obj=Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate: 0)
             break
         case "Checklists":
-            obj=Checklists(_id: "", _name: "", _description: "" , _lastUpdate: 0)
+            obj=Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _url: "",_lastUpdate: 0)
         default:
-            obj=Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:1 , _lastUpdate: 0)
+            obj=Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate: 0)
             break
         }
         return obj

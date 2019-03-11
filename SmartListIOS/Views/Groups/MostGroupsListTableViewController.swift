@@ -15,4 +15,10 @@ class MostGroupsListTableViewController: GroupsListTableViewController {
         navTitle.title="Most Groups"
     }
 
+    
+    override func getAllRecords()
+    {
+        model.getAllRecords(fieldName: ["privacyType"], fieldValue: ["MostPop"])
+    }
+    
 }

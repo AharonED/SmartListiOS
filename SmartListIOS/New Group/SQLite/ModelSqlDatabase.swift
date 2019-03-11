@@ -25,7 +25,7 @@ public class ModelSQLDatabase {
                     return nil
                 }
             
-                //dropTables()
+                dropTables()
                 createTables()
                 return database;
             }

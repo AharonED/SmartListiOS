@@ -12,7 +12,9 @@ import UIKit
 public class Model<T> where T:BaseModelObject {
     
     //static let instance:Model = Model()
- 
+    
+    var FilterExpression:String=""
+
     var modelSql = ModelSQL<T>();
     var modelFirebase = ModelFirebase<T>();
 
@@ -21,7 +23,7 @@ public class Model<T> where T:BaseModelObject {
     }
     
 
-    public func getAllRecords(){
+    public func getAllRecords(fieldName:[String]!, fieldValue:[String]!){
         //1. read local students last update date
         let lastUpdated = (modelSql.getLastUpdateDate(database: modelSql.database) as! Double)+1
         //lastUpdated += 1;
@@ -42,7 +44,14 @@ public class Model<T> where T:BaseModelObject {
             self.modelSql.setLastUpdateDate(database: self.modelSql.database, date: lastUpdated2)
             
             //5. get the full data
-            let stFullData = self.modelSql.getAll(database: self.modelSql.database)
+            var stFullData:[BaseModelObject] = [BaseModelObject]()
+            if(fieldName != nil && fieldValue != nil){
+                stFullData = self.modelSql.getAllByField(database: self.modelSql.database, fieldName: fieldName, fieldValue: fieldValue)
+
+            }else
+            {
+                stFullData = self.modelSql.getAll(database: self.modelSql.database)
+            }
             
             var collectionName = String(describing: T.self).components(separatedBy: ".").last!
 

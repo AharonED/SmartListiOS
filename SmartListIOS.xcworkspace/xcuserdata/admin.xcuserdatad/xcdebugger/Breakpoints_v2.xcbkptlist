@@ -186,12 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.668694"
+            timestampString = "574018139.840012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.977843"
+            timestampString = "574015047.1997221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -250,12 +250,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.668872"
+            timestampString = "574018139.840179"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -266,12 +266,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.6689529"
+            timestampString = "574018139.840263"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,12 +282,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.66903"
+            timestampString = "574018139.840344"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSQL.swift"
-            timestampString = "573862161.6691099"
+            timestampString = "574018139.840461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "addNew(database:instance:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSQL.swift"
-            timestampString = "573862161.669251"
+            timestampString = "574018139.840585"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -342,11 +342,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSqlDatabase.swift"
-            timestampString = "573862161.669322"
+            timestampString = "574018139.84067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSqlDatabase.swift"
-            timestampString = "573862161.6693881"
+            timestampString = "574018139.84075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -374,11 +374,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSqlDatabase.swift"
-            timestampString = "573862161.66945"
+            timestampString = "574018139.840827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSqlDatabase.swift"
-            timestampString = "573862161.669512"
+            timestampString = "574018139.840904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -426,7 +426,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.669606"
+            timestampString = "574018139.841013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -474,12 +474,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.669681"
+            timestampString = "574018139.841092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -490,12 +490,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.669755"
+            timestampString = "574018139.841169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978314"
+            timestampString = "574015047.20083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -522,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978387"
+            timestampString = "574015047.2008981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -538,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978457"
+            timestampString = "574015047.200964"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978538"
+            timestampString = "574015047.20103"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -570,12 +570,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.669945"
+            timestampString = "574018139.8413841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -586,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.97864"
+            timestampString = "574015047.201174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -602,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978708"
+            timestampString = "574015047.2012399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -618,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978776"
+            timestampString = "574015047.201306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -634,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978844"
+            timestampString = "574015047.201371"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -650,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.978931"
+            timestampString = "574015047.201436"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -666,7 +666,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.979"
+            timestampString = "574015047.201502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
@@ -682,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/Firebase/ModelFirebase.swift"
-            timestampString = "573942361.979068"
+            timestampString = "574015047.201566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -730,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
-            timestampString = "573862161.67028"
+            timestampString = "574018139.8418061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -746,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
-            timestampString = "573862161.670352"
+            timestampString = "574018139.841905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "getAll(database:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -762,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
-            timestampString = "573862161.670423"
+            timestampString = "574018139.841992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "getAll(database:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -778,7 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/New Group/SQLite/ModelSQL.swift"
-            timestampString = "573862161.670493"
+            timestampString = "574018139.842082"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -906,12 +906,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.67076"
+            timestampString = "574018139.842415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1018,12 +1018,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Model/Model.swift"
-            timestampString = "573862161.671006"
+            timestampString = "574018139.842711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getAllRecords()"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1130,7 +1130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Groups/GroupsListTableViewController.swift"
-            timestampString = "573990933.317127"
+            timestampString = "574018139.843037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -1146,11 +1146,11 @@
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Views/Groups/GroupsListTableViewController.swift"
-                  timestampString = "573990933.844884"
+                  timestampString = "574014672.4262249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
                   offsetFromSymbolStart = "49">
                </Location>
                <Location
@@ -1161,11 +1161,11 @@
                   moduleName = "SmartListIOS"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Documents/Dev/SmartListIOS/SmartListIOS/Views/Groups/GroupsListTableViewController.swift"
-                  timestampString = "573990933.8484679"
+                  timestampString = "574014672.428967"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "148"
-                  endingLineNumber = "148"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
                   offsetFromSymbolStart = "164">
                </Location>
             </Locations>
@@ -1178,7 +1178,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Checklist/ChecklistsTabViewController.swift"
-            timestampString = "573990933.317706"
+            timestampString = "574018139.843176"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
@@ -1226,7 +1226,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Checklist/ChecklistsTabViewController.swift"
-            timestampString = "573990933.317784"
+            timestampString = "574018139.843254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -1242,7 +1242,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Checklist/ChecklistsTabViewController.swift"
-            timestampString = "573990933.317858"
+            timestampString = "574018139.843328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -1258,12 +1258,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Checklist/ChecklistsViewController.swift"
-            timestampString = "573990933.318011"
+            timestampString = "574018139.8435071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getAllRecords()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1274,11 +1274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Checklist/PrivateChecklistsViewController.swift"
-            timestampString = "573990933.318082"
+            timestampString = "574018139.843587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "setTitle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1290,12 +1290,252 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartListIOS/Views/Checklist/ChecklistsTabViewController.swift"
-            timestampString = "573990933.318149"
+            timestampString = "574018139.843658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSqlDatabase.swift"
+            timestampString = "574018139.843738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "createTables()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSqlDatabase.swift"
+            timestampString = "574018139.843817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "dropTables()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
+            timestampString = "574018139.843894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "drop(database:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSQLChecklists.swift"
+            timestampString = "574018139.843998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "drop(database:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSQLChecklists.swift"
+            timestampString = "574018139.84408"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "createTable(database:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
+            timestampString = "574018139.8441581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "createTable(database:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/LastUpdateDates.swift"
+            timestampString = "574010570.4400899"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "createTable(database:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/LastUpdateDates.swift"
+            timestampString = "574010570.440164"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "get(database:tabeName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/LastUpdateDates.swift"
+            timestampString = "574010570.440236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "set(database:tabeName:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
+            timestampString = "574018139.844344"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "addNew(database:instance:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/ModelSQLGroups.swift"
+            timestampString = "574018139.844426"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "drop(database:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/LastUpdateDates.swift"
+            timestampString = "574010570.440454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "get(database:tabeName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/LastUpdateDates.swift"
+            timestampString = "574010570.440519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "set(database:tabeName:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/New Group/SQLite/LastUpdateDates.swift"
+            timestampString = "574010570.440585"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "set(database:tabeName:date:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartListIOS/Model/Model.swift"
+            timestampString = "574018139.844605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getAllRecords(fieldName:fieldValue:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

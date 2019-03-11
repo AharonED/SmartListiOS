@@ -14,7 +14,7 @@ public class Groups : BaseModelObject{
     var description:String
     var url:String
     var owner:String=""
-    var privacyType:Int = 0
+    var privacyType:String=""
     
     
     var users:[GroupUsers] = [GroupUsers]()
@@ -36,7 +36,7 @@ public class Groups : BaseModelObject{
  */
     
     
-    public convenience init (_id:String, _name:String, _description:String, _url:String = "", _owner:String, _privacyType:Int, _lastUpdate:Double?)
+    public convenience init (_id:String, _name:String, _description:String, _url:String = "", _owner:String, _privacyType:String, _lastUpdate:Double?)
     {
         /*
         name = _name
@@ -54,7 +54,7 @@ public class Groups : BaseModelObject{
         json["url"] = _url
         json["lastUpdate"] = _lastUpdate
         json["owner"] = _owner
-        json["isPrivate"] = _privacyType
+        json["privacyType"] = _privacyType
 
         self.init(json:json)
         
@@ -70,7 +70,7 @@ public class Groups : BaseModelObject{
         }
         
          if json["privacyType"] != nil{
-            privacyType = json["privacyType"] as! Int
+            privacyType = json["privacyType"] as! String
         }
         
         if json["url"] != nil{
@@ -94,6 +94,8 @@ public class Groups : BaseModelObject{
         json["id"] = id
         json["name"] = name
         json["description"] = description
+        json["owner"] = owner
+        json["privacyType"] = privacyType
 
         json["url"] = url
         json["lastUpdate"] = ServerValue.timestamp()

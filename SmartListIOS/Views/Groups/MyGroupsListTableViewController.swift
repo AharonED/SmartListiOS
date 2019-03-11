@@ -15,4 +15,10 @@ class MyGroupsListTableViewController: GroupsListTableViewController {
         navTitle.title="My Groups"
     }
 
+    
+    override func getAllRecords()
+    {
+        model.getAllRecords(fieldName: ["OWNER"], fieldValue: [(LoggedUser.user?.id)!])
+    }
+    
 }
