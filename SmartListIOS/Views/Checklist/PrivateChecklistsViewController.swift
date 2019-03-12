@@ -30,4 +30,15 @@ class PrivateChecklistsViewController : ChecklistsViewController {
     {
         return "Private_Checklists"
     }
+
+    @IBAction override func checklistItems(_ sender: Any) {
+        super.checklistItems(sender)
+    }
+    @IBAction override func editChecklist(_ sender: Any) {
+        super.editChecklist(sender)
+    }
+    
+    @IBAction override func newChecklist(_ sender: Any) {
+        super.newChecklist(sender)
+    }
 }

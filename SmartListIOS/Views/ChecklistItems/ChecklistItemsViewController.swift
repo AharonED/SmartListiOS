@@ -36,8 +36,9 @@ class ChecklistItemsViewController: UITableViewController {
     
     func getAllRecords()
     {
-//        model.getAllRecords(fieldName: ["checklistId"], fieldValue: [checklistId])
-        model.getAllRecords(fieldName: nil, fieldValue: nil, uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
+        model.getAllRecords(fieldName: ["checklistId"], fieldValue: [checklistId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
+        
+ //       model.getAllRecords(fieldName: nil, fieldValue: nil, uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
     override func viewDidAppear(_ animated: Bool) {

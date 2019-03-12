@@ -854,9 +854,21 @@
                                         </connections>
                                     </barButtonItem>
                                     <rightBarButtonItems>
-                                        <barButtonItem systemItem="add" id="Yhk-jH-x9c"/>
-                                        <barButtonItem systemItem="compose" id="rv9-Vs-z0m"/>
-                                        <barButtonItem systemItem="organize" id="8qq-j4-Le6"/>
+                                        <barButtonItem systemItem="add" id="Yhk-jH-x9c">
+                                            <connections>
+                                                <action selector="newChecklist:" destination="C7W-V9-f2T" id="lpp-gQ-3Mw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="compose" id="rv9-Vs-z0m">
+                                            <connections>
+                                                <action selector="editChecklist:" destination="C7W-V9-f2T" id="Ice-kd-Brp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="action" id="8qq-j4-Le6">
+                                            <connections>
+                                                <action selector="checklistItems:" destination="C7W-V9-f2T" id="dR1-3r-tGs"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </rightBarButtonItems>
                                 </navigationItem>
                             </items>
@@ -905,6 +917,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navTitle" destination="FNp-rn-FUv" id="PaP-qw-Pgr"/>
+                        <segue destination="DvF-6m-l4S" kind="show" identifier="ChecklistsItemsSegue" id="LDo-pj-a6L"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWq-JO-0Nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -930,9 +943,17 @@
                                         </connections>
                                     </barButtonItem>
                                     <rightBarButtonItems>
-                                        <barButtonItem systemItem="add" id="PeK-it-0kZ"/>
+                                        <barButtonItem systemItem="add" id="PeK-it-0kZ">
+                                            <connections>
+                                                <action selector="newChecklist:" destination="TSF-eg-l7M" id="k9a-Ec-h5Y"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem systemItem="compose" id="a6h-g5-fXU"/>
-                                        <barButtonItem systemItem="organize" id="gyw-kt-SWo"/>
+                                        <barButtonItem systemItem="action" id="gyw-kt-SWo">
+                                            <connections>
+                                                <action selector="editChecklist:" destination="TSF-eg-l7M" id="pUb-DN-6Ud"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </rightBarButtonItems>
                                 </navigationItem>
                             </items>
@@ -981,6 +1002,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navTitle" destination="JCT-Tx-Bu7" id="WLR-xO-CW4"/>
+                        <segue destination="DvF-6m-l4S" kind="show" identifier="ChecklistsItemsSegue" id="Kmw-Me-ePu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ai-14-jSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1137,6 +1159,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="LDo-pj-a6L"/>
         <segue reference="fjR-Jx-1ee"/>
         <segue reference="ksm-0A-Y6M"/>
         <segue reference="DLN-jf-riK"/>

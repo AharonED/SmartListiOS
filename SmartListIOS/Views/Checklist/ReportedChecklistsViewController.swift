@@ -28,4 +28,11 @@ class ReportedChecklistsViewController : ChecklistsViewController {
     {
         return "Reported_Checklists"
     }
+    
+    @IBAction override func checklistItems(_ sender: Any) {
+    }
+    @IBAction override func editChecklist(_ sender: Any) {
+    }
+    @IBAction override func newChecklist(_ sender: Any) {
+    }
 }
