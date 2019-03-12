@@ -9,12 +9,33 @@
 import UIKit
 
 class ChecklistsViewController: UITableViewController {
-
+    
     public var ChecklistId:String=""
     public var groupId:String=""
+    public var groupName : String=""
+
+    @IBAction func checklistItems(_ sender: Any) {
+        if(self.selectedId != nil)
+        {
+            self.performSegue(withIdentifier: "ChecklistsItemsSegue", sender: self)
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage:  "Select Checklist for editing...")
+        }
+    }
+    
+    @IBAction func editChecklist(_ sender: Any) {
+        //self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
+
+    }
     
     @IBOutlet weak var navTitle: UINavigationItem!
-   
+    
+    @IBAction func newChecklist(_ sender: Any) {
+       // self.performSegue(withIdentifier: "AddChecklistsegue", sender: self)
+    }
+    
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -30,25 +51,29 @@ class ChecklistsViewController: UITableViewController {
     
     public func setTitle()
     {
-        navTitle.title="Public Checklists"
+        navTitle.title = groupName + "-Public Checklists"
     }
     
     
     func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId])
+        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        getAllRecords()
+        //getAllRecords()
     }
     
+    func getUniqueInstanceIdentifier()->String
+    {
+        return "Public_Checklists"
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("ChecklistsViewController.viewDidLoad.groupId \(groupId).")
-
+        
         
         let chk:Checklists = Checklists(_id: "CHECK-" + groupId, _name: "Checklist - " + groupId , _description: "Checklist Description", _groupId:groupId, _owner:((LoggedUser.user?.id)!), _checklistType:"", _url: "", _lastUpdate:nil )
         
@@ -65,24 +90,27 @@ class ChecklistsViewController: UITableViewController {
         
         let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _url: "", _lastUpdate: 0)
         collectionName = dummy.tableName
-        
+        dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
+
         ChecklistsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
             (data:Any) in
+            print("GetNotification.observe()-ChecklistsListener")
             self.data = data as! [Checklists]
             self.tableView.reloadData()
-            print("GetNotification.observe()")
             } as NSObjectProtocol
         
-       
+        
         getAllRecords()
         //model.getAllRecords(fieldName: nil, fieldValue: nil)
-      
+        
     }
     
     deinit{
         if ChecklistsListener != nil{
             let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _lastUpdate: 0)
             collectionName = dummy.tableName
+            dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
+
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: ChecklistsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)
         }
@@ -140,33 +168,32 @@ class ChecklistsViewController: UITableViewController {
      @IBAction func OpenChecklists(_ sender: Any) {
      self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
      }
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "ChecklistDetailsSegue"{
-     let ChecklistDetailsVc:ChecklistDetailsViewController = segue.destination as! ChecklistDetailsViewController
-     ChecklistDetailsVc.ChecklistId = self.selectedId!
-     if(selectedChecklist != nil)
-     {
-     ChecklistDetailsVc.name = selectedChecklist!.name
-     ChecklistDetailsVc.desc = selectedChecklist!.description
-     ChecklistDetailsVc.imageUrl = selectedChecklist!.url
-     if(selectedCell != nil)
-     {
-     ChecklistDetailsVc.uiImage = self.selectedCell!.ChecklistImageView?.image
-     }
-     }
-     }
-     
-     if segue.identifier == "ChecklistsSegue"{
-     let checklistsVc:MainViewController = segue.destination as! MainViewController
-     checklistsVc.ChecklistId = self.selectedId!
-     
-     }
-     
-     
-     
-     }
-     
      */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        /*
+         if segue.identifier == "ChecklistDetailsSegue"{
+         let ChecklistDetailsVc:ChecklistDetailsViewController = segue.destination as! ChecklistDetailsViewController
+         ChecklistDetailsVc.ChecklistId = self.selectedId!
+         if(selectedChecklist != nil)
+         {
+         ChecklistDetailsVc.name = selectedChecklist!.name
+         ChecklistDetailsVc.desc = selectedChecklist!.description
+         ChecklistDetailsVc.imageUrl = selectedChecklist!.url
+         if(selectedCell != nil)
+         {
+         ChecklistDetailsVc.uiImage = self.selectedCell!.ChecklistImageView?.image
+         }
+         }
+         }
+         */
+        if segue.identifier == "ChecklistsItemsSegue"{
+            let checklistsItemsVc:ChecklistItemsViewController = segue.destination as! ChecklistItemsViewController
+            checklistsItemsVc.checklistId = self.selectedId!
+            
+        }
+        
+    }
+    
+    
+    
 }

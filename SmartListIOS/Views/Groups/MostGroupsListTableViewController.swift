@@ -18,7 +18,11 @@ class MostGroupsListTableViewController: GroupsListTableViewController {
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["privacyType"], fieldValue: ["MostPop"])
+        model.getAllRecords(fieldName: ["privacyType"], fieldValue: ["MostPop"], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
+    override func getUniqueInstanceIdentifier()->String
+    {
+        return "Most_Groups"
+    }
 }

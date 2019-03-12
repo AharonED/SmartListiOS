@@ -16,14 +16,18 @@ class PrivateChecklistsViewController : ChecklistsViewController {
     
     override func setTitle()
     {
-        navTitle.title="Private Checklists"
+        navTitle.title = groupName + "-Private Checklists"
     }
     
     
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["owner","groupid"], fieldValue: [ (LoggedUser.user?.id)!,  groupId])
+        model.getAllRecords(fieldName: ["owner","groupid"], fieldValue: [ (LoggedUser.user?.id)!,  groupId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
-   
+    
+    override func getUniqueInstanceIdentifier()->String
+    {
+        return "Private_Checklists"
+    }
 }

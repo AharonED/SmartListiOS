@@ -13,7 +13,8 @@ class ChecklistsTabViewController: UITabBarController {
     public var groupType:String=""
     public var ChecklistId:String=""
     public var groupId:String=""
-    
+    public var groupName : String=""
+
     let tabPublic:Int=0
     let tabPrivate:Int=1
     let tabReported:Int=2
@@ -29,12 +30,14 @@ class ChecklistsTabViewController: UITabBarController {
         if (self.viewControllers?[tabPublic] is UINavigationController)
         {
             checklistsVc = (self.viewControllers?[tabPublic] as! UINavigationController).viewControllers[0]  as! ChecklistsViewController
-            checklistsVc.groupId = self.groupId 
+            checklistsVc.groupId = self.groupId
+            checklistsVc.groupName = self.groupName
         }
         else if (self.viewControllers?[tabPublic] is ChecklistsViewController)
         {
             checklistsVc =  self.viewControllers?[tabPublic] as! ChecklistsViewController
             checklistsVc.groupId = self.groupId
+            checklistsVc.groupName = self.groupName
         }
 
         
@@ -44,11 +47,13 @@ class ChecklistsTabViewController: UITabBarController {
         {
             privateChecklistsVc = (self.viewControllers?[tabPrivate] as! UINavigationController).viewControllers[0]  as! PrivateChecklistsViewController
             privateChecklistsVc.groupId = self.groupId
+            privateChecklistsVc.groupName = self.groupName
         }
         else if (self.viewControllers?[tabPrivate] is ChecklistsViewController)
         {
             privateChecklistsVc =  self.viewControllers?[tabPrivate] as! PrivateChecklistsViewController
             privateChecklistsVc.groupId = self.groupId
+            privateChecklistsVc.groupName = self.groupName
         }
 
         
@@ -58,12 +63,14 @@ class ChecklistsTabViewController: UITabBarController {
         {
             reportedChecklistsVc = (self.viewControllers?[tabReported] as! UINavigationController).viewControllers[0]  as! ReportedChecklistsViewController
             reportedChecklistsVc.groupId = self.groupId
+            reportedChecklistsVc.groupName = self.groupName
         }
         else if (self.viewControllers?[tabReported] is ChecklistsViewController)
         {
             reportedChecklistsVc =  self.viewControllers?[tabReported] as! ReportedChecklistsViewController
             reportedChecklistsVc.groupId = self.groupId
-        }
+            reportedChecklistsVc.groupName = self.groupName
+       }
 
 
         // Do any additional setup after loading the view.

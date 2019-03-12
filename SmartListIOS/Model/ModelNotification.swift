@@ -18,7 +18,7 @@ class ModelNotification{
 
     static func GetNotification<T>(collectionName:String, dummy:T )->MyNotification<T> where T:BaseModelObject {
        
-        let collectionName =  dummy.tableName
+        let collectionName =  dummy.tableName + dummy.UniqueInstanceIdentifier
         
         var obj:MyNotification<T>
         
@@ -57,7 +57,7 @@ class ModelNotification{
             return NotificationCenter.default.addObserver(forName: NSNotification.Name(name),
                                                           object: nil, queue: nil) { (data) in
                                                             
-                                                            cb(data.userInfo?["data"] as! [T] )
+                                                           // cb(data.userInfo?["data"] as! [T] )
                                                             
                                                             if let data1 = data.userInfo?["data"] as? [T] {
                                                                 cb(data1)

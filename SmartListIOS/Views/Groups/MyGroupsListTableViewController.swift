@@ -18,7 +18,11 @@ class MyGroupsListTableViewController: GroupsListTableViewController {
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["OWNER"], fieldValue: [(LoggedUser.user?.id)!])
+        model.getAllRecords(fieldName: ["OWNER"], fieldValue: [(LoggedUser.user?.id)!], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
+    override func getUniqueInstanceIdentifier()->String
+    {
+        return "My_Groups"
+    }
 }

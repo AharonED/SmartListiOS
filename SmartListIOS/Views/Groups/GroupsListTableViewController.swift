@@ -21,6 +21,38 @@ class GroupsListTableViewController: UITableViewController {
     var selectedId:String?
     var collectionName:String = ""
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //setListener()
+        //getAllRecords()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+                        /*
+                        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate:nil)
+         
+                        do{
+                            //Add the new user also to Firebase Database
+                            try model.addNew(instance: grp)
+                        }
+                        catch let error {
+                            //let errorDesc:String = error.localizedDescription
+                            print("Unexpected error: \(error.localizedDescription).")
+                        }
+                        */
+        
+        
+        //Set the Navigationbar Title
+        setTitle()
+        setListener()
+        //Call method for gertting all data from DB, will implemented in chiled class
+        getAllRecords()
+     }
+
     func setTitle()
     {
         navTitle.title="Other Groups"
@@ -28,56 +60,54 @@ class GroupsListTableViewController: UITableViewController {
     
     func getAllRecords()
     {
-        model.getAllRecords(fieldName: nil, fieldValue: nil)
+        model.getAllRecords(fieldName: nil, fieldValue: nil, uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
-   
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        getAllRecords()
+    func getUniqueInstanceIdentifier()->String
+    {
+        return "Other_Groups"
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        /*
-        let grp:Groups = Groups(_id: "6", _name: "Group6", _description: "Group 6 Description", _url: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate:nil)
-        
-        do{
-            //Add the new user also to Firebase Database
-            try model.addNew(instance: grp)
-        }
-        catch let error {
-            //let errorDesc:String = error.localizedDescription
-            print("Unexpected error: \(error.localizedDescription).")
-        }
-        */
-        
-        
-        //Set the Navigationbar Title
-        setTitle()
-
+    func setListener()
+    {
         let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate: 0)
+        dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
         collectionName = dummy.tableName
         
+        let notif = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy)
+        if(notif.count==0)
+        {
+        groupsListener = notif.observe(){
+            (data:Any) in
+            print("GetNotification.observe()-groupsListener")
+            self.data = try! data as! [Groups]
+            self.tableView.reloadData()
+            } as NSObjectProtocol
+        }
+        /*
         groupsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
             (data:Any) in
-            self.data = data as! [Groups]
+            print("GetNotification.observe()-groupsListener")
+            self.data = try! data as! [Groups]
             self.tableView.reloadData()
-             print("GetNotification.observe()")
-            } as NSObjectProtocol
-        
-        //Call method for gertting all data from DB, will implemented in chiled class
-       getAllRecords()
-        
-     }
+        } as NSObjectProtocol
+        */
+    }
 
-    deinit{
+    
+    func removeListener()
+    {
         if groupsListener != nil{
             let dummy:BaseModelObject = Groups(_id: "", _name: "", _description: "", _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate: 0)
             collectionName = dummy.tableName
+            dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
+
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: groupsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)
         }
+    }
+    
+    deinit{
+       removeListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -137,14 +167,93 @@ class GroupsListTableViewController: UITableViewController {
     }
     
     @IBAction func EditGroup(_ sender: Any) {
+        if(self.selectedGroup != nil)
+        {
          self.performSegue(withIdentifier: "GroupDetailsSegue", sender: self)
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage:  "Select Group for editing...")
+        }
     }
     
     @IBAction func OpenChecklists(_ sender: Any) {
-         self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
+        if(self.selectedGroup != nil)
+        {
+            self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage:  "Select Group for displaying Checklists...")
+        }
+        
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch (identifier)
+        {
+        case "GroupDetailsSegue":
+            do{
+                if(self.selectedGroup == nil)
+                {
+                    Utils.displayMessage(_controller: self, userMessage:  "Select Group for editing...")
+                    return false
+                }
+            }
+            break
+        case "ChecklistsSegue":
+            do {
+                if(self.selectedGroup == nil)
+                {
+                    Utils.displayMessage(_controller: self, userMessage:  "Select Group for displaying Checklists...")
+                    return false
+                }
+            }
+            break
+        case "MyChecklistsTabController":
+            do{
+                if(self.selectedGroup == nil)
+                {
+                    Utils.displayMessage(_controller: self, userMessage:  "Select Group for displaying Checklists...")
+                    return false
+                }
+            }
+            break
+        case "OtherChecklistsTabController":
+            do{
+                if(self.selectedGroup == nil)
+                {
+                    Utils.displayMessage(_controller: self, userMessage:  "Select Group for displaying Checklists...")
+                    return false
+                }
+            }
+            break
+        case "MostChecklistsTabController":
+            do{
+                if(self.selectedGroup == nil)
+                {
+                    Utils.displayMessage(_controller: self, userMessage:  "Select Group for displaying Checklists...")
+                    return false
+                }
+                
+            }
+            break
+            
+        default:
+            do {
+                return true
+            }
+        }
+
+    // by default, transition
+        return true
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //removeListener()
+        
         switch (segue.identifier)
         {
         case "GroupDetailsSegue":
@@ -174,6 +283,8 @@ class GroupsListTableViewController: UITableViewController {
                 let checklistsVc:ChecklistsTabViewController = segue.destination as! ChecklistsTabViewController
                 checklistsVc.groupId = self.selectedId!
                 checklistsVc.groupType = "My"
+                checklistsVc.groupName = selectedGroup!.name
+
                  //checklistsVc.setTitle()
             }
             break
@@ -182,6 +293,7 @@ class GroupsListTableViewController: UITableViewController {
                 let checklistsVc:ChecklistsTabViewController = segue.destination as! ChecklistsTabViewController
                 checklistsVc.groupId = self.selectedId!
                 checklistsVc.groupType = "Other"
+                checklistsVc.groupName = selectedGroup!.name
 
             }
             break
@@ -190,6 +302,7 @@ class GroupsListTableViewController: UITableViewController {
                 let checklistsVc:ChecklistsTabViewController = segue.destination as! ChecklistsTabViewController
                 checklistsVc.groupId = self.selectedId! 
                 checklistsVc.groupType = "Most"
+                checklistsVc.groupName = selectedGroup!.name
 
             }
             break

@@ -11,6 +11,8 @@ import Foundation
 public class BaseModelObject {
     public var id:String
     public var tableName:String = "BaseModelObject"
+    public var UniqueInstanceIdentifier:String = ""
+
     public var lastUpdate:Double?
 
     public convenience init(_id:String)

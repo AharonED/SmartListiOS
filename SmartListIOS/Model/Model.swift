@@ -23,7 +23,7 @@ public class Model<T> where T:BaseModelObject {
     }
     
 
-    public func getAllRecords(fieldName:[String]!, fieldValue:[String]!){
+    public func getAllRecords(fieldName:[String]!, fieldValue:[String]!, uniqueInstanceIdentifier:String){
         //1. read local students last update date
         let lastUpdated = (modelSql.getLastUpdateDate(database: modelSql.database) as! Double)+1
         //lastUpdated += 1;
@@ -57,6 +57,7 @@ public class Model<T> where T:BaseModelObject {
 
             //6. notify observers with full data
             let dummy:BaseModelObject = DataObjectFactory.GetInstance(type: collectionName)
+            dummy.UniqueInstanceIdentifier = uniqueInstanceIdentifier
             collectionName = dummy.tableName
 
             ModelNotification.GetNotification(collectionName: collectionName , dummy: dummy).notify(data: stFullData)

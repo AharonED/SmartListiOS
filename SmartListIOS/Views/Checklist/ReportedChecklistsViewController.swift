@@ -16,13 +16,16 @@ class ReportedChecklistsViewController : ChecklistsViewController {
     
     override func setTitle()
     {
-        navTitle.title="Reported Checklists"
+        navTitle.title = groupName + "-Reported Checklists"
     }
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId])
+        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
-
+    override func getUniqueInstanceIdentifier()->String
+    {
+        return "Reported_Checklists"
+    }
 }

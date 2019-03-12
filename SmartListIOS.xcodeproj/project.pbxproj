@@ -44,6 +44,9 @@
 		84714B8E22346E67002296E8 /* DataObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84714B8D22346E67002296E8 /* DataObjectFactory.swift */; };
 		84762985222B434A00006358 /* ChecklistsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84762984222B434A00006358 /* ChecklistsTableViewCell.swift */; };
 		847ADFFC220A436600B1CB09 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */; };
+		848037A1223702DB002EF536 /* ModelSQLChecklistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848037A0223702DB002EF536 /* ModelSQLChecklistItems.swift */; };
+		848037A4223708DC002EF536 /* ChecklistItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848037A3223708DC002EF536 /* ChecklistItemsViewController.swift */; };
+		848037A6223774E2002EF536 /* ChecklistItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848037A5223774E2002EF536 /* ChecklistItemsTableViewCell.swift */; };
 		849EA8D0222729D400B0C3C6 /* Checklists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8CF222729D400B0C3C6 /* Checklists.swift */; };
 		849EA8D2222729F500B0C3C6 /* ChecklistItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8D1222729F500B0C3C6 /* ChecklistItems.swift */; };
 		849EA8D422272B3900B0C3C6 /* Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849EA8D322272B3900B0C3C6 /* Attributes.swift */; };
@@ -131,6 +134,9 @@
 		84714B8D22346E67002296E8 /* DataObjectFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectFactory.swift; sourceTree = "<group>"; };
 		84762984222B434A00006358 /* ChecklistsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsTableViewCell.swift; sourceTree = "<group>"; };
 		847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		848037A0223702DB002EF536 /* ModelSQLChecklistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLChecklistItems.swift; sourceTree = "<group>"; };
+		848037A3223708DC002EF536 /* ChecklistItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemsViewController.swift; sourceTree = "<group>"; };
+		848037A5223774E2002EF536 /* ChecklistItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemsTableViewCell.swift; sourceTree = "<group>"; };
 		849EA8CF222729D400B0C3C6 /* Checklists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklists.swift; sourceTree = "<group>"; };
 		849EA8D1222729F500B0C3C6 /* ChecklistItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItems.swift; sourceTree = "<group>"; };
 		849EA8D322272B3900B0C3C6 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
@@ -206,13 +212,13 @@
 		8429CA8B2223210F0048E1A3 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */,
+				844792BA22327456005FC1FA /* GroupsTabViewController.swift */,
 				84CFC97121D28BAD007DC3EC /* GroupsListTableViewController.swift */,
 				844792B42232713A005FC1FA /* MostGroupsListTableViewController.swift */,
 				844792B6223271A0005FC1FA /* MyGroupsListTableViewController.swift */,
+				8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */,
 				8429CA8C222322410048E1A3 /* GroupDetailsViewController.swift */,
 				847ADFFB220A436600B1CB09 /* GroupsTableViewCell.swift */,
-				844792BA22327456005FC1FA /* GroupsTabViewController.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -220,11 +226,11 @@
 		8429CA90222327170048E1A3 /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
+				84703EE1223577F900DB2711 /* ChecklistsTabViewController.swift */,
 				8429CA8E222327120048E1A3 /* ChecklistsViewController.swift */,
 				84CFC96C21D28A82007DC3EC /* PrivateChecklistsViewController.swift */,
-				84762984222B434A00006358 /* ChecklistsTableViewCell.swift */,
 				84703EDF223551DB00DB2711 /* ReportedChecklistsViewController.swift */,
-				84703EE1223577F900DB2711 /* ChecklistsTabViewController.swift */,
+				84762984222B434A00006358 /* ChecklistsTableViewCell.swift */,
 			);
 			path = Checklist;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 			children = (
 				8461A3BB2200C1D60020AF92 /* DataObjects */,
 				84CFC97021D28B7D007DC3EC /* Views */,
+				8400D28B21D1850B0070BDD6 /* Model */,
 				84CFC96521D2665F007DC3EC /* Utils */,
 				846BED4921CF6AD80046DA0F /* GoogleService-Info.plist */,
 				84558B5E21B33C28005C3978 /* HomePageViewController.swift */,
@@ -265,7 +272,6 @@
 				84558B3721B32FCA005C3978 /* Assets.xcassets */,
 				84558B3921B32FCA005C3978 /* LaunchScreen.storyboard */,
 				84558B3421B32FC8005C3978 /* Main.storyboard */,
-				8400D28B21D1850B0070BDD6 /* Model */,
 				8416E432220390590032CB52 /* SmartList-Bridging-Header.h */,
 			);
 			path = SmartListIOS;
@@ -305,6 +311,15 @@
 			path = DataObjects;
 			sourceTree = "<group>";
 		};
+		848037A22237079C002EF536 /* ChecklistItems */ = {
+			isa = PBXGroup;
+			children = (
+				848037A3223708DC002EF536 /* ChecklistItemsViewController.swift */,
+				848037A5223774E2002EF536 /* ChecklistItemsTableViewCell.swift */,
+			);
+			path = ChecklistItems;
+			sourceTree = "<group>";
+		};
 		84CFC96521D2665F007DC3EC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,11 +333,12 @@
 		84CFC97021D28B7D007DC3EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8429CA8B2223210F0048E1A3 /* Groups */,
 				84CFC96A21D2864E007DC3EC /* MainViewController.swift */,
 				84558B6021B33C28005C3978 /* RegisterUserViewController.swift */,
 				84558B5F21B33C28005C3978 /* SignInViewController.swift */,
+				8429CA8B2223210F0048E1A3 /* Groups */,
 				8429CA90222327170048E1A3 /* Checklist */,
+				848037A22237079C002EF536 /* ChecklistItems */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,10 +349,11 @@
 				84DF5A6A2209A75700A92AB2 /* IModelSQL.swift */,
 				8416E4392203BDEF0032CB52 /* ModelSQL.swift */,
 				8416E43022038D410032CB52 /* ModelSqlDatabase.swift */,
-				8416E43B2203C1720032CB52 /* LastUpdateDates.swift */,
 				84DF5A662209A11A00A92AB2 /* ModelSQLFactory.swift */,
 				84DF5A682209A58E00A92AB2 /* ModelSQLGroups.swift */,
 				84714B8B22346349002296E8 /* ModelSQLChecklists.swift */,
+				848037A0223702DB002EF536 /* ModelSQLChecklistItems.swift */,
+				8416E43B2203C1720032CB52 /* LastUpdateDates.swift */,
 			);
 			path = SQLite;
 			sourceTree = "<group>";
@@ -651,6 +668,7 @@
 				849EA8D2222729F500B0C3C6 /* ChecklistItems.swift in Sources */,
 				847ADFFC220A436600B1CB09 /* GroupsTableViewCell.swift in Sources */,
 				84DF5A672209A11A00A92AB2 /* ModelSQLFactory.swift in Sources */,
+				848037A6223774E2002EF536 /* ChecklistItemsTableViewCell.swift in Sources */,
 				8416E42F220385ED0032CB52 /* ModelNotification.swift in Sources */,
 				84703EE2223577F900DB2711 /* ChecklistsTabViewController.swift in Sources */,
 				849EA8D622273B1500B0C3C6 /* UIImage.swift in Sources */,
@@ -673,8 +691,10 @@
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
 				8428D8B72221F39E00DCA44D /* NewGroupViewController.swift in Sources */,
+				848037A4223708DC002EF536 /* ChecklistItemsViewController.swift in Sources */,
 				8400D29321D18EC70070BDD6 /* ModelFirebase.swift in Sources */,
 				8461A3C22200C2ED0020AF92 /* GroupUsers.swift in Sources */,
+				848037A1223702DB002EF536 /* ModelSQLChecklistItems.swift in Sources */,
 				84714B8C22346349002296E8 /* ModelSQLChecklists.swift in Sources */,
 				8416E43C2203C1720032CB52 /* LastUpdateDates.swift in Sources */,
 				84762985222B434A00006358 /* ChecklistsTableViewCell.swift in Sources */,
