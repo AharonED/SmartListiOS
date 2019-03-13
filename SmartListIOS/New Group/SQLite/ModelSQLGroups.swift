@@ -78,6 +78,7 @@ public class ModelSQLGroups:IModelSQL {
             
             sqlite3_bind_text(sqlite3_stmt, 1, fieldValue,-1,nil);
 */
+        /*
         var statm = "SELECT * from GROUPS where 1=1 "
         for st in fieldName{
             statm = statm + " AND " + st + " = ? "
@@ -92,6 +93,33 @@ public class ModelSQLGroups:IModelSQL {
                 indx = indx + 1
                 sqlite3_bind_text(sqlite3_stmt, indx, val,-1,nil);
             }
+*/
+        
+        //where groupid || '_' || checklisttype='2_Template'
+        
+        var statm = "SELECT * from GROUPS where 1=1 "
+
+        statm = statm + " AND '_' "
+        
+        for st in fieldName{
+            statm = statm + " || " + st + " || '_' "
+        }
+        
+        statm = statm + " = ? "
+        
+        statm = statm + " ORDER BY NAME;"
+        
+        if (sqlite3_prepare_v2(database,statm,-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+            
+            var statm1:String = "_"
+            
+            for val in fieldValue {
+
+                statm1 = statm1 + val + "_"
+            }
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, statm1,-1,nil);
 
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let stId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)

@@ -73,13 +73,17 @@ class ChecklistItemsViewController: UITableViewController {
         collectionName = dummy.tableName
         dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
 
-        ChecklistItemsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
-            (data:Any) in
+        let notif = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy)
+        if(notif.count>0)
+        {
+             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: ChecklistItemsListener!)
+            ChecklistItemsListener = notif.observe(){
+                (data:Any) in
             print("GetNotification.observe()-ChecklistItemsListener")
             self.data = data as! [ChecklistItems]
             self.tableView.reloadData()
             } as NSObjectProtocol
-        
+        }
         
         getAllRecords()
         //model.getAllRecords(fieldName: nil, fieldValue: nil)

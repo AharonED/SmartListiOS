@@ -26,6 +26,19 @@ public class ModelSQLChecklists:IModelSQL {
             print("error creating table");
             return
         }
+        
+        /*
+         CREATE INDEX `idx1` ON `CHECKLISTS` (
+         `GROUPID`,
+         `OWNER`,
+         `CHECKLISTTYPE`
+         );
+         
+         CREATE INDEX `IDX_NAME` ON `CHECKLISTITEMS` (
+         `NAME`    ASC
+         );
+         
+         */
     }
     
     public func drop(database: OpaquePointer?)  {
@@ -71,21 +84,35 @@ public class ModelSQLChecklists:IModelSQL {
         var sqlite3_stmt: OpaquePointer? = nil
         var data = [BaseModelObject]()
         
+        //where groupid || '_' || checklisttype='2_Template'
+
         var statm = "SELECT * from CHECKLISTS where 1=1 "
+        
+        statm = statm + " AND '_' "
+        
         for st in fieldName{
-            statm = statm + " AND " + st + " = ? "
+            //statm = statm + " AND " + st + " = ? "
+            statm = statm + " || " + st + " || '_' "
         }
+        
+        statm = statm + " = ? "
+
         statm = statm + " ORDER BY NAME;"
         
         if (sqlite3_prepare_v2(database,statm,-1,&sqlite3_stmt,nil)
             == SQLITE_OK){
-            var indx:Int32=0
+            //var indx:Int32=0
+            
+            var statm1:String = "_"
             
             for val in fieldValue {
-                indx = indx + 1
-                sqlite3_bind_text(sqlite3_stmt, indx, val,-1,nil);
+                //indx = indx + 1
+                //sqlite3_bind_text(sqlite3_stmt, indx, val,-1,nil);
+                statm1 = statm1 + val + "_"
             }
             
+            sqlite3_bind_text(sqlite3_stmt, 1, statm1,-1,nil);
+
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let stId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
                 let name = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)

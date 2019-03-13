@@ -57,11 +57,19 @@ class ChecklistsViewController: UITableViewController {
     
     func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
+        model.getAllRecords(fieldName: ["groupid","CHECKLISTTYPE"], fieldValue: [groupId, "Template"], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setListener()
         //getAllRecords()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        removeListener()
     }
     
     func getUniqueInstanceIdentifier()->String
@@ -74,8 +82,8 @@ class ChecklistsViewController: UITableViewController {
         
         print("ChecklistsViewController.viewDidLoad.groupId \(groupId).")
         
-        
-        let chk:Checklists = Checklists(_id: "CHECK-" + groupId, _name: "Checklist - " + groupId , _description: "Checklist Description", _groupId:groupId, _owner:((LoggedUser.user?.id)!), _checklistType:"", _url: "", _lastUpdate:nil )
+        /*
+        let chk:Checklists = Checklists(_id: "CHECK-" + groupId, _name: "Checklist - " + groupId , _description: "Checklist Description", _groupId:groupId, _owner:((LoggedUser.user?.id)!), _checklistType:"Template", _url: "", _lastUpdate:nil )
         
         do{
             //Add the new user also to Firebase Database
@@ -85,35 +93,48 @@ class ChecklistsViewController: UITableViewController {
             //let errorDesc:String = error.localizedDescription
             print("Unexpected error: \(error.localizedDescription).")
         }
+        */
         
         setTitle()
         
-        let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _url: "", _lastUpdate: 0)
-        collectionName = dummy.tableName
-        dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
-
-        ChecklistsListener = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).observe(){
-            (data:Any) in
-            print("GetNotification.observe()-ChecklistsListener")
-            self.data = data as! [Checklists]
-            self.tableView.reloadData()
-            } as NSObjectProtocol
-        
-        
+        setListener()
         getAllRecords()
         //model.getAllRecords(fieldName: nil, fieldValue: nil)
         
     }
     
-    deinit{
+    func setListener()
+    {
+        let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _url: "", _lastUpdate: 0)
+        collectionName = dummy.tableName
+        dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
+        
+        let notif = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy)
+        if(notif.count==0)
+        {
+            ChecklistsListener = notif.observe(){
+                (data:Any) in
+                print("GetNotification.observe()-ChecklistsListener")
+                self.data = data as! [Checklists]
+                self.tableView.reloadData()
+                } as NSObjectProtocol
+        }
+    }
+    
+    func removeListener()
+    {
         if ChecklistsListener != nil{
             let dummy:BaseModelObject = Checklists(_id: "", _name: "", _description: "", _groupId:"", _owner:"", _checklistType:"", _lastUpdate: 0)
             collectionName = dummy.tableName
             dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
-
+            
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: ChecklistsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)
         }
+    }
+    
+    deinit{
+        removeListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {

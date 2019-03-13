@@ -16,12 +16,12 @@ class ReportedChecklistsViewController : ChecklistsViewController {
     
     override func setTitle()
     {
-        navTitle.title = groupName + "-Reported Checklists"
+        navTitle.title = groupName + "-Reported Checklists_" + groupId
     }
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["groupid"], fieldValue: [groupId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
+        model.getAllRecords(fieldName: ["owner","groupid","CHECKLISTTYPE"], fieldValue: [ (LoggedUser.user?.id)!,  groupId, "Reported"], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
     override func getUniqueInstanceIdentifier()->String

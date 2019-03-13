@@ -23,7 +23,7 @@ class PrivateChecklistsViewController : ChecklistsViewController {
     
     override func getAllRecords()
     {
-        model.getAllRecords(fieldName: ["owner","groupid"], fieldValue: [ (LoggedUser.user?.id)!,  groupId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
+        model.getAllRecords(fieldName: ["owner","groupid","CHECKLISTTYPE"], fieldValue: [ (LoggedUser.user?.id)!,  groupId, "Template"], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
     override func getUniqueInstanceIdentifier()->String

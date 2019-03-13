@@ -166,6 +166,17 @@
          contextName = "closure #1 in ModelFirebase.addNew(instance:):ModelFirebase.swift">
       </ContextState>
       <ContextState
+         contextName = "ModelSQLChecklists.getAllByField(database:fieldName:fieldValue:):ModelSQLChecklists.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "SQLITE_ROW">
+            </PersistentString>
+            <PersistentString
+               value = "sqlite3_step(sqlite3_stmt) ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "static ModelNotification.GetNotification&lt;A&gt;(collectionName:dummy:):ModelNotification.swift">
          <PersistentStrings>
             <PersistentString

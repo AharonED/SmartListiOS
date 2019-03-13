@@ -69,7 +69,7 @@ public class ModelSQLChecklistItems:IModelSQL {
     public func getAllByField(database: OpaquePointer?, fieldName:[String]!, fieldValue:[String]!)->[BaseModelObject]{
         var sqlite3_stmt: OpaquePointer? = nil
         var data = [BaseModelObject]()
-        
+        /*
         var statm = "SELECT * from CHECKLISTITEMS where 1=1 "
         for st in fieldName{
             statm = statm + " AND " + st + " = ? "
@@ -84,7 +84,31 @@ public class ModelSQLChecklistItems:IModelSQL {
                 indx = indx + 1
                 sqlite3_bind_text(sqlite3_stmt, indx, val,-1,nil);
             }
+            */
+        
+        var statm = "SELECT * from CHECKLISTITEMS where 1=1 "
+
+        statm = statm + " AND '_' "
+        
+        for st in fieldName{
+            statm = statm + " || " + st + " || '_' "
+        }
+        
+        statm = statm + " = ? "
+        
+        statm = statm + " ORDER BY NAME;"
+        
+        if (sqlite3_prepare_v2(database,statm,-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
             
+            var statm1:String = "_"
+            
+            for val in fieldValue {
+                statm1 = statm1 + val + "_"
+            }
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, statm1,-1,nil);
+
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let stId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
                 let name = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
