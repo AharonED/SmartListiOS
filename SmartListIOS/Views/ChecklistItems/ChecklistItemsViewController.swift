@@ -12,11 +12,31 @@ class ChecklistItemsViewController: UITableViewController {
 
     public var checklistItemId:String=""
     public var checklistId:String=""
-    
+    var checklistType = "Tempalte"
+
     @IBOutlet weak var navTitle: UINavigationItem!
     
+    /*
     @IBAction func back(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    */
+    
+    @IBAction func EditItem(_ sender: Any) {
+        if(self.selectedId != nil)
+        {
+            self.performSegue(withIdentifier: "EditItemSegue", sender: self)
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage:  "Select Item for editing...")
+        }
+        
+    }
+    
+    @IBAction func AddItem(_ sender: Any) {
+        self.performSegue(withIdentifier: "AddItemSegue", sender: self)
+
     }
     
     var data = [ChecklistItems]()
@@ -83,7 +103,7 @@ class ChecklistItemsViewController: UITableViewController {
     func setListener()
     {
     
-        let dummy:BaseModelObject = ChecklistItems(_id: "", _name: "", _description: "", _checklistId:"", _owner:"", _itemType:"", _attributes: "", _lastUpdate: 0)
+        let dummy:BaseModelObject = ChecklistItems(_id: "", _name: "", _description: "", _checklistId:"", _owner:"", _itemType:"", _attributes: "", _itemIndex:0,_result:"", _lastUpdate: 0)
         collectionName = dummy.tableName
         dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
 
@@ -102,7 +122,7 @@ class ChecklistItemsViewController: UITableViewController {
     func removeListener()
     {
         if ChecklistItemsListener != nil{
-            let dummy:BaseModelObject = ChecklistItems(_id: "", _name: "", _description: "", _checklistId:"", _owner:"", _itemType:"", _lastUpdate: 0)
+            let dummy:BaseModelObject = ChecklistItems(_id: "", _name: "", _description: "", _checklistId:"", _owner:"", _itemType:"", _itemIndex:0,_result:"", _lastUpdate: 0)
             collectionName = dummy.tableName
             dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
             
@@ -156,46 +176,34 @@ class ChecklistItemsViewController: UITableViewController {
         //self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
     }
     
-    /*
-     @IBAction func AddChecklistItem(_ sender: Any) {
-     self.performSegue(withIdentifier: "AddChecklistItemsegue", sender: self)
-     }
-     
-     @IBAction func EditChecklistItem(_ sender: Any) {
-     self.performSegue(withIdentifier: "ChecklistItemDetailsSegue", sender: self)
-     }
-     
-     @IBAction func OpenChecklistItems(_ sender: Any) {
-     self.performSegue(withIdentifier: "ChecklistItemsSegue", sender: self)
-     }
-     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "ChecklistItemDetailsSegue"{
-     let ChecklistItemDetailsVc:ChecklistItemDetailsViewController = segue.destination as! ChecklistItemDetailsViewController
-     ChecklistItemDetailsVc.checklistItemId = self.selectedId!
-     if(selectedChecklistItem != nil)
-     {
-     ChecklistItemDetailsVc.name = selectedChecklistItem!.name
-     ChecklistItemDetailsVc.desc = selectedChecklistItem!.description
-     ChecklistItemDetailsVc.imageUrl = selectedChecklistItem!.url
-     if(selectedCell != nil)
-     {
-     ChecklistItemDetailsVc.uiImage = self.selectedCell!.ChecklistItemImageView?.image
-     }
-     }
-     }
-     
-     if segue.identifier == "ChecklistItemsSegue"{
-     let ChecklistItemsVc:MainViewController = segue.destination as! MainViewController
-     ChecklistItemsVc.checklistItemId = self.selectedId!
-     
-     }
-     
-     
-     
-     }
-     
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "AddItemSegue"{
+            let checklistVc:ChecklistItemViewController = segue.destination as! ChecklistItemViewController
+            checklistVc.checklistId = self.checklistId
+            //checklistVc.checklistType = self.checklistType
+            checklistVc.editMode = Utils.EditMode.Insert
+            
+            checklistVc.checklistItemId = ""
+        }
+        
+        
+        if segue.identifier == "EditItemSegue"{
+            let checklistVc:ChecklistItemViewController = segue.destination as! ChecklistItemViewController
+            checklistVc.checklistId = self.checklistId
+            //checklistVc.checklistType = self.checklistType
+            checklistVc.editMode = Utils.EditMode.Edit
+            
+            checklistVc.checklistItemId = self.selectedId!
+            //checklistVc.name = (self.selectedChecklistItem?.name)!
+            //checklistVc.desc = (self.selectedChecklistItem?.description)!
+            checklistVc.selectedChecklistItem=(self.selectedChecklistItem)!
+        }
+        
+        
+        
+    }
+    
 
 
 }

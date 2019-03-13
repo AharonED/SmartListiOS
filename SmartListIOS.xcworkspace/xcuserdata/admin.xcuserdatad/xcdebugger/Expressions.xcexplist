@@ -166,17 +166,6 @@
          contextName = "closure #1 in ModelFirebase.addNew(instance:):ModelFirebase.swift">
       </ContextState>
       <ContextState
-         contextName = "ChecklistsViewController.prepare(for:sender:):ChecklistsViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.selectedId!">
-            </PersistentString>
-            <PersistentString
-               value = "checklistsItemsVc.checklistId">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "ModelSQLChecklists.getAllByField(database:fieldName:fieldValue:):ModelSQLChecklists.swift">
          <PersistentStrings>
             <PersistentString
@@ -232,13 +221,16 @@
          contextName = "ChecklistItems.init(json:):ChecklistItems.swift">
          <PersistentStrings>
             <PersistentString
-               value = "name">
+               value = "json[&quot;checklistId&quot;] ">
             </PersistentString>
             <PersistentString
                value = "json[&quot;checklistId&quot;]">
             </PersistentString>
             <PersistentString
-               value = "json[&quot;checklistId&quot;] ">
+               value = "name">
+            </PersistentString>
+            <PersistentString
+               value = "json[&quot;itemIndex&quot;] as Int32">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

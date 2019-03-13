@@ -12,6 +12,7 @@ class NewChecklistViewController: UIViewController, UINavigationControllerDelega
     let model:Model<Checklists> = Model<Checklists>()
     var identifier = NSUUID().uuidString
     
+    @IBOutlet weak var Caption: UILabel!
     
     public var name : String=""
     public var desc : String=""
@@ -19,6 +20,8 @@ class NewChecklistViewController: UIViewController, UINavigationControllerDelega
     public var groupId:String=""
     public var checklistId:String=""
 
+    public var checklistType:String="Template"
+    
     public var editMode:Utils.EditMode = Utils.EditMode.Insert
 
     
@@ -28,8 +31,9 @@ class NewChecklistViewController: UIViewController, UINavigationControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (checklistId != "")
+        if (checklistId != "" && editMode == Utils.EditMode.Edit)
         {
+            Caption.text = "Edit Checklist"
             identifier = checklistId
             checklistNameTextField.text = name
             checklistDescriptionTextField.text = desc
@@ -50,7 +54,7 @@ class NewChecklistViewController: UIViewController, UINavigationControllerDelega
                                         _description: checklistDescriptionTextField.text!,
                                         _groupId:groupId,
                                         _owner:((LoggedUser.user?.id)!),
-                                        _checklistType:"Template",
+                                        _checklistType:checklistType,
                                         _url: "",
                                         _lastUpdate:nil
         )

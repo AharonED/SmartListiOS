@@ -20,7 +20,7 @@ public class ModelSQLChecklistItems:IModelSQL {
     
     public func createTable(database: OpaquePointer?)  {
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS CHECKLISTITEMS (ID TEXT PRIMARY KEY, NAME TEXT, DESCRIPTION TEXT, ATTRIBUTES TEXT, CHECKLISTID TEXT, OWNER TEXT, ITEMTYPE TEXT)", nil, nil, &errormsg);
+        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS CHECKLISTITEMS (ID TEXT PRIMARY KEY, NAME TEXT, DESCRIPTION TEXT, ATTRIBUTES TEXT, CHECKLISTID TEXT, OWNER TEXT, ITEMTYPE TEXT, ITEMINDEX INT, RESULT TEXT)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return
@@ -49,7 +49,9 @@ public class ModelSQLChecklistItems:IModelSQL {
                 let checklistId = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
                 let owner = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
                 let itemType = String(cString:sqlite3_column_text(sqlite3_stmt,6)!)
-                
+                let itemIndex = sqlite3_column_int(sqlite3_stmt,7)
+                let result = String(cString:sqlite3_column_text(sqlite3_stmt,8)!)
+
                 var json = [String:Any]()
                 json["id"] = stId
                 json["name"] = name
@@ -58,7 +60,9 @@ public class ModelSQLChecklistItems:IModelSQL {
                 json["checklistId"] = checklistId
                 json["owner"] = owner
                 json["itemType"] = itemType
-                
+                json["itemIndex"] = itemIndex
+                json["result"] = result
+
                 data.append(ChecklistItems(json:json))
             }
         }
@@ -96,7 +100,7 @@ public class ModelSQLChecklistItems:IModelSQL {
         
         statm = statm + " = ? "
         
-        statm = statm + " ORDER BY NAME;"
+        statm = statm + " ORDER BY ITEMINDEX;"
         
         if (sqlite3_prepare_v2(database,statm,-1,&sqlite3_stmt,nil)
             == SQLITE_OK){
@@ -117,7 +121,9 @@ public class ModelSQLChecklistItems:IModelSQL {
                 let checklistId = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
                 let owner = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
                 let itemType = String(cString:sqlite3_column_text(sqlite3_stmt,6)!)
-                
+                let itemIndex = sqlite3_column_int(sqlite3_stmt,7)
+                let result = String(cString:sqlite3_column_text(sqlite3_stmt,8)!)
+
                 var json = [String:Any]()
                 json["id"] = stId
                 json["name"] = name
@@ -126,7 +132,9 @@ public class ModelSQLChecklistItems:IModelSQL {
                 json["checklistId"] = checklistId
                 json["owner"] = owner
                 json["itemType"] = itemType
-                
+                json["itemIndex"] = itemIndex
+                json["result"] = result
+
                 data.append(ChecklistItems(json:json))
             }
         }
@@ -139,7 +147,7 @@ public class ModelSQLChecklistItems:IModelSQL {
         let inst:ChecklistItems=instance as! ChecklistItems
         
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO CHECKLISTITEMS(ID, NAME, DESCRIPTION, ATTRIBUTES, CHECKLISTID, OWNER, ITEMTYPE) VALUES (?,?,?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO CHECKLISTITEMS(ID, NAME, DESCRIPTION, ATTRIBUTES, CHECKLISTID, OWNER, ITEMTYPE, ITEMINDEX, RESULT) VALUES (?,?,?,?,?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
             let id = inst.id.cString(using: .utf8)
             let name = inst.name.cString(using: .utf8)
             let description = inst.description.cString(using: .utf8)
@@ -147,6 +155,9 @@ public class ModelSQLChecklistItems:IModelSQL {
             let groupid = inst.checklistId.cString(using: .utf8)
             let owner = inst.owner.cString(using: .utf8)
             let itemType = inst.itemType.cString(using: .utf8)
+            let itemIndex = Int32(inst.itemIndex)
+            let result = inst.result.cString(using: .utf8)
+
             
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 2, name,-1,nil);
@@ -155,6 +166,9 @@ public class ModelSQLChecklistItems:IModelSQL {
             sqlite3_bind_text(sqlite3_stmt, 5, groupid,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 6, owner,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 7, itemType,-1,nil);
+            sqlite3_bind_int(sqlite3_stmt, 8, itemIndex);
+            sqlite3_bind_text(sqlite3_stmt, 9, result,-1,nil);
+
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
                 print("new row added succefully")
             }

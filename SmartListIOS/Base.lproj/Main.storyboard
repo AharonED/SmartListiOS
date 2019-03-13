@@ -507,7 +507,7 @@
                                 <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="groupNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-kQ-dlt">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="groupNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-kQ-dlt">
                                 <rect key="frame" x="16" y="76" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -892,6 +892,8 @@
                     <connections>
                         <outlet property="navTitle" destination="FNp-rn-FUv" id="PaP-qw-Pgr"/>
                         <segue destination="DvF-6m-l4S" kind="show" identifier="ChecklistsItemsSegue" id="LDo-pj-a6L"/>
+                        <segue destination="oFs-UA-ut7" kind="show" identifier="AddChecklistSegue" id="tVl-gq-EaW"/>
+                        <segue destination="oFs-UA-ut7" kind="show" identifier="EditChecklistSegue" id="l6k-eH-SvE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWq-JO-0Nx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -919,13 +921,17 @@
                                     <rightBarButtonItems>
                                         <barButtonItem systemItem="add" id="PeK-it-0kZ">
                                             <connections>
-                                                <action selector="newChecklist:" destination="TSF-eg-l7M" id="k9a-Ec-h5Y"/>
+                                                <action selector="newChecklist:" destination="TSF-eg-l7M" id="wDG-aR-bN4"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem systemItem="compose" id="a6h-g5-fXU"/>
+                                        <barButtonItem systemItem="compose" id="a6h-g5-fXU">
+                                            <connections>
+                                                <action selector="editChecklist:" destination="TSF-eg-l7M" id="ZJq-AY-RRc"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem systemItem="action" id="gyw-kt-SWo">
                                             <connections>
-                                                <action selector="editChecklist:" destination="TSF-eg-l7M" id="pUb-DN-6Ud"/>
+                                                <action selector="checklistItems:" destination="TSF-eg-l7M" id="JGt-eu-gnU"/>
                                             </connections>
                                         </barButtonItem>
                                     </rightBarButtonItems>
@@ -977,6 +983,8 @@
                     <connections>
                         <outlet property="navTitle" destination="JCT-Tx-Bu7" id="WLR-xO-CW4"/>
                         <segue destination="DvF-6m-l4S" kind="show" identifier="ChecklistsItemsSegue" id="Kmw-Me-ePu"/>
+                        <segue destination="oFs-UA-ut7" kind="show" identifier="EditChecklistSegue" id="ivU-Kt-MEL"/>
+                        <segue destination="oFs-UA-ut7" kind="show" identifier="AddChecklistSegue" id="5da-vw-Gca"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ai-14-jSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1075,8 +1083,16 @@
                             <items>
                                 <navigationItem id="nW2-n2-Gtd">
                                     <rightBarButtonItems>
-                                        <barButtonItem systemItem="add" id="Q53-Q7-JHF"/>
-                                        <barButtonItem systemItem="compose" id="Woh-LP-dsr"/>
+                                        <barButtonItem systemItem="add" id="Q53-Q7-JHF">
+                                            <connections>
+                                                <action selector="AddItem:" destination="DvF-6m-l4S" id="6Mw-7e-4eS"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="compose" id="Woh-LP-dsr">
+                                            <connections>
+                                                <action selector="EditItem:" destination="DvF-6m-l4S" id="RaG-gw-iO1"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </rightBarButtonItems>
                                 </navigationItem>
                             </items>
@@ -1125,6 +1141,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navTitle" destination="vki-De-ABU" id="glp-us-pmA"/>
+                        <segue destination="jiv-ot-SYR" kind="show" identifier="AddItemSegue" id="vNx-MS-kPO"/>
+                        <segue destination="jiv-ot-SYR" kind="show" identifier="EditItemSegue" id="rhu-wu-g4p"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucX-TG-4NE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1145,7 +1163,7 @@
                                 <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Checklist Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Dx4-nI-qY1">
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Checklist Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Dx4-nI-qY1">
                                 <rect key="frame" x="16" y="120" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1203,18 +1221,121 @@
                         <viewLayoutGuide key="safeArea" id="1Xv-dH-r5T"/>
                     </view>
                     <connections>
+                        <outlet property="Caption" destination="aM0-1i-A15" id="1vs-dO-kdw"/>
                         <outlet property="checklistDescriptionTextField" destination="JCK-5n-J0a" id="9OJ-iS-tHj"/>
                         <outlet property="checklistNameTextField" destination="Dx4-nI-qY1" id="nzs-vY-9nj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJl-4h-Uom" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8913" y="-690"/>
+            <point key="canvasLocation" x="8902" y="-690"/>
+        </scene>
+        <!--Checklist Item View Controller-->
+        <scene sceneID="oIP-QM-Xcm">
+            <objects>
+                <viewController restorationIdentifier="ChecklistItemViewController" storyboardIdentifier="ChecklistItemViewController" id="jiv-ot-SYR" customClass="ChecklistItemViewController" customModule="SmartListIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="60Q-gB-dXs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-cB-dPe">
+                                <rect key="frame" x="16" y="84" width="77.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistItemNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1Qi-Wb-OtY">
+                                <rect key="frame" x="16" y="120" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistItemDescriptionTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Description" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-84-nTU">
+                                <rect key="frame" x="16" y="168" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistItemAttributeTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Attributes" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="MEP-3Z-HcV">
+                                <rect key="frame" x="16" y="217" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistItemIndexTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Index" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="yer-4V-bKz">
+                                <rect key="frame" x="16" y="262" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NOe-Az-gJn">
+                                <rect key="frame" x="16" y="318" width="131" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="eGt-Sm-PhP"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="AVX-BG-iii" eventType="touchUpInside" id="b3X-e7-tZm"/>
+                                    <action selector="cancelButtonTapped:" destination="jiv-ot-SYR" eventType="touchUpInside" id="vHd-ls-SzS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3j-F9-rXc">
+                                <rect key="frame" x="228" y="318" width="131" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="DOF-PA-Ggt"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="jiv-ot-SYR" eventType="touchUpInside" id="6gf-1T-ySm"/>
+                                    <action selector="signupButtonTapped:" destination="AVX-BG-iii" eventType="touchUpInside" id="jFF-2q-fmk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MEP-3Z-HcV" firstAttribute="leading" secondItem="2v4-FJ-Vud" secondAttribute="leading" constant="16" id="0da-3P-jp5"/>
+                            <constraint firstItem="2v4-FJ-Vud" firstAttribute="trailing" secondItem="1Qi-Wb-OtY" secondAttribute="trailing" constant="16" id="2DU-tr-M1U"/>
+                            <constraint firstItem="2v4-FJ-Vud" firstAttribute="trailing" secondItem="h3j-F9-rXc" secondAttribute="trailing" constant="16" id="7Pt-hA-goa"/>
+                            <constraint firstItem="NOe-Az-gJn" firstAttribute="top" secondItem="yer-4V-bKz" secondAttribute="bottom" constant="26" id="Be2-Ct-cTe"/>
+                            <constraint firstItem="MEP-3Z-HcV" firstAttribute="top" secondItem="mPm-84-nTU" secondAttribute="bottom" constant="19" id="DT4-yb-zmD"/>
+                            <constraint firstItem="1Qi-Wb-OtY" firstAttribute="top" secondItem="2v4-FJ-Vud" secondAttribute="top" constant="56" id="IOG-XE-T37"/>
+                            <constraint firstItem="aZr-cB-dPe" firstAttribute="leading" secondItem="2v4-FJ-Vud" secondAttribute="leading" constant="16" id="J2C-qW-Iv2"/>
+                            <constraint firstItem="yer-4V-bKz" firstAttribute="leading" secondItem="2v4-FJ-Vud" secondAttribute="leading" constant="16" id="Kh2-XN-hlr"/>
+                            <constraint firstItem="h3j-F9-rXc" firstAttribute="top" secondItem="yer-4V-bKz" secondAttribute="bottom" constant="26" id="LMO-JB-iFB"/>
+                            <constraint firstItem="aZr-cB-dPe" firstAttribute="top" secondItem="2v4-FJ-Vud" secondAttribute="top" constant="20" id="Nbg-Qz-KLD"/>
+                            <constraint firstItem="mPm-84-nTU" firstAttribute="leading" secondItem="2v4-FJ-Vud" secondAttribute="leading" constant="16" id="Nhf-Wl-6G9"/>
+                            <constraint firstItem="NOe-Az-gJn" firstAttribute="leading" secondItem="2v4-FJ-Vud" secondAttribute="leading" constant="16" id="R5U-4C-WIo"/>
+                            <constraint firstItem="yer-4V-bKz" firstAttribute="top" secondItem="MEP-3Z-HcV" secondAttribute="bottom" constant="15" id="TBe-xh-F8h"/>
+                            <constraint firstItem="NOe-Az-gJn" firstAttribute="top" secondItem="h3j-F9-rXc" secondAttribute="top" id="YQ7-FQ-PNZ"/>
+                            <constraint firstItem="yer-4V-bKz" firstAttribute="width" secondItem="MEP-3Z-HcV" secondAttribute="width" id="cb5-1e-Xzf"/>
+                            <constraint firstItem="1Qi-Wb-OtY" firstAttribute="leading" secondItem="2v4-FJ-Vud" secondAttribute="leading" constant="16" id="fye-rt-GeE"/>
+                            <constraint firstItem="MEP-3Z-HcV" firstAttribute="width" secondItem="mPm-84-nTU" secondAttribute="width" id="g5L-2N-yy7"/>
+                            <constraint firstItem="1Qi-Wb-OtY" firstAttribute="width" secondItem="mPm-84-nTU" secondAttribute="width" id="gwW-4K-6LJ"/>
+                            <constraint firstItem="mPm-84-nTU" firstAttribute="top" secondItem="1Qi-Wb-OtY" secondAttribute="bottom" constant="18" id="uZn-p2-TpZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2v4-FJ-Vud"/>
+                    </view>
+                    <connections>
+                        <outlet property="Caption" destination="aZr-cB-dPe" id="2UV-7Y-LP9"/>
+                        <outlet property="checklistItemAttributesTextField" destination="MEP-3Z-HcV" id="Heu-So-xK0"/>
+                        <outlet property="checklistItemDescriptionTextField" destination="mPm-84-nTU" id="drs-Zz-F69"/>
+                        <outlet property="checklistItemIndexTextField" destination="yer-4V-bKz" id="DFU-VB-Rqc"/>
+                        <outlet property="checklistItemNameTextField" destination="1Qi-Wb-OtY" id="Qkv-iI-3BA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SWq-ya-O2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10544.799999999999" y="26.53673163418291"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="DnV-6T-SL7"/>
-        <segue reference="Z5S-pG-ws4"/>
+        <segue reference="vNx-MS-kPO"/>
+        <segue reference="5da-vw-Gca"/>
+        <segue reference="Kmw-Me-ePu"/>
         <segue reference="kdw-8R-JN0"/>
         <segue reference="ksm-0A-Y6M"/>
         <segue reference="jdT-D9-S97"/>

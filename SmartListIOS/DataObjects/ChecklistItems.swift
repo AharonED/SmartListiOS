@@ -16,11 +16,12 @@ public class ChecklistItems : BaseModelObject{
     var checklistId:String=""
     var owner:String=""
     var itemType:String=""
-    
+    var itemIndex:Int32=0
+    var result:String=""
     
     //var attributes:[Attributes] = [Attributes]()
     
-    public convenience init (_id:String, _name:String, _description:String, _checklistId:String, _owner:String, _itemType:String, _attributes:String = "", _lastUpdate:Double?)
+    public convenience init (_id:String, _name:String, _description:String, _checklistId:String, _owner:String, _itemType:String, _attributes:String = "",_itemIndex:Int32, _result:String, _lastUpdate:Double?)
     {
         var json = [String:Any]()
         json["id"] = _id
@@ -29,6 +30,8 @@ public class ChecklistItems : BaseModelObject{
         json["checklistId"] = _checklistId
         json["owner"] = _owner
         json["itemType"] = _itemType
+        json["itemIndex"] = _itemIndex
+        json["result"] = _result
         json["attributes"] = _attributes
         json["lastUpdate"] = _lastUpdate
         
@@ -56,6 +59,13 @@ public class ChecklistItems : BaseModelObject{
         if json["itemType"] != nil{
             itemType = json["itemType"] as! String
         }
+        if json["itemIndex"] != nil{
+            itemIndex = json["itemIndex"] as! Int32
+        }
+        if json["result"] != nil{
+            result = json["result"] as! String
+        }
+        
         super.init(json: json)
         super.tableName="ChecklistItems"
     }
@@ -68,7 +78,9 @@ public class ChecklistItems : BaseModelObject{
         json["checklistId"] = checklistId
         json["owner"] = owner
         json["itemType"] = itemType
-        
+        json["itemIndex"] = itemIndex
+        json["result"] = result
+
         json["attributes"] = attributes
         json["lastUpdate"] = ServerValue.timestamp()
         return json

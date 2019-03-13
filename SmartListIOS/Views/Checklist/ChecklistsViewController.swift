@@ -14,6 +14,18 @@ class ChecklistsViewController: UITableViewController {
     public var groupId:String=""
     public var groupName : String=""
 
+    
+    var data = [Checklists]()
+    var selectedChecklist:Checklists?
+    var selectedCell:ChecklistsTableViewCell?
+    
+    var ChecklistsListener:NSObjectProtocol?
+    let model:Model<Checklists> = Model<Checklists>()
+    var selectedId:String?
+    var collectionName:String = ""
+    
+    var checklistType = "Tempalte"
+    
     @IBAction func checklistItems(_ sender: Any) {
         if(self.selectedId != nil)
         {
@@ -46,14 +58,6 @@ class ChecklistsViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    var data = [Checklists]()
-    var selectedChecklist:Checklists?
-    var selectedCell:ChecklistsTableViewCell?
-    
-    var ChecklistsListener:NSObjectProtocol?
-    let model:Model<Checklists> = Model<Checklists>()
-    var selectedId:String?
-    var collectionName:String = ""
     
     public func setTitle()
     {
@@ -175,21 +179,28 @@ class ChecklistsViewController: UITableViewController {
         if segue.identifier == "ChecklistsItemsSegue"{
             let checklistsItemsVc:ChecklistItemsViewController = segue.destination as! ChecklistItemsViewController
             checklistsItemsVc.checklistId = self.selectedId!
-            
+            checklistsItemsVc.checklistType = self.checklistType
         }
         
         if segue.identifier == "AddChecklistSegue"{
             let checklistVc:NewChecklistViewController = segue.destination as! NewChecklistViewController
             checklistVc.groupId = self.groupId
+            checklistVc.checklistType = self.checklistType
             checklistVc.editMode = Utils.EditMode.Insert
+
+            checklistVc.checklistId = ""
         }
 
         
         if segue.identifier == "EditChecklistSegue"{
             let checklistVc:NewChecklistViewController = segue.destination as! NewChecklistViewController
             checklistVc.groupId = self.groupId
-            checklistVc.editMode = Utils.EditMode.Insert
+            checklistVc.checklistType = self.checklistType
+            checklistVc.editMode = Utils.EditMode.Edit
+            
             checklistVc.checklistId = self.selectedId!
+            checklistVc.name = (self.selectedChecklist?.name)!
+            checklistVc.desc = (self.selectedChecklist?.description)!
         }
         
        
