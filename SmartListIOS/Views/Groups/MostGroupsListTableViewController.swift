@@ -23,6 +23,6 @@ class MostGroupsListTableViewController: GroupsListTableViewController {
     
     override func getUniqueInstanceIdentifier()->String
     {
-        return "Most_Groups"
+        return "" // "Most_Groups"
     }
 }

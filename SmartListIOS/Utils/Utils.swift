@@ -11,6 +11,11 @@ import UIKit
 
 public class Utils{
     
+    public enum EditMode:Int
+    {
+        case Insert = 1 , Edit
+    }
+    
     public static func displayMessage(_controller:UIViewController, userMessage:String, CloseParent:Bool = false) -> Void {
         DispatchQueue.main.async
             {

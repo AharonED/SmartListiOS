@@ -26,6 +26,9 @@ public class Model<T> where T:BaseModelObject {
     public func getAllRecords(fieldName:[String]!, fieldValue:[String]!, uniqueInstanceIdentifier:String){
         //1. read local students last update date
         let lastUpdated = (modelSql.getLastUpdateDate(database: modelSql.database) as! Double)+1
+        
+        //////let lastUpdated = (modelSql.getLastUpdateDate(database: modelSql.database) as! Double)-10000000
+        
         //lastUpdated += 1;
         var lastUpdated2 : Double = 0
         

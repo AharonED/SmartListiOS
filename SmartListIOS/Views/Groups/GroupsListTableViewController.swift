@@ -21,12 +21,21 @@ class GroupsListTableViewController: UITableViewController {
     var selectedId:String?
     var collectionName:String = ""
     
-    
+    var lastUpdate:Double?
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        //setListener()
+        setListener()
+        
+        
+        //**********************
         //getAllRecords()
+        //**********************
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        removeListener()
     }
     
     override func viewDidLoad() {
@@ -64,7 +73,7 @@ class GroupsListTableViewController: UITableViewController {
     }
     func getUniqueInstanceIdentifier()->String
     {
-        return "Other_Groups"
+        return "" // "Other_Groups"
     }
     
     func setListener()

@@ -37,12 +37,18 @@ class ChecklistItemsViewController: UITableViewController {
     func getAllRecords()
     {
         model.getAllRecords(fieldName: ["checklistId"], fieldValue: [checklistId], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
-        
- //       model.getAllRecords(fieldName: nil, fieldValue: nil, uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //getAllRecords()
+        super.viewDidAppear(animated)
+        
+        setListener()
+        getAllRecords()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        removeListener()
     }
     
     func getUniqueInstanceIdentifier()->String
@@ -55,7 +61,7 @@ class ChecklistItemsViewController: UITableViewController {
         
         print("ChecklistItemsViewController.viewDidLoad.checklistId \(checklistId).")
         
-        
+        /*
         let chk:ChecklistItems = ChecklistItems(_id: "Question-" + checklistId, _name: "ChecklistItem - " + checklistId , _description: "ChecklistItem Description", _checklistId:checklistId, _owner:((LoggedUser.user?.id)!), _itemType:"Options", _attributes: "true;false", _lastUpdate:nil )
         
         do{
@@ -66,45 +72,54 @@ class ChecklistItemsViewController: UITableViewController {
             //let errorDesc:String = error.localizedDescription
             print("Unexpected error: \(error.localizedDescription).")
         }
+        */
         
         setTitle()
-        
+        setListener()
+        getAllRecords()
+
+    }
+    
+    func setListener()
+    {
+    
         let dummy:BaseModelObject = ChecklistItems(_id: "", _name: "", _description: "", _checklistId:"", _owner:"", _itemType:"", _attributes: "", _lastUpdate: 0)
         collectionName = dummy.tableName
         dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
 
         let notif = ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy)
-        if(notif.count>0)
+        if(notif.count==0)
         {
-             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: ChecklistItemsListener!)
             ChecklistItemsListener = notif.observe(){
                 (data:Any) in
-            print("GetNotification.observe()-ChecklistItemsListener")
-            self.data = data as! [ChecklistItems]
-            self.tableView.reloadData()
-            } as NSObjectProtocol
+                print("GetNotification.observe()-ChecklistItemsListener")
+                self.data = data as! [ChecklistItems]
+                self.tableView.reloadData()
+                } as NSObjectProtocol
         }
-        
-        getAllRecords()
-        //model.getAllRecords(fieldName: nil, fieldValue: nil)
-        
     }
     
-    deinit{
+    func removeListener()
+    {
         if ChecklistItemsListener != nil{
             let dummy:BaseModelObject = ChecklistItems(_id: "", _name: "", _description: "", _checklistId:"", _owner:"", _itemType:"", _lastUpdate: 0)
             collectionName = dummy.tableName
             dummy.UniqueInstanceIdentifier = getUniqueInstanceIdentifier()
-
+            
             ModelNotification.GetNotification(collectionName: collectionName,dummy:dummy).remove(observer: ChecklistItemsListener!)
             //ModelNotification.ListNotification.removeValue(forKey: collectionName)
         }
+    }
+    
+    deinit{
+        removeListener()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

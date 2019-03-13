@@ -20,10 +20,10 @@
                value = "self.data is [Groups]">
             </PersistentString>
             <PersistentString
-               value = "(data.self as [BaseModelObject]).count">
+               value = "self.data[0].self">
             </PersistentString>
             <PersistentString
-               value = "self.data[0].self">
+               value = "(data.self as [BaseModelObject]).count">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -50,13 +50,13 @@
          contextName = "closure #1 in ModelNotification.MyNotification.observe(cb:):ModelNotification.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self">
+            </PersistentString>
+            <PersistentString
                value = "NSNotification.Name(name)">
             </PersistentString>
             <PersistentString
                value = "T.self">
-            </PersistentString>
-            <PersistentString
-               value = "self">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -111,13 +111,13 @@
          contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
          <PersistentStrings>
             <PersistentString
+               value = "instance.id">
+            </PersistentString>
+            <PersistentString
                value = "String(describing: instance)">
             </PersistentString>
             <PersistentString
                value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
-            </PersistentString>
-            <PersistentString
-               value = "instance.id">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -147,10 +147,10 @@
                value = "st">
             </PersistentString>
             <PersistentString
-               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
+               value = "(st as! BaseModelObject)">
             </PersistentString>
             <PersistentString
-               value = "(st as! BaseModelObject)">
+               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -166,6 +166,17 @@
          contextName = "closure #1 in ModelFirebase.addNew(instance:):ModelFirebase.swift">
       </ContextState>
       <ContextState
+         contextName = "ChecklistsViewController.prepare(for:sender:):ChecklistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedId!">
+            </PersistentString>
+            <PersistentString
+               value = "checklistsItemsVc.checklistId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ModelSQLChecklists.getAllByField(database:fieldName:fieldValue:):ModelSQLChecklists.swift">
          <PersistentStrings>
             <PersistentString
@@ -173,6 +184,25 @@
             </PersistentString>
             <PersistentString
                value = "sqlite3_step(sqlite3_stmt) ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChecklistsViewController.tableView(_:didSelectRowAt:):ChecklistsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GroupsListTableViewController.tableView(_:cellForRowAt:):GroupsListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data[1]">
+            </PersistentString>
+            <PersistentString
+               value = "data">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -187,17 +217,6 @@
             </PersistentString>
             <PersistentString
                value = "obj.count">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "GroupsListTableViewController.tableView(_:cellForRowAt:):GroupsListTableViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "data[1]">
-            </PersistentString>
-            <PersistentString
-               value = "data">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -307,6 +326,14 @@
             </PersistentString>
             <PersistentString
                value = "collectionName">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChecklistItemsViewController.getAllRecords():ChecklistItemsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "checklistId">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

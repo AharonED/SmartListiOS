@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37.600000000000001" y="26.53673163418291"/>
+            <point key="canvasLocation" x="646" y="27"/>
         </scene>
         <!--Register User View Controller-->
         <scene sceneID="Z1d-0D-yMD">
@@ -199,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tmG-vG-DNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="26.53673163418291"/>
+            <point key="canvasLocation" x="1316" y="27"/>
         </scene>
         <!--Group Details View Controller-->
         <scene sceneID="LJv-OF-DEv">
@@ -386,6 +386,8 @@
                     <connections>
                         <outlet property="navTitle" destination="Fus-Ec-0aE" id="PTY-Hn-z8z"/>
                         <segue destination="DvF-6m-l4S" kind="show" identifier="ChecklistsItemsSegue" id="Z5S-pG-ws4"/>
+                        <segue destination="oFs-UA-ut7" kind="show" identifier="AddChecklistSegue" id="Qja-dn-12d"/>
+                        <segue destination="oFs-UA-ut7" kind="show" identifier="EditChecklistSegue" id="DnV-6T-SL7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgI-Os-bCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1127,13 +1129,94 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucX-TG-4NE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8844" y="-690"/>
+            <point key="canvasLocation" x="9569" y="27"/>
+        </scene>
+        <!--New Checklist View Controller-->
+        <scene sceneID="h1B-Xz-Dre">
+            <objects>
+                <viewController storyboardIdentifier="NewChecklistViewController" id="oFs-UA-ut7" customClass="NewChecklistViewController" customModule="SmartListIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NXi-5O-4g0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Checklist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM0-1i-A15">
+                                <rect key="frame" x="16" y="84" width="117.5" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Checklist Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Dx4-nI-qY1">
+                                <rect key="frame" x="16" y="120" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="ChecklistDescriptionTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Checklist Description" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="JCK-5n-J0a">
+                                <rect key="frame" x="16" y="168" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFs-79-Q2e">
+                                <rect key="frame" x="16" y="219" width="131" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="EJx-DV-RPm"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="oFs-UA-ut7" eventType="touchUpInside" id="5Xn-sK-LwG"/>
+                                    <action selector="cancelButtonTapped:" destination="AVX-BG-iii" eventType="touchUpInside" id="zrM-Ax-wj8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhI-3U-Hrz">
+                                <rect key="frame" x="228" y="219" width="131" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="tql-oq-vY0"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="oFs-UA-ut7" eventType="touchUpInside" id="1Yz-rc-c50"/>
+                                    <action selector="signupButtonTapped:" destination="AVX-BG-iii" eventType="touchUpInside" id="Yvz-UJ-rhb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UhI-3U-Hrz" firstAttribute="top" secondItem="JCK-5n-J0a" secondAttribute="bottom" constant="21" id="G5M-eL-Aqa"/>
+                            <constraint firstItem="aM0-1i-A15" firstAttribute="top" secondItem="1Xv-dH-r5T" secondAttribute="top" constant="20" id="GHO-iF-uhP"/>
+                            <constraint firstItem="JCK-5n-J0a" firstAttribute="top" secondItem="Dx4-nI-qY1" secondAttribute="bottom" constant="18" id="Gg1-mM-q71"/>
+                            <constraint firstItem="1Xv-dH-r5T" firstAttribute="trailing" secondItem="Dx4-nI-qY1" secondAttribute="trailing" constant="16" id="Mfs-yX-CfS"/>
+                            <constraint firstItem="aM0-1i-A15" firstAttribute="leading" secondItem="1Xv-dH-r5T" secondAttribute="leading" constant="16" id="OaU-7Z-akT"/>
+                            <constraint firstItem="1Xv-dH-r5T" firstAttribute="trailing" secondItem="UhI-3U-Hrz" secondAttribute="trailing" constant="16" id="PnA-Za-Jhn"/>
+                            <constraint firstItem="pFs-79-Q2e" firstAttribute="top" secondItem="UhI-3U-Hrz" secondAttribute="top" id="Rly-1y-fNX"/>
+                            <constraint firstItem="Dx4-nI-qY1" firstAttribute="leading" secondItem="1Xv-dH-r5T" secondAttribute="leading" constant="16" id="hTa-2S-5oA"/>
+                            <constraint firstItem="pFs-79-Q2e" firstAttribute="top" secondItem="JCK-5n-J0a" secondAttribute="bottom" constant="21" id="k6W-F4-WVs"/>
+                            <constraint firstItem="Dx4-nI-qY1" firstAttribute="width" secondItem="JCK-5n-J0a" secondAttribute="width" id="ngL-5u-R8a"/>
+                            <constraint firstItem="JCK-5n-J0a" firstAttribute="leading" secondItem="1Xv-dH-r5T" secondAttribute="leading" constant="16" id="qTm-7P-dLD"/>
+                            <constraint firstItem="Dx4-nI-qY1" firstAttribute="top" secondItem="1Xv-dH-r5T" secondAttribute="top" constant="56" id="u6v-Xs-Cm1"/>
+                            <constraint firstItem="pFs-79-Q2e" firstAttribute="leading" secondItem="1Xv-dH-r5T" secondAttribute="leading" constant="16" id="zCv-cT-9g4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Xv-dH-r5T"/>
+                    </view>
+                    <connections>
+                        <outlet property="checklistDescriptionTextField" destination="JCK-5n-J0a" id="9OJ-iS-tHj"/>
+                        <outlet property="checklistNameTextField" destination="Dx4-nI-qY1" id="nzs-vY-9nj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJl-4h-Uom" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8913" y="-690"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="DnV-6T-SL7"/>
         <segue reference="Z5S-pG-ws4"/>
         <segue reference="kdw-8R-JN0"/>
-        <segue reference="HQx-se-HjP"/>
+        <segue reference="ksm-0A-Y6M"/>
         <segue reference="jdT-D9-S97"/>
     </inferredMetricsTieBreakers>
 </document>

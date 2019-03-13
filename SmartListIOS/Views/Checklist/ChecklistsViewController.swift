@@ -26,14 +26,20 @@ class ChecklistsViewController: UITableViewController {
     }
     
     @IBAction func editChecklist(_ sender: Any) {
-        //self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
-
+        if(self.selectedId != nil)
+        {
+            self.performSegue(withIdentifier: "EditChecklistSegue", sender: self)
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage:  "Select Checklist for editing...")
+        }
     }
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
     @IBAction func newChecklist(_ sender: Any) {
-       // self.performSegue(withIdentifier: "AddChecklistsegue", sender: self)
+       self.performSegue(withIdentifier: "AddChecklistSegue", sender: self)
     }
     
     @IBAction func back(_ sender: Any) {
@@ -64,7 +70,7 @@ class ChecklistsViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         setListener()
-        //getAllRecords()
+        getAllRecords()
         
     }
     
@@ -81,20 +87,7 @@ class ChecklistsViewController: UITableViewController {
         super.viewDidLoad()
         
         print("ChecklistsViewController.viewDidLoad.groupId \(groupId).")
-        
-        /*
-        let chk:Checklists = Checklists(_id: "CHECK-" + groupId, _name: "Checklist - " + groupId , _description: "Checklist Description", _groupId:groupId, _owner:((LoggedUser.user?.id)!), _checklistType:"Template", _url: "", _lastUpdate:nil )
-        
-        do{
-            //Add the new user also to Firebase Database
-            try model.addNew(instance: chk)
-        }
-        catch let error {
-            //let errorDesc:String = error.localizedDescription
-            print("Unexpected error: \(error.localizedDescription).")
-        }
-        */
-        
+     
         setTitle()
         
         setListener()
@@ -177,41 +170,29 @@ class ChecklistsViewController: UITableViewController {
         //self.performSegue(withIdentifier: "ChrcklistsSegue", sender: self)
     }
     
-    /*
-     @IBAction func AddChecklist(_ sender: Any) {
-     self.performSegue(withIdentifier: "AddChecklistsegue", sender: self)
-     }
-     
-     @IBAction func EditChecklist(_ sender: Any) {
-     self.performSegue(withIdentifier: "ChecklistDetailsSegue", sender: self)
-     }
-     
-     @IBAction func OpenChecklists(_ sender: Any) {
-     self.performSegue(withIdentifier: "ChecklistsSegue", sender: self)
-     }
-     */
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*
-         if segue.identifier == "ChecklistDetailsSegue"{
-         let ChecklistDetailsVc:ChecklistDetailsViewController = segue.destination as! ChecklistDetailsViewController
-         ChecklistDetailsVc.ChecklistId = self.selectedId!
-         if(selectedChecklist != nil)
-         {
-         ChecklistDetailsVc.name = selectedChecklist!.name
-         ChecklistDetailsVc.desc = selectedChecklist!.description
-         ChecklistDetailsVc.imageUrl = selectedChecklist!.url
-         if(selectedCell != nil)
-         {
-         ChecklistDetailsVc.uiImage = self.selectedCell!.ChecklistImageView?.image
-         }
-         }
-         }
-         */
         if segue.identifier == "ChecklistsItemsSegue"{
             let checklistsItemsVc:ChecklistItemsViewController = segue.destination as! ChecklistItemsViewController
             checklistsItemsVc.checklistId = self.selectedId!
             
         }
+        
+        if segue.identifier == "AddChecklistSegue"{
+            let checklistVc:NewChecklistViewController = segue.destination as! NewChecklistViewController
+            checklistVc.groupId = self.groupId
+            checklistVc.editMode = Utils.EditMode.Insert
+        }
+
+        
+        if segue.identifier == "EditChecklistSegue"{
+            let checklistVc:NewChecklistViewController = segue.destination as! NewChecklistViewController
+            checklistVc.groupId = self.groupId
+            checklistVc.editMode = Utils.EditMode.Insert
+            checklistVc.checklistId = self.selectedId!
+        }
+        
+       
         
     }
     

@@ -23,6 +23,6 @@ class MyGroupsListTableViewController: GroupsListTableViewController {
     
     override func getUniqueInstanceIdentifier()->String
     {
-        return "My_Groups"
+        return "" // "My_Groups"
     }
 }
