@@ -16,7 +16,7 @@ class ChecklistItemViewController: UIViewController {
     
     public var checklistId:String=""
     public var checklistItemId:String=""
-    var checklistType = "Tempalte"
+    var checklistType = "Template"
 
     public var checklistItemType:String="Text"
     //public var checklistItemAttributes:String=""

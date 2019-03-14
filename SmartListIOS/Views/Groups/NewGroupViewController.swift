@@ -65,7 +65,7 @@ class NewGroupViewController: UIViewController, UIImagePickerControllerDelegate,
     
     func saveGroupInfo(url:String)  {
         
-        let grp:Groups = Groups(_id: identifier, _name: groupNameTextField.text!, _description: groupDescriptionTextField.text!, _url: url, _owner: (LoggedUser.user?.id)!, _privacyType:"MostPop" , _lastUpdate:nil)
+        let grp:Groups = Groups(_id: identifier, _name: groupNameTextField.text!, _description: groupDescriptionTextField.text!, _url: url, _owner: (LoggedUser.user?.id)!, _privacyType:"" , _lastUpdate:nil)
         
  
         

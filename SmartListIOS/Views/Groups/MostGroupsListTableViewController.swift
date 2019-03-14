@@ -12,7 +12,7 @@ class MostGroupsListTableViewController: GroupsListTableViewController {
 
     override func setTitle()
     {
-        navTitle.title="Most Groups"
+        navTitle.title="Most Popular Groups"
     }
 
     

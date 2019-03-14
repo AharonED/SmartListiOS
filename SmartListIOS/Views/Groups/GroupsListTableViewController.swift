@@ -30,7 +30,7 @@ class GroupsListTableViewController: UITableViewController {
         
         
         //**********************
-        //getAllRecords()
+        getAllRecords()
         //**********************
     }
     

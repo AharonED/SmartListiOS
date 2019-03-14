@@ -13,7 +13,7 @@ class ChecklistItemsViewController: UITableViewController {
     public var checklistItemId:String=""
     public var checklistId:String=""
     public var checklistName:String=""
-    public var checklistType = "Tempalte"
+    public var checklistType = "Template"
 
     var data = [ChecklistItems]()
     var selectedChecklistItem:ChecklistItems?

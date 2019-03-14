@@ -24,7 +24,7 @@ class ChecklistsViewController: UITableViewController {
     var selectedId:String?
     var collectionName:String = ""
     
-    var checklistType = "Tempalte"
+    var checklistType = "Template"
     
     
     @IBAction func ReportChecklist(_ sender: Any) {

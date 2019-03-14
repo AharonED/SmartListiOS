@@ -23,8 +23,22 @@ public class ChecklistDataManager
         chkCopy.id = identifier
         checklistIdentifier = identifier
         chkCopy.checklistType = "Reported"
-        chkCopy.name = "Copy of" + chkCopy.name
+        chkCopy.name = "" + chkCopy.name
         
+
+        ////////////////////////////////////
+        let date : Date = Date()
+               let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
+        
+        //print(dateFormatterPrint.string(from: date))
+        
+        chkCopy.description = dateFormatterPrint.string(from: date) + " - " +  chkCopy.description
+        ////////////////////////////////////
+
         
         do{
             let modelChecklists:Model<Checklists> = Model<Checklists>()
@@ -53,7 +67,7 @@ public class ChecklistDataManager
             let chkItemCopy:ChecklistItems = ChecklistItems(json: (item.toJson())) // Make a byValue copy
             let identifier = NSUUID().uuidString
             chkItemCopy.id = identifier
-            chkItemCopy.name = "Copy of" + chkItemCopy.name
+            chkItemCopy.name = "" + chkItemCopy.name
             chkItemCopy.checklistId = checklistIdentifier
             
             
