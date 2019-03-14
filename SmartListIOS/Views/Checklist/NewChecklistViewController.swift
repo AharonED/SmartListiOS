@@ -44,6 +44,11 @@ class NewChecklistViewController: UIViewController, UINavigationControllerDelega
     
     
     @IBAction func save(_ sender: Any) {
+        if (checklistNameTextField.text! == "") {
+            Utils.displayMessage(_controller: self, userMessage:  "Title field is required")
+            return
+        }
+        
             self.saveChecklistInfo(url: "")
     }
     

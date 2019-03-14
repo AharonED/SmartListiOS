@@ -189,6 +189,7 @@ class ChecklistItemsViewController: UITableViewController {
             cell.checklistItemResultTextField.text = st.result
             cell.id = st.id
             cell.selectedChecklistItem = data[indexPath.row]
+            cell.view = self 
             return cell
         }
         else

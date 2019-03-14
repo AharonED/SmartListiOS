@@ -79,6 +79,12 @@ class GroupDetailsViewController:  UIViewController, UIImagePickerControllerDele
     }
     
     @IBAction func save(_ sender: Any) {
+        
+        if (groupNameTextField.text! == "") {
+            Utils.displayMessage(_controller: self, userMessage:  "Title field is required")
+            return
+        }
+        
         if image != nil {
             let imageIdentifier = NSUUID().uuidString
             model.saveImage(image: image!, name: imageIdentifier){ (url:String?) in

@@ -10,6 +10,8 @@ import UIKit
 
 class ChecklistItemsReportedTableViewCell: UITableViewCell {
 
+    var view:UIViewController! = nil
+    
     let model:Model<ChecklistItems> = Model<ChecklistItems>()
 
     public var selectedChecklistItem:ChecklistItems = ChecklistItems(_id: "",
@@ -36,8 +38,15 @@ class ChecklistItemsReportedTableViewCell: UITableViewCell {
     @IBAction func saveClicked(_ sender: Any) {
         if(checklistItemResultTextField.text! == "")
         {
-            //Utils.displayMessage(_controller: self.superview, userMessage:  "Not valid Item Index, please set numeriv value")
-            
+            //selectedChecklistItem.attributes.split(separator: ";").contains(checklistItemResultTextField!.text)
+            if(selectedChecklistItem.attributes != "")
+            {
+                Utils.displayMessage(_controller: view, userMessage:  "Not valid Result, please set valid value (" + selectedChecklistItem.attributes + ")" )
+            }
+            else
+            {
+                Utils.displayMessage(_controller: view, userMessage:  "Not valid Result, please set valid value" )
+            }
         }
         else
         {

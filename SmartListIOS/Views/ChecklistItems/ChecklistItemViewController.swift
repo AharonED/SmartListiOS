@@ -72,12 +72,18 @@ class ChecklistItemViewController: UIViewController {
     
     
     @IBAction func save(_ sender: Any) {
+        
+        if (checklistItemNameTextField.text! == "") {
+            Utils.displayMessage(_controller: self, userMessage:  "Title field is required")
+            return
+        }
+        
         var num = Int(checklistItemIndexTextField.text!)
         if num != nil {
             self.saveChecklistItemInfo(url: "")
         }
         else {
-            Utils.displayMessage(_controller: self, userMessage:  "Not valid Item Index, please set numeriv value")
+            Utils.displayMessage(_controller: self, userMessage:  "Not valid Item Index, please set numeric value")
         }
         
     }
