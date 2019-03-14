@@ -16,7 +16,7 @@ class PrivateChecklistsViewController : ChecklistsViewController {
     
     override func setTitle()
     {
-        navTitle.title = groupName + "-Private Checklists"
+        navTitle.title = "Private Checklists - " + groupName
     }
     
     

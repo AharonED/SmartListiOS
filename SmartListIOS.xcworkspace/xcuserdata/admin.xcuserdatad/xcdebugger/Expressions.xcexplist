@@ -50,13 +50,13 @@
          contextName = "closure #1 in ModelNotification.MyNotification.observe(cb:):ModelNotification.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self">
+               value = "T.self">
             </PersistentString>
             <PersistentString
                value = "NSNotification.Name(name)">
             </PersistentString>
             <PersistentString
-               value = "T.self">
+               value = "self">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -111,13 +111,13 @@
          contextName = "ModelFirebase.addNew(instance:):ModelFirebase.swift">
          <PersistentStrings>
             <PersistentString
-               value = "instance.id">
+               value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
             </PersistentString>
             <PersistentString
                value = "String(describing: instance)">
             </PersistentString>
             <PersistentString
-               value = "String(describing: instance).components(separatedBy: &quot;.&quot;).last!">
+               value = "instance.id">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -147,10 +147,10 @@
                value = "st">
             </PersistentString>
             <PersistentString
-               value = "(st as! BaseModelObject)">
+               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
             </PersistentString>
             <PersistentString
-               value = "(st.lastUpdate != nil &amp;&amp; st.lastUpdate! &gt; lastUpdated)">
+               value = "(st as! BaseModelObject)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -318,6 +318,9 @@
             </PersistentString>
             <PersistentString
                value = "collectionName">
+            </PersistentString>
+            <PersistentString
+               value = "navTitle.rightBarButtonItems?.remove(at: 1)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

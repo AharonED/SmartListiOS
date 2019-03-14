@@ -26,6 +26,19 @@ class ChecklistsViewController: UITableViewController {
     
     var checklistType = "Tempalte"
     
+    
+    @IBAction func ReportChecklist(_ sender: Any) {
+        if(self.selectedId != nil)
+        {
+            self.performSegue(withIdentifier: "ReportChecklistsItemsSegue", sender: self)
+        }
+        else
+        {
+            Utils.displayMessage(_controller: self, userMessage:  "Select Checklist for start reporting...")
+        }
+    }
+    
+    
     @IBAction func checklistItems(_ sender: Any) {
         if(self.selectedId != nil)
         {
@@ -61,7 +74,7 @@ class ChecklistsViewController: UITableViewController {
     
     public func setTitle()
     {
-        navTitle.title = groupName + "-Public Checklists"
+        navTitle.title = "Checklists - " + groupName
     }
     
     
@@ -180,6 +193,44 @@ class ChecklistsViewController: UITableViewController {
             let checklistsItemsVc:ChecklistItemsViewController = segue.destination as! ChecklistItemsViewController
             checklistsItemsVc.checklistId = self.selectedId!
             checklistsItemsVc.checklistType = self.checklistType
+            checklistsItemsVc.checklistName = (self.selectedChecklist?.name)!
+        }
+        
+        
+        if segue.identifier == "ReportChecklistsItemsSegue"{
+            let checklistsItemsVc:ChecklistItemsViewController = segue.destination as! ChecklistItemsViewController
+            
+            var dm:ChecklistDataManager = ChecklistDataManager()
+            var chkCopy:Checklists = dm.CopyChecklist(checklist: self.selectedChecklist!)
+            
+            /*
+            let chkCopy:Checklists = Checklists(json: (self.selectedChecklist?.toJson())!) // Make a byValue copy
+            let identifier = NSUUID().uuidString
+            chkCopy.id = identifier
+            chkCopy.checklistType = "Reported"
+            chkCopy.name = "Copy of" + chkCopy.name 
+            
+          
+            do{
+                //Add the new Checklist to Firebase Database
+                try model.addNew(instance: chkCopy)
+            }
+            catch let error {
+                //let errorDesc:String = error.localizedDescription
+                print("Unexpected error when adding new record: \(error.localizedDescription).")
+            }
+            
+            let modelItems:Model<ChecklistItems> = Model<ChecklistItems>()
+            modelItems.getAllRecords(fieldName: ["checklistId"], fieldValue: [identifier], uniqueInstanceIdentifier: getUniqueInstanceIdentifier())
+            
+            ////Add the new user also to Firebase Database
+            //try model.addNew(instance: chkCopy)
+*/
+            checklistsItemsVc.checklistId = chkCopy.id// identifier
+            checklistsItemsVc.checklistType = "Reported"
+            checklistsItemsVc.checklistName = chkCopy.name
+ 
+            
         }
         
         if segue.identifier == "AddChecklistSegue"{

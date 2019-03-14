@@ -16,7 +16,8 @@ class ChecklistItemViewController: UIViewController {
     
     public var checklistId:String=""
     public var checklistItemId:String=""
-    
+    var checklistType = "Tempalte"
+
     public var checklistItemType:String="Text"
     //public var checklistItemAttributes:String=""
     
@@ -62,12 +63,23 @@ class ChecklistItemViewController: UIViewController {
             
         }
         
+        if(checklistType=="Reported")
+        {
+            
+        }
     }
     
     
     
     @IBAction func save(_ sender: Any) {
-        self.saveChecklistItemInfo(url: "")
+        var num = Int(checklistItemIndexTextField.text!)
+        if num != nil {
+            self.saveChecklistItemInfo(url: "")
+        }
+        else {
+            Utils.displayMessage(_controller: self, userMessage:  "Not valid Item Index, please set numeriv value")
+        }
+        
     }
     
     func saveChecklistItemInfo(url:String)  {

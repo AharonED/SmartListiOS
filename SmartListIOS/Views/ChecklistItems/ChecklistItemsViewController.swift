@@ -12,8 +12,19 @@ class ChecklistItemsViewController: UITableViewController {
 
     public var checklistItemId:String=""
     public var checklistId:String=""
-    var checklistType = "Tempalte"
+    public var checklistName:String=""
+    public var checklistType = "Tempalte"
 
+    var data = [ChecklistItems]()
+    var selectedChecklistItem:ChecklistItems?
+    var selectedCell:ChecklistItemsTableViewCell?
+    
+    var ChecklistItemsListener:NSObjectProtocol?
+    let model:Model<ChecklistItems> = Model<ChecklistItems>()
+    var selectedId:String?
+    var collectionName:String = ""
+    
+    
     @IBOutlet weak var navTitle: UINavigationItem!
     
     /*
@@ -39,18 +50,9 @@ class ChecklistItemsViewController: UITableViewController {
 
     }
     
-    var data = [ChecklistItems]()
-    var selectedChecklistItem:ChecklistItems?
-    var selectedCell:ChecklistItemsTableViewCell?
-    
-    var ChecklistItemsListener:NSObjectProtocol?
-    let model:Model<ChecklistItems> = Model<ChecklistItems>()
-    var selectedId:String?
-    var collectionName:String = ""
-    
     public func setTitle()
     {
-        navTitle.title="Checklist Items - " + checklistId
+        navTitle.title="Items of " + checklistName
     }
     
     
@@ -93,6 +95,18 @@ class ChecklistItemsViewController: UITableViewController {
             print("Unexpected error: \(error.localizedDescription).")
         }
         */
+
+        /*
+        if(checklistType == "Reported")
+        {
+            let btAdd:UIBarButtonItem = ((navTitle.rightBarButtonItems?.first)!)
+            if(btAdd.tag == 1)
+            {
+                navTitle.rightBarButtonItems?.remove(at: 1)
+            }
+        }
+        */
+        
         
         setTitle()
         setListener()
@@ -154,17 +168,39 @@ class ChecklistItemsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        if(checklistType == "Reported")
+        {
+            return 120
+        }
+        else
+        {
+            return 80
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ChecklistItemsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemCell", for: indexPath) as! ChecklistItemsTableViewCell
-        
-        let st = data[indexPath.row]
-        cell.ChecklistItemNameTextField.text = st.name
-        cell.ChecklistItemDescTextField.text = st.description
-        cell.id = st.id
-        return cell
+        if(checklistType == "Reported")
+        {
+            let cell:ChecklistItemsReportedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemReportedCell", for: indexPath) as! ChecklistItemsReportedTableViewCell
+            
+            let st = data[indexPath.row]
+            cell.ChecklistItemNameTextField.text = st.name
+            cell.ChecklistItemDescTextField.text = st.description
+            cell.checklistItemResultTextField.text = st.result
+            cell.id = st.id
+            cell.selectedChecklistItem = data[indexPath.row]
+            return cell
+        }
+        else
+        {
+            let cell:ChecklistItemsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemCell", for: indexPath) as! ChecklistItemsTableViewCell
+            
+            let st = data[indexPath.row]
+            cell.ChecklistItemNameTextField.text = st.name
+            cell.ChecklistItemDescTextField.text = st.description
+            cell.id = st.id
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -181,7 +217,7 @@ class ChecklistItemsViewController: UITableViewController {
         if segue.identifier == "AddItemSegue"{
             let checklistVc:ChecklistItemViewController = segue.destination as! ChecklistItemViewController
             checklistVc.checklistId = self.checklistId
-            //checklistVc.checklistType = self.checklistType
+            checklistVc.checklistType = self.checklistType
             checklistVc.editMode = Utils.EditMode.Insert
             
             checklistVc.checklistItemId = ""
@@ -191,7 +227,7 @@ class ChecklistItemsViewController: UITableViewController {
         if segue.identifier == "EditItemSegue"{
             let checklistVc:ChecklistItemViewController = segue.destination as! ChecklistItemViewController
             checklistVc.checklistId = self.checklistId
-            //checklistVc.checklistType = self.checklistType
+            checklistVc.checklistType = self.checklistType
             checklistVc.editMode = Utils.EditMode.Edit
             
             checklistVc.checklistItemId = self.selectedId!

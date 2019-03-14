@@ -16,7 +16,7 @@ class ReportedChecklistsViewController : ChecklistsViewController {
     
     override func setTitle()
     {
-        navTitle.title = groupName + "-Reported Checklists_" + groupId
+        navTitle.title = "Checklists - " + groupName
     }
     
     override func getAllRecords()

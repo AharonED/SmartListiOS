@@ -20,6 +20,7 @@
 		8428D8B72221F39E00DCA44D /* NewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */; };
 		8429CA8D222322410048E1A3 /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429CA8C222322410048E1A3 /* GroupDetailsViewController.swift */; };
 		8429CA8F222327120048E1A3 /* ChecklistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429CA8E222327120048E1A3 /* ChecklistsViewController.swift */; };
+		842B364E223A4C4400F903BC /* ChecklistDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B364D223A4C4400F903BC /* ChecklistDataManager.swift */; };
 		844792B52232713A005FC1FA /* MostGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B42232713A005FC1FA /* MostGroupsListTableViewController.swift */; };
 		844792B7223271A0005FC1FA /* MyGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792B6223271A0005FC1FA /* MyGroupsListTableViewController.swift */; };
 		844792BB22327456005FC1FA /* GroupsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844792BA22327456005FC1FA /* GroupsTabViewController.swift */; };
@@ -35,6 +36,7 @@
 		84558B6321B33C28005C3978 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84558B6021B33C28005C3978 /* RegisterUserViewController.swift */; };
 		8455E2C4223914F300EE558E /* NewChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455E2C3223914F300EE558E /* NewChecklistViewController.swift */; };
 		8455E2C8223930F100EE558E /* ChecklistItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455E2C7223930F100EE558E /* ChecklistItemViewController.swift */; };
+		8455E2CA2239BFE700EE558E /* ChecklistItemsReportedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455E2C92239BFE700EE558E /* ChecklistItemsReportedTableViewCell.swift */; };
 		8461A3C02200C2ED0020AF92 /* BaseModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BC2200C2ED0020AF92 /* BaseModelObject.swift */; };
 		8461A3C12200C2ED0020AF92 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BD2200C2ED0020AF92 /* Groups.swift */; };
 		8461A3C22200C2ED0020AF92 /* GroupUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461A3BE2200C2ED0020AF92 /* GroupUsers.swift */; };
@@ -104,6 +106,7 @@
 		8428D8B62221F39E00DCA44D /* NewGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewController.swift; sourceTree = "<group>"; };
 		8429CA8C222322410048E1A3 /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
 		8429CA8E222327120048E1A3 /* ChecklistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistsViewController.swift; sourceTree = "<group>"; };
+		842B364D223A4C4400F903BC /* ChecklistDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistDataManager.swift; sourceTree = "<group>"; };
 		844792B42232713A005FC1FA /* MostGroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostGroupsListTableViewController.swift; sourceTree = "<group>"; };
 		844792B6223271A0005FC1FA /* MyGroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsListTableViewController.swift; sourceTree = "<group>"; };
 		844792BA22327456005FC1FA /* GroupsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTabViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		84558B6421B34605005C3978 /* SwiftKeychainWrapper */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftKeychainWrapper; path = SwiftKeychainWrapper/SwiftKeychainWrapper; sourceTree = "<group>"; };
 		8455E2C3223914F300EE558E /* NewChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChecklistViewController.swift; sourceTree = "<group>"; };
 		8455E2C7223930F100EE558E /* ChecklistItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemViewController.swift; sourceTree = "<group>"; };
+		8455E2C92239BFE700EE558E /* ChecklistItemsReportedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItemsReportedTableViewCell.swift; sourceTree = "<group>"; };
 		8461A3BC2200C2ED0020AF92 /* BaseModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseModelObject.swift; path = SmartListIOS/DataObjects/BaseModelObject.swift; sourceTree = SOURCE_ROOT; };
 		8461A3BD2200C2ED0020AF92 /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Groups.swift; path = SmartListIOS/DataObjects/Groups.swift; sourceTree = SOURCE_ROOT; };
 		8461A3BE2200C2ED0020AF92 /* GroupUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupUsers.swift; path = SmartListIOS/DataObjects/GroupUsers.swift; sourceTree = SOURCE_ROOT; };
@@ -238,6 +242,14 @@
 			path = Checklist;
 			sourceTree = "<group>";
 		};
+		842B364F223A4C5200F903BC /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				842B364D223A4C4400F903BC /* ChecklistDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		84558B2421B32FC7005C3978 = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +332,7 @@
 				848037A3223708DC002EF536 /* ChecklistItemsViewController.swift */,
 				848037A5223774E2002EF536 /* ChecklistItemsTableViewCell.swift */,
 				8455E2C7223930F100EE558E /* ChecklistItemViewController.swift */,
+				8455E2C92239BFE700EE558E /* ChecklistItemsReportedTableViewCell.swift */,
 			);
 			path = ChecklistItems;
 			sourceTree = "<group>";
@@ -364,6 +377,7 @@
 		84DF5A6522099C6300A92AB2 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				842B364F223A4C5200F903BC /* DataManager */,
 				8400D29221D18EC70070BDD6 /* ModelFirebase.swift */,
 				8416E4372203AF730032CB52 /* ModelFirebaseDatabase.swift */,
 				84CFC96221D231B1007DC3EC /* FirebaseUsersManager.swift */,
@@ -684,6 +698,7 @@
 				8461A3C02200C2ED0020AF92 /* BaseModelObject.swift in Sources */,
 				849EA8D422272B3900B0C3C6 /* Attributes.swift in Sources */,
 				84CFC96D21D28A82007DC3EC /* PrivateChecklistsViewController.swift in Sources */,
+				8455E2CA2239BFE700EE558E /* ChecklistItemsReportedTableViewCell.swift in Sources */,
 				8416E43A2203BDEF0032CB52 /* ModelSQL.swift in Sources */,
 				8461A3C32200C2ED0020AF92 /* Users.swift in Sources */,
 				849EA8D0222729D400B0C3C6 /* Checklists.swift in Sources */,
@@ -691,6 +706,7 @@
 				84DF5A692209A58E00A92AB2 /* ModelSQLGroups.swift in Sources */,
 				8461A3C12200C2ED0020AF92 /* Groups.swift in Sources */,
 				844792B7223271A0005FC1FA /* MyGroupsListTableViewController.swift in Sources */,
+				842B364E223A4C4400F903BC /* ChecklistDataManager.swift in Sources */,
 				84558B3121B32FC8005C3978 /* AppDelegate.swift in Sources */,
 				84558B6121B33C28005C3978 /* HomePageViewController.swift in Sources */,
 				8428D8B72221F39E00DCA44D /* NewGroupViewController.swift in Sources */,

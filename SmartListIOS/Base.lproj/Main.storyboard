@@ -316,7 +316,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="KEp-8r-Ljc">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="EuO-Wk-hTi">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="reply" id="EuO-Wk-hTi">
                                         <connections>
                                             <action selector="back:" destination="asy-7J-2MA" id="9So-9q-Va8"/>
                                         </connections>
@@ -335,6 +335,12 @@
                                         <barButtonItem systemItem="action" id="N2q-Fr-fMv">
                                             <connections>
                                                 <action selector="checklistItems:" destination="asy-7J-2MA" id="LSA-DV-kQs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="play" id="2Dy-jp-kjU">
+                                            <connections>
+                                                <action selector="ReportChecklist:" destination="asy-7J-2MA" id="m7Q-KN-jEf"/>
+                                                <segue destination="DvF-6m-l4S" kind="show" identifier="ReportChecklistsItemsSegue" id="HsI-d8-eXE"/>
                                             </connections>
                                         </barButtonItem>
                                     </rightBarButtonItems>
@@ -822,7 +828,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="oK9-HR-fXe">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="8VY-Qs-hrY">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="reply" id="8VY-Qs-hrY">
                                         <connections>
                                             <action selector="back:" destination="C7W-V9-f2T" id="aLY-Et-OIy"/>
                                         </connections>
@@ -841,6 +847,11 @@
                                         <barButtonItem systemItem="action" id="8qq-j4-Le6">
                                             <connections>
                                                 <action selector="checklistItems:" destination="C7W-V9-f2T" id="dR1-3r-tGs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="play" id="c0D-Jx-rBX">
+                                            <connections>
+                                                <segue destination="DvF-6m-l4S" kind="show" identifier="ReportChecklistsItemsSegue" id="zUL-w3-6Sj"/>
                                             </connections>
                                         </barButtonItem>
                                     </rightBarButtonItems>
@@ -913,7 +924,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem id="TOU-TB-2JB">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="rewind" id="2iV-bJ-Lg9">
+                                    <barButtonItem key="leftBarButtonItem" systemItem="reply" id="2iV-bJ-Lg9">
                                         <connections>
                                             <action selector="back:" destination="TSF-eg-l7M" id="CEf-w9-q2F"/>
                                         </connections>
@@ -1083,12 +1094,12 @@
                             <items>
                                 <navigationItem id="nW2-n2-Gtd">
                                     <rightBarButtonItems>
-                                        <barButtonItem systemItem="add" id="Q53-Q7-JHF">
+                                        <barButtonItem tag="1" systemItem="add" id="Q53-Q7-JHF">
                                             <connections>
                                                 <action selector="AddItem:" destination="DvF-6m-l4S" id="6Mw-7e-4eS"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem systemItem="compose" id="Woh-LP-dsr">
+                                        <barButtonItem tag="2" systemItem="compose" id="Woh-LP-dsr">
                                             <connections>
                                                 <action selector="EditItem:" destination="DvF-6m-l4S" id="RaG-gw-iO1"/>
                                             </connections>
@@ -1098,23 +1109,23 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChecklistItemCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChecklistItemCell" rowHeight="80" id="KzA-qV-tzl" customClass="ChecklistItemsTableViewCell" customModule="SmartListIOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChecklistItemCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChecklistItemCell" rowHeight="70" id="KzA-qV-tzl" customClass="ChecklistItemsTableViewCell" customModule="SmartListIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KzA-qV-tzl" id="bml-dr-Xx3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="ChecklistItemNameTextField" layoutMarginsFollowReadableWidth="YES" text="Item1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-IB-nH7">
                                             <rect key="frame" x="15" y="11" width="345" height="24"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="ChecklistItemDescTextField" layoutMarginsFollowReadableWidth="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-dS-xqN">
                                             <rect key="frame" x="15" y="43" width="345" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1129,6 +1140,68 @@
                                 <connections>
                                     <outlet property="ChecklistItemDescTextField" destination="d7J-dS-xqN" id="eDy-2e-P08"/>
                                     <outlet property="ChecklistItemNameTextField" destination="zRb-IB-nH7" id="arw-TM-M3c"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ChecklistItemReportedCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChecklistItemReportedCell" rowHeight="113" id="sv8-al-Snm" customClass="ChecklistItemsReportedTableViewCell" customModule="SmartListIOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="142" width="375" height="113"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sv8-al-Snm" id="VRi-up-anb">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ChecklistItemNameRepTextField" layoutMarginsFollowReadableWidth="YES" text="Item1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7v-IV-rlQ">
+                                            <rect key="frame" x="15" y="11" width="345" height="24"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="ChecklistItemDescRepTextField" layoutMarginsFollowReadableWidth="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyJ-qN-ffy">
+                                            <rect key="frame" x="15" y="43" width="345" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistItemResultTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="i8N-eV-FIK">
+                                            <rect key="frame" x="15" y="71.5" width="310" height="30"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wn6-2Z-E0m">
+                                            <rect key="frame" x="341" y="75.5" width="15" height="22"/>
+                                            <connections>
+                                                <action selector="saveClicked:" destination="sv8-al-Snm" eventType="touchUpInside" id="qlf-5z-ATH"/>
+                                                <action selector="takeImage:" destination="db3-5E-cej" eventType="touchUpInside" id="z5r-kW-xMI"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TyJ-qN-ffy" firstAttribute="top" secondItem="C7v-IV-rlQ" secondAttribute="bottom" constant="8" id="1Os-Lm-rJ7"/>
+                                        <constraint firstAttribute="trailing" secondItem="wn6-2Z-E0m" secondAttribute="trailing" constant="19" id="AQP-Ve-meC"/>
+                                        <constraint firstAttribute="bottom" secondItem="wn6-2Z-E0m" secondAttribute="bottom" constant="15" id="D4Q-ME-4UU"/>
+                                        <constraint firstItem="C7v-IV-rlQ" firstAttribute="leading" secondItem="VRi-up-anb" secondAttribute="leading" constant="15" id="Djz-sC-vpz"/>
+                                        <constraint firstItem="i8N-eV-FIK" firstAttribute="top" secondItem="TyJ-qN-ffy" secondAttribute="bottom" constant="8" id="HI7-vK-Lym"/>
+                                        <constraint firstItem="TyJ-qN-ffy" firstAttribute="width" secondItem="C7v-IV-rlQ" secondAttribute="width" id="NQh-xw-s31"/>
+                                        <constraint firstAttribute="bottom" secondItem="i8N-eV-FIK" secondAttribute="bottom" constant="11" id="ROJ-vr-Pzg"/>
+                                        <constraint firstItem="C7v-IV-rlQ" firstAttribute="top" secondItem="VRi-up-anb" secondAttribute="top" constant="11" id="VGy-JH-cvz"/>
+                                        <constraint firstItem="TyJ-qN-ffy" firstAttribute="top" secondItem="C7v-IV-rlQ" secondAttribute="bottom" constant="8" id="WAV-x0-DcS"/>
+                                        <constraint firstAttribute="trailing" secondItem="i8N-eV-FIK" secondAttribute="trailing" constant="50" id="dlq-bc-jzl"/>
+                                        <constraint firstItem="i8N-eV-FIK" firstAttribute="top" secondItem="TyJ-qN-ffy" secondAttribute="bottom" constant="8" id="duy-LV-Qjk"/>
+                                        <constraint firstItem="C7v-IV-rlQ" firstAttribute="top" secondItem="VRi-up-anb" secondAttribute="top" constant="11" id="fd0-1g-riw"/>
+                                        <constraint firstItem="i8N-eV-FIK" firstAttribute="top" secondItem="TyJ-qN-ffy" secondAttribute="bottom" constant="8" id="gHX-LH-MUZ"/>
+                                        <constraint firstItem="wn6-2Z-E0m" firstAttribute="leading" secondItem="i8N-eV-FIK" secondAttribute="trailing" constant="16" id="kJi-gt-m13"/>
+                                        <constraint firstItem="i8N-eV-FIK" firstAttribute="leading" secondItem="VRi-up-anb" secondAttribute="leading" constant="15" id="kwg-af-frj"/>
+                                        <constraint firstItem="wn6-2Z-E0m" firstAttribute="top" secondItem="TyJ-qN-ffy" secondAttribute="bottom" constant="12" id="l2G-kJ-OE1"/>
+                                        <constraint firstItem="TyJ-qN-ffy" firstAttribute="top" secondItem="C7v-IV-rlQ" secondAttribute="bottom" constant="8" id="pOY-3m-t3Z"/>
+                                        <constraint firstAttribute="trailing" secondItem="C7v-IV-rlQ" secondAttribute="trailing" constant="15" id="rRe-Fg-F00"/>
+                                        <constraint firstItem="TyJ-qN-ffy" firstAttribute="leading" secondItem="VRi-up-anb" secondAttribute="leading" constant="15" id="yld-1O-G0k"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ChecklistItemDescTextField" destination="TyJ-qN-ffy" id="d20-Pf-DwN"/>
+                                    <outlet property="ChecklistItemNameTextField" destination="C7v-IV-rlQ" id="s9v-UK-scH"/>
+                                    <outlet property="checklistItemResultTextField" destination="i8N-eV-FIK" id="AWG-1t-2s0"/>
+                                    <outlet property="save" destination="wn6-2Z-E0m" id="nOc-EV-xTn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1147,7 +1220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucX-TG-4NE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9569" y="27"/>
+            <point key="canvasLocation" x="9568.7999999999993" y="26.53673163418291"/>
         </scene>
         <!--New Checklist View Controller-->
         <scene sceneID="h1B-Xz-Dre">
@@ -1241,7 +1314,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZr-cB-dPe">
                                 <rect key="frame" x="16" y="84" width="77.5" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="checklistItemNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="1Qi-Wb-OtY">
@@ -1334,10 +1407,10 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vNx-MS-kPO"/>
-        <segue reference="5da-vw-Gca"/>
-        <segue reference="Kmw-Me-ePu"/>
+        <segue reference="tVl-gq-EaW"/>
+        <segue reference="zUL-w3-6Sj"/>
         <segue reference="kdw-8R-JN0"/>
         <segue reference="ksm-0A-Y6M"/>
-        <segue reference="jdT-D9-S97"/>
+        <segue reference="DLN-jf-riK"/>
     </inferredMetricsTieBreakers>
 </document>
