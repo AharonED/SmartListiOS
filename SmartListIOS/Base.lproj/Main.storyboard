@@ -930,11 +930,6 @@
                                         </connections>
                                     </barButtonItem>
                                     <rightBarButtonItems>
-                                        <barButtonItem systemItem="add" id="PeK-it-0kZ">
-                                            <connections>
-                                                <action selector="newChecklist:" destination="TSF-eg-l7M" id="wDG-aR-bN4"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <barButtonItem systemItem="compose" id="a6h-g5-fXU">
                                             <connections>
                                                 <action selector="editChecklist:" destination="TSF-eg-l7M" id="ZJq-AY-RRc"/>
@@ -1407,8 +1402,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="vNx-MS-kPO"/>
-        <segue reference="tVl-gq-EaW"/>
-        <segue reference="zUL-w3-6Sj"/>
+        <segue reference="ivU-Kt-MEL"/>
+        <segue reference="Kmw-Me-ePu"/>
         <segue reference="kdw-8R-JN0"/>
         <segue reference="ksm-0A-Y6M"/>
         <segue reference="DLN-jf-riK"/>
